@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en-SG">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Save Gillman Forest</title>
+<meta name="description" content="A residents' campaign to save Gillman Forest in Telok Blangah, Singapore. Sign the petition, give feedback to HDB, and follow the dialogue.">
+<style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url(assets/fonts/woff2-01.woff2) format('woff2')}
+:root{
+  --ink:#0c0e0d; --cream:#f3ead2; --amber:#f5b02e; --white:#ffffff;
+  --leaf-bg:#cdeec0; --leaf-bd:#2f7d32; --leaf-tx:#173a12;
+  --muted:#c9cdc4; --panel:#f6f4ee;
+  --sans:'Inter',system-ui,-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;overflow-x:hidden}
+body{font-family:var(--sans);color:#fff;background:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+.bg{position:fixed;inset:0;background:#0c0e0d center/cover no-repeat;background-image:url(assets/img/jpg-01.jpg);z-index:-2}
+.scrim{position:fixed;inset:0;background:linear-gradient(180deg,rgba(13,36,24,.80),rgba(11,30,20,.72) 42%,rgba(7,22,14,.88));z-index:-1}
+a{color:inherit}
+img{max-width:100%;display:block}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,0))}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:26px clamp(20px,4.5vw,44px)}
+.nav-links{display:flex;align-items:center;gap:2px;flex-wrap:wrap}
+.nav-links button{background:none;border:none;color:#fff;font-family:var(--sans);font-weight:700;font-size:17px;
+  padding:6px 12px;cursor:pointer;letter-spacing:.01em;opacity:.94}
+.nav-links button:first-child{padding-left:0}
+.nav-links button:hover{color:var(--amber)}
+.nav-links button[aria-current="true"]{color:var(--amber)}
+.nav-sep{color:rgba(255,255,255,.5);font-weight:400}
+.signup-btn{display:inline-block;text-decoration:none;text-align:center;background:var(--amber);color:#3a2a00;border:none;border-radius:999px;
+  font-family:var(--sans);font-weight:800;font-size:15px;padding:9px 18px;cursor:pointer;white-space:nowrap}
+.signup-btn:hover{background:#ffc24d}
+
+/* pages */
+.page{display:none;min-height:100vh;padding:96px 0 64px;animation:fade .35s ease both}
+.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4.5vw,44px)}
+.wrap-wide{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4.5vw,44px)}
+
+h1,h2,h3{margin:0}
+.lede{color:var(--cream);font-size:clamp(18px,2.3vw,23px);line-height:1.5;max-width:60ch;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin:0 0 14px}
+
+/* home hero */
+.home-hero{min-height:52vh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:22px}
+.hero-title{font-weight:800;font-size:clamp(42px,8.4vw,92px);line-height:.98;letter-spacing:-.03em;color:#fff;text-shadow:0 2px 26px rgba(0,0,0,.6);margin:0 0 18px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-start;margin-top:24px}
+.cta-center{justify-content:center;margin:28px 0 0}
+.cta-stack{display:flex;flex-direction:column;align-items:center;gap:12px}
+.cta-note{font-family:var(--sans);font-size:13px;line-height:1.35;color:var(--amber);font-weight:700;max-width:26ch;text-align:center}
+.cta-row .cta-stack .btn{margin:0}
+.home-top{text-align:center;padding:2vh 0 2px}
+.home-top .hero-title{margin:14px 0 18px}
+.home-top .lede{margin:0 auto;text-align:center;font-size:clamp(19px,2.4vw,24px)}
+#page-home{padding:0}
+.home-below{padding:80px clamp(20px,4.5vw,44px) 60px;text-align:center}
+.home-below .lede{margin:0 auto;text-align:center}
+.hero-vid{position:relative;width:100%;height:84vh;min-height:440px;overflow:hidden;background:#0c0e0d}
+.hero-vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-vid-scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(8,20,13,.34),rgba(8,20,13,.26) 45%,rgba(8,20,13,.66))}
+.hero-vid-title{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);margin:0;text-align:center;color:#fff;font-weight:800;font-size:clamp(38px,7vw,88px);line-height:1.0;letter-spacing:-.03em;text-shadow:0 3px 30px rgba(0,0,0,.6);pointer-events:none}
+.film-el{display:block;width:100%;max-width:1060px;margin:90px auto 0;border-radius:14px;border:1px solid rgba(255,255,255,.18);background:#0c0e0d;aspect-ratio:16/9}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:16px;text-decoration:none;border-radius:999px;padding:9px 17px;cursor:pointer;border:2px solid transparent;font-family:var(--sans)}
+.btn--go{background:var(--amber);color:#3a2a00;border-color:var(--amber)}
+.btn--go:hover{background:#ffbe47}
+.btn--ghost{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.34);color:#eaf3e6}
+.btn--ghost:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5)}
+.btn--leaf{background:var(--leaf-bg);color:var(--leaf-tx);border-color:var(--leaf-bd)}
+.btn--leaf:hover{background:#bde8ae}
+.btn small{display:block;font-weight:600;font-size:12px;opacity:.8;letter-spacing:.02em}
+
+/* video */
+.film{position:relative;margin:34px auto 8px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.18);max-width:860px;aspect-ratio:16/9;background:#0c0e0d}
+.film img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.7)}
+.film-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+.film-play .disc{width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center}
+.film-play .disc:after{content:"";border-left:22px solid var(--ink);border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px}
+.film-cap{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.45);padding:6px 12px;border-radius:999px}
+
+/* wildlife */
+.wild{max-width:820px;margin:76px auto 64px;text-align:center}
+.wild img{width:100%;height:100%;max-height:340px;object-fit:cover;border-radius:12px}
+.wild p{color:var(--cream);font-size:clamp(18px,2.3vw,23px);line-height:1.5;margin:0 0 16px;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.wild p:last-child{margin-bottom:0}
+.wild-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.wild-strip figure{margin:0}
+.wild-strip figure img{width:100%;height:150px;object-fit:cover;border-radius:10px;display:block}
+.wild-strip figcaption{margin-top:9px;font-size:13px;line-height:1.35;color:var(--cream);opacity:.95}
+.wild p.wild-lead{font-size:clamp(38px,6vw,70px);font-weight:800;color:#fff;line-height:1.02;letter-spacing:-.03em;margin:0 0 20px;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.wild p b{color:var(--amber);font-weight:800}
+.strip-kicker{font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:0;text-transform:none;color:#fff;margin:34px 0 14px}
+.damage{max-width:980px;margin:64px auto 0;text-align:center}
+.damage-title{font-weight:800;font-size:clamp(28px,4.6vw,48px);color:#fff;letter-spacing:-.01em;line-height:1.05;margin:0 0 26px;text-shadow:0 2px 16px rgba(0,0,0,.5)}
+.damage-img{width:100vw;max-width:none;margin:0 0 6px calc(50% - 50vw);display:block;border:none;border-radius:0;aspect-ratio:1200/719;object-fit:cover;object-position:50% 100%}
+.damage-list{max-width:840px;margin:56px auto 0;text-align:center}
+.damage-list .dmg-body{margin-left:auto;margin-right:auto;max-width:56ch}
+.dmg{padding:24px 2px;border-top:1px solid rgba(255,255,255,.16)}
+.damage-list .dmg:first-child{border-top:0;padding-top:0}
+.dmg-lead{font-weight:800;font-size:clamp(20px,2.4vw,27px);color:var(--amber);line-height:1.15;letter-spacing:-.015em;margin-bottom:9px}
+.dmg-body{color:var(--cream);font-size:clamp(16px,1.7vw,18px);line-height:1.55;margin:0}
+
+/* petition */
+.pet-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px;max-width:760px;margin:40px auto 0}
+.qr-tile{text-align:center}
+.qr-frame{background:#fff;border-radius:14px;padding:18px;display:inline-block;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+.qr-frame img{width:210px;height:210px;display:block}
+.qr-ph{width:210px;height:210px;display:flex;align-items:center;justify-content:center;text-align:center;
+  border:2px dashed #b9bdb2;border-radius:8px;color:#7a7e74;font-size:13px;font-weight:600;padding:14px;background:#f4f4f0}
+.qr-title{font-size:22px;font-weight:800;letter-spacing:-.015em;margin:16px 0 4px;color:#fff}
+.qr-sub{font-size:15px;color:var(--muted)}
+.qr-sub b{color:var(--amber)}
+.pet-actions{display:flex;justify-content:center;gap:10px;margin-top:14px;flex-wrap:wrap}
+
+/* events */
+.events-box{text-align:center;max-width:680px;margin:8vh auto 0}
+.events-box h2{font-size:clamp(26px,4vw,40px);font-weight:800;color:#fff;letter-spacing:-.02em;margin:0 0 20px;line-height:1.12;text-shadow:0 2px 18px rgba(0,0,0,.55)}
+.events-box p{color:var(--cream);font-size:19px;margin:0 0 16px}
+.events-note{margin-top:22px;color:var(--muted);font-size:14px;border:1px dashed rgba(255,255,255,.3);border-radius:10px;padding:14px 18px;display:inline-block}
+
+/* letters */
+.letters-intro{max-width:1120px}
+.mp-table-wrap{overflow-x:auto;margin-top:26px}
+.mp-table{width:100%;min-width:720px;border-collapse:collapse}
+.mp-table th{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 20px 12px 0;border-bottom:1px solid rgba(255,255,255,.3)}
+.mp-table td{padding:16px 20px 16px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:15px;color:var(--cream);vertical-align:top;line-height:1.4}
+.mp-table td:first-child{color:#fff;font-weight:600}
+.mp-table td:last-child{white-space:nowrap}
+.mp-table a{color:var(--amber);text-decoration:underline;text-underline-offset:2px}
+.mp-table a:hover{color:#fff}
+.mp-table th:last-child,.mp-table td:last-child{padding-right:0}
+@media(max-width:620px){.mp-table th,.mp-table td{font-size:13px;padding-right:12px}}
+.letters-intro p{color:var(--cream);font-size:18px;margin:0 0 16px}
+.doc-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:30px 0 8px}
+.doc-card{padding:6px 20px 6px 0;border-left:1px solid rgba(255,255,255,.35);padding-left:20px;cursor:pointer;background:none;text-align:left;color:#fff;font-family:var(--sans)}
+.doc-card:first-child{border-left:none;padding-left:0}
+.doc-card:hover .dc-title{color:var(--amber)}
+.dc-kicker{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:8px}
+.dc-title{font-size:17px;font-weight:700;line-height:1.35;color:#fff}
+.dc-meta{font-size:13px;color:var(--muted);margin-top:8px}
+.doc-card.is-placeholder{cursor:default}
+.doc-card.is-placeholder .dc-title{color:var(--muted)}
+
+/* reader */
+.reader{margin-top:30px;display:grid;grid-template-columns:48px 1fr 48px;gap:14px;align-items:center;max-width:900px}
+.reader-arrow{width:48px;height:64px;border:none;background:rgba(255,255,255,.1);color:#fff;font-size:26px;border-radius:10px;cursor:pointer}
+.reader-arrow:hover{background:rgba(255,255,255,.22)}
+.reader-card{background:var(--panel);color:var(--ink);border-radius:14px;padding:22px;display:grid;grid-template-columns:130px 1fr;gap:22px;align-items:center;min-height:220px}
+.reader-card img{width:130px;height:184px;object-fit:cover;object-position:top;border:1px solid #d9d7cf;border-radius:6px;box-shadow:0 2px 10px rgba(0,0,0,.16)}
+.rc-kicker{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9e6b1f}
+.rc-title{font-size:22px;font-weight:800;margin:6px 0 8px;line-height:1.2}
+.rc-desc{font-size:15px;color:#4a4a44;line-height:1.55;margin:0 0 16px}
+.rc-count{font-size:13px;color:#8a8a80;margin-top:10px}
+
+/* dialogue */
+.dlg-intro{max-width:70ch;color:var(--cream);font-size:18px;margin:0 0 8px}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:36px 0 10px;max-width:900px}
+.tl{border-left:2px solid rgba(255,255,255,.4);padding:4px 22px 30px;position:relative}
+.tl:before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--amber)}
+.tl-date{font-size:15px;font-weight:800;color:var(--amber)}
+.tl-body{font-size:15px;color:#fff;margin-top:6px;line-height:1.4}
+.tl.clickable{cursor:pointer}
+.tl.clickable:hover .tl-body{color:var(--amber)}
+.tl-tag{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:#3a2a00;background:var(--amber);padding:3px 10px;border-radius:999px}
+.tl.future{opacity:.7}
+.tl.future .tl-date{color:var(--muted)}
+
+.detail{margin-top:14px;max-width:760px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:22px 24px;display:none}
+.detail.open{display:block}
+.detail h3{font-size:19px;font-weight:800;margin:0 0 14px;color:#fff}
+.res-link{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;text-align:left;
+  background:none;border:none;border-top:1px solid rgba(255,255,255,.14);padding:14px 0;color:#fff;font-family:var(--sans);
+  font-size:16px;cursor:pointer}
+.res-link:first-of-type{border-top:none}
+.res-link:hover{color:var(--amber)}
+.res-chip{font-size:12px;font-weight:800;letter-spacing:.04em;background:rgba(255,255,255,.9);color:var(--ink);padding:5px 12px;border-radius:6px;white-space:nowrap}
+.detail-note{color:var(--cream);font-size:15px;line-height:1.55;margin:0 0 14px}
+.detail-list{color:var(--cream);font-size:15px;line-height:1.55;margin:0 0 16px;padding-left:20px}
+.detail-list li{margin:0 0 9px}
+.detail-gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.detail-photo{width:100%;max-height:380px;object-fit:cover;object-position:center;border-radius:10px;border:1px solid rgba(255,255,255,.16);cursor:zoom-in;display:block;margin:2px 0 18px}
+.detail-gallery img{width:100%;height:230px;object-fit:cover;border-radius:10px;cursor:zoom-in;border:1px solid rgba(255,255,255,.16)}
+@media(max-width:820px){.detail-gallery{grid-template-columns:1fr}.detail-gallery img{height:200px}}
+
+/* signup */
+.signup-box{max-width:620px;margin:6vh auto 0;text-align:center}
+.signup-box h2{font-size:clamp(30px,5vw,46px);font-weight:800;color:#fff;letter-spacing:-.02em;margin:0 0 16px}
+.signup-box p{color:var(--cream);font-size:18px;margin:0 0 26px}
+
+/* footer note */
+.foot{max-width:1080px;margin:44px auto 0;color:var(--muted);font-size:13px;border-top:1px solid rgba(255,255,255,.14);padding-top:18px;line-height:1.6}
+.foot a{color:var(--amber)}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;background:#080a09;display:none;align-items:center;justify-content:center;z-index:200}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain}
+.lightbox-close{position:absolute;top:14px;right:16px;width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.16);color:#fff;font-size:26px;cursor:pointer}
+
+.site-footer{position:relative;z-index:10;padding:120px clamp(20px,4.5vw,44px) 184px;text-align:center;overflow:hidden;background:#0a2115}
+.footer-mosaic{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:0;align-content:start}
+.footer-mosaic .mo{display:block;width:100%;aspect-ratio:1/1;background-position:center;background-size:cover;background-repeat:no-repeat}
+.footer-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(10,33,21,.85) 0%,rgba(10,33,21,.74) 7%,rgba(10,33,21,.60) 18%,rgba(10,33,21,.45) 48%,rgba(10,33,21,.60) 82%,rgba(10,33,21,.74) 93%,rgba(10,33,21,.85) 100%)}
+.site-footer > *:not(.footer-mosaic):not(.footer-scrim){position:relative;z-index:2}
+.site-footer .footer-note,.site-footer .cta-note{text-shadow:0 1px 10px rgba(0,0,0,.9)}
+@media(max-width:640px){.footer-mosaic{grid-template-columns:repeat(auto-fill,minmax(104px,1fr))}}
+.mo1{background-image:url(assets/img/jpg-02.jpg)}.mo2{background-image:url(assets/img/jpg-03.jpg)}.mo3{background-image:url(assets/img/jpg-04.jpg)}.mo4{background-image:url(assets/img/jpg-05.jpg)}.mo5{background-image:url(assets/img/jpg-06.jpg)}.mo6{background-image:url(assets/img/jpg-07.jpg)}.mo7{background-image:url(assets/img/jpg-08.jpg)}.mo8{background-image:url(assets/img/jpg-09.jpg)}.mo9{background-image:url(assets/img/jpg-10.jpg)}.mo10{background-image:url(assets/img/jpg-11.jpg)}.mo11{background-image:url(assets/img/jpg-12.jpg)}.mo12{background-image:url(assets/img/jpg-13.jpg)}.mo13{background-image:url(assets/img/jpg-14.jpg)}.mo14{background-image:url(assets/img/jpg-15.jpg)}.mo15{background-image:url(assets/img/jpg-16.jpg)}.mo16{background-image:url(assets/img/jpg-17.jpg)}.mo17{background-image:url(assets/img/jpg-18.jpg)}.mo18{background-image:url(assets/img/jpg-19.jpg)}.mo19{background-image:url(assets/img/jpg-20.jpg)}.mo20{background-image:url(assets/img/jpg-21.jpg)}.mo21{background-image:url(assets/img/jpg-22.jpg)}.mo22{background-image:url(assets/img/jpg-23.jpg)}.mo23{background-image:url(assets/img/jpg-24.jpg)}.mo24{background-image:url(assets/img/jpg-25.jpg)}.mo25{background-image:url(assets/img/jpg-26.jpg)}.mo26{background-image:url(assets/img/jpg-27.jpg)}.mo27{background-image:url(assets/img/jpg-28.jpg)}.mo28{background-image:url(assets/img/jpg-29.jpg)}.mo29{background-image:url(assets/img/jpg-30.jpg)}.mo30{background-image:url(assets/img/jpg-31.jpg)}.mo31{background-image:url(assets/img/jpg-32.jpg)}.mo32{background-image:url(assets/img/jpg-33.jpg)}.mo33{background-image:url(assets/img/jpg-34.jpg)}.mo34{background-image:url(assets/img/jpg-35.jpg)}.mo35{background-image:url(assets/img/jpg-36.jpg)}.mo36{background-image:url(assets/img/jpg-37.jpg)}
+.footer-wordmark{font-weight:800;font-size:clamp(34px,6vw,70px);letter-spacing:-.03em;color:#fff;line-height:1;margin:0 0 46px;text-shadow:0 2px 22px rgba(0,0,0,.55)}
+.footer-note{margin:28px auto 0;max-width:62ch;color:var(--muted);font-size:13px;line-height:1.55}
+body[data-page="petition"] .site-footer .cta-row{display:none}
+
+@media(max-width:820px){
+  .nav-inner{padding-top:14px;padding-bottom:14px}
+  .nav-links{gap:0}
+  .nav-links button{font-size:14px;padding:5px 8px}
+  .nav-sep{display:none}
+  .signup-btn{font-size:13px;padding:8px 12px}
+  .page{padding:110px 16px 56px}
+  .wild{grid-template-columns:1fr}
+  .wild-strip{grid-template-columns:repeat(2,1fr)}
+  .wild-strip figure img{height:120px}
+  .pet-grid{grid-template-columns:1fr;gap:30px}
+  .doc-cards{grid-template-columns:1fr 1fr;gap:18px 0}
+  .doc-card{border-left:none;padding-left:0;border-top:1px solid rgba(255,255,255,.2);padding-top:14px}
+  .doc-card:first-child,.doc-card:nth-child(2){border-top:none;padding-top:0}
+  .reader{grid-template-columns:40px 1fr 40px;gap:8px}
+  .reader-card{grid-template-columns:1fr;text-align:center}
+  .reader-card img{margin:0 auto}
+  .timeline{grid-template-columns:1fr;gap:0}
+  .tl{border-left:2px solid rgba(255,255,255,.4);padding-bottom:24px}
+  .hero-vid{height:62vh;min-height:340px}
+  .hero-vid-title{line-height:0.9;font-size:clamp(34px,10.5vw,58px)}
+}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="scrim"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+  <nav class="nav-links" aria-label="Main">
+    <button data-page="home" aria-current="true">Home</button><span class="nav-sep">|</span>
+    <button data-page="events">Events</button><span class="nav-sep">|</span>
+    <button data-page="letters">Letters</button><span class="nav-sep">|</span>
+    <button data-page="dialogue">Dialogue</button>
+  </nav>
+  <a class="signup-btn" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">Feedback to HDB</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section class="page active" id="page-home">
+  <div class="hero-vid">
+    <video class="hero-vid-el" autoplay muted loop playsinline webkit-playsinline x5-playsinline disablepictureinpicture preload="auto" poster="assets/img/jpg-38.jpg" aria-label="Aerial footage of Gillman Forest"><source data-src="media/hero.mp4" type="video/mp4"></video>
+    <div class="hero-vid-scrim"></div>
+    <h1 class="hero-vid-title">Save Gillman Forest</h1>
+  </div>
+  <div class="wrap home-below">
+    <p class="lede">Gillman Forest has stood for generations. Within months, a decision could be made to clear it. And once a mature forest is lost, no amount of replanting brings it back. Add your voice today, and help us keep Gillman standing for generations to come.</p>
+
+    <div class="cta-row cta-center">
+      <span class="cta-stack"><a class="btn btn--go" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">Feedback to HDB <small class="js-deadline-mini">by 6 Aug 2026</small></a><span class="cta-note">Takes 5 minutes. Carries more weight. Closes on 6 August.</span></span>
+      <a class="btn btn--ghost" href="https://www.change.org/p/save-gillman-barracks-forest-build-homes-in-gsw-instead" target="_blank" rel="noopener">Sign the petition</a>
+    </div>
+
+    <video class="film-el" controls playsinline preload="metadata" poster="assets/img/jpg-39.jpg"><source data-src="media/film.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+
+    <section class="wild">
+      <div>
+        <p class="wild-lead">What clearing Gillman would destroy</p>
+        <p>Gillman is not empty land. It is a <b>mature forest decades in the making</b> that cannot be recreated, a <b>living link</b> between Berlayer Creek, Labrador and the Southern Ridges, and one of Singapore&rsquo;s most effective <b>natural cooling landscapes</b>. It is a sanctuary where people walk, breathe and restore their health, and one of the rare places where <b>heritage, art and nature meet</b>. Clear it, and <b>none of it comes back</b>.</p>
+      </div>
+    </section>
+    <section class="damage">
+      <img class="damage-img" src="assets/img/jpg-40.jpg" alt="Aerial view of the forest canopy and an elevated walkway along the Southern Ridges near Gillman" loading="lazy" decoding="async">
+      <div class="damage-list">
+        <div class="dmg"><div class="dmg-lead">A mature secondary forest</div><p class="dmg-body">Decades of natural regeneration that cannot simply be recreated.</p></div>
+        <div class="dmg"><div class="dmg-lead">Wildlife habitat and ecological connectivity</div><p class="dmg-body">A vital link between Berlayer Creek, Labrador Nature Reserve and the Southern Ridges.</p></div>
+        <div class="dmg"><div class="dmg-lead">Natural cooling and cleaner air</div><p class="dmg-body">One of Singapore&rsquo;s most effective natural urban cooling landscapes.</p></div>
+        <div class="dmg"><div class="dmg-lead">A sanctuary for people</div><p class="dmg-body">Daily access to walking, forest bathing, birdlife and restorative green space.</p></div>
+        <div class="dmg"><div class="dmg-lead">Health and wellbeing</div><p class="dmg-body">Proven benefits for physical health, mental wellbeing and quality of life.</p></div>
+        <div class="dmg"><div class="dmg-lead">Gillman Barracks&rsquo; unique identity</div><p class="dmg-body">A rare place where heritage, arts and nature exist together.</p></div>
+        <div class="dmg"><div class="dmg-lead">An irreplaceable legacy</div><p class="dmg-body">Once cleared, these ecological and community values cannot be fully restored.</p></div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<!-- PETITION -->
+<section class="page" id="page-petition">
+  <div class="wrap">
+    <p class="eyebrow">Two ways to be counted</p>
+    <h2 class="hero-title" style="font-size:clamp(30px,5vw,52px)">Make your voice count</h2>
+    <div class="pet-grid">
+      <div class="qr-tile">
+        <a class="qr-frame" href="https://www.change.org/p/save-gillman-barracks-forest-build-homes-in-gsw-instead" target="_blank" rel="noopener" aria-label="Sign the petition">
+          <img src="assets/img/png-01.png" alt="QR code linking to the Change.org petition to save Gillman Barracks and Forest" loading="lazy" decoding="async">
+        </a>
+        <div class="qr-title">Sign the petition</div>
+        <div class="qr-sub">No deadline</div>
+        <div class="pet-actions"><a class="btn btn--ghost" href="https://www.change.org/p/save-gillman-barracks-forest-build-homes-in-gsw-instead" target="_blank" rel="noopener">Open petition</a></div>
+      </div>
+      <div class="qr-tile">
+        <a class="qr-frame" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener" aria-label="Give feedback to HDB">
+          <img src="assets/img/png-02.png" alt="QR code linking to the HDB feedback form" loading="lazy" decoding="async">
+        </a>
+        <div class="qr-title">Feedback to HDB</div>
+        <div class="qr-sub"><b class="js-deadline">closes 6 August 2026</b></div>
+        <div class="pet-actions"><a class="btn btn--go" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">Open HDB form</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="page" id="page-events">
+  <div class="wrap">
+    <div class="events-box">
+      <p class="eyebrow">Events</p>
+      <h2>The Gillman forest walk has just re-opened</h2>
+      <p>Watch out for upcoming events to be announced soon</p>
+      <div class="events-note">Date, time and meeting place to be confirmed &mdash; details and a map will appear here.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LETTERS -->
+<section class="page" id="page-letters">
+  <div class="wrap-wide">
+    <p class="eyebrow">Letters &amp; reports</p>
+    <div class="letters-intro">
+      <p>If you have a letter you would like to send, here are the contacts of the MPs covering Tanjong Pagar GRC and key decision maker Minister.</p>
+      <div class="mp-table-wrap">
+      <table class="mp-table">
+        <thead><tr><th>Name</th><th>Constituency</th><th>Government position</th><th>Email address</th></tr></thead>
+        <tbody>
+          <tr><td>Chan Chun Sing</td><td>Buona Vista</td><td>Coordinating Minister for Public Services and Minister for Defence</td><td><a href="mailto:chan_chun_sing@mindef.gov.sg">chan_chun_sing@mindef.gov.sg</a></td></tr>
+          <tr><td>Alvin Tan Sheng Hui</td><td>Moulmein-Cairnhill</td><td>Minister of State for Trade and Industry, and National Development</td><td><a href="mailto:alvin.tan@pap.org.sg">alvin.tan@pap.org.sg</a></td></tr>
+          <tr><td>Joan Pereira</td><td>Henderson-Dawson</td><td>Member of Parliament</td><td><a href="mailto:joan.pereira@pap.org.sg">joan.pereira@pap.org.sg</a></td></tr>
+          <tr><td>Foo Cexiang</td><td>Tanjong Pagar-Tiong Bahru</td><td>Minister of State</td><td><a href="mailto:Foo.Cexiang@pap.org.sg">Foo.Cexiang@pap.org.sg</a></td></tr>
+          <tr><td>Rachel Ong</td><td>Telok Blangah</td><td>Member of Parliament</td><td><a href="mailto:rachel.ong@pap.org.sg">rachel.ong@pap.org.sg</a></td></tr>
+          <tr><td>Grace Fu</td><td></td><td>Minister for Sustainability and the Environment</td><td><a href="mailto:grace_fu@mse.gov.sg">grace_fu@mse.gov.sg</a></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <div class="doc-cards" id="doc-cards">
+      <button class="doc-card" data-doc="0"><div class="dc-kicker">Report</div><div class="dc-title">Residents&rsquo; feedback &amp; proposal on the redevelopment</div><div class="dc-meta">26pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="1"><div class="dc-kicker">Summary</div><div class="dc-title">Summary of the 30 July dialogue session</div><div class="dc-meta">11pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="2"><div class="dc-kicker">Letter</div><div class="dc-title">Letter to PM Wong on the 30 July dialogue</div><div class="dc-meta">3pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="3"><div class="dc-kicker">Letter</div><div class="dc-title">Letter to Minister Grace Fu (MSE)</div><div class="dc-meta">3pp &middot; PDF</div></button>
+    </div>
+
+    <div class="reader">
+      <button class="reader-arrow" id="rd-prev" aria-label="Previous">&#8249;</button>
+      <div class="reader-card">
+        <img id="rd-thumb" src="assets/img/jpg-41.jpg" alt="" loading="lazy" decoding="async">
+        <div>
+          <div class="rc-kicker" id="rd-kicker">Report</div>
+          <div class="rc-title" id="rd-title"></div>
+          <p class="rc-desc" id="rd-desc"></p>
+          <button class="btn btn--go" id="rd-open" style="font-size:15px;padding:11px 20px">Read the full PDF</button>
+          <div class="rc-count" id="rd-count"></div>
+        </div>
+      </div>
+      <button class="reader-arrow" id="rd-next" aria-label="Next">&#8250;</button>
+    </div>
+  </div>
+</section>
+
+<!-- DIALOGUE -->
+<section class="page" id="page-dialogue">
+  <div class="wrap-wide">
+    <p class="eyebrow">The dialogue</p>
+    <p class="dlg-intro">The dialogue with our Ministers, MPs and the representatives of HDB, URA, NParks and MSE is ongoing. Here is where it stands.</p>
+
+    <div class="timeline">
+      <div class="tl clickable" id="tl-26" data-detail="detail-26">
+        <div class="tl-date">26 July 2026</div>
+        <div class="tl-body">Gillman Barracks and Forest Community Forum. Residents gathered for a community-led dialogue on the future of Gillman.</div>
+        <span class="tl-tag">See photos &darr;</span>
+      </div>
+      <div class="tl clickable" id="tl-30" data-detail="detail-30">
+        <div class="tl-date">30 July 2026</div>
+        <div class="tl-body">Get-together and dialogue with MP Rachel Ong and representatives of HDB, URA and NParks.</div>
+        <span class="tl-tag">See details &darr;</span>
+      </div>
+      <div class="tl clickable" id="tl-01" data-detail="detail-01">
+        <div class="tl-date">1 August 2026</div>
+        <div class="tl-body">Dialogue with MP David Hoe, MP Lee Hui Ying and the Nature Society on how Environmental Impact Assessments are commissioned, and what residents want asked in Parliament.</div>
+        <span class="tl-tag">See details &darr;</span>
+      </div>
+      <div class="tl future">
+        <div class="tl-date">Ongoing</div>
+        <div class="tl-body">Agencies have said they will revert in the coming months. Updates will be posted here.</div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-26">
+      <h3>26 July 2026 &middot; Gillman Barracks and Forest Community Forum</h3>
+      <p class="detail-note">Residents came together for a community-led dialogue, &ldquo;The Future of Gillman Barracks&rdquo;, to understand the plans and share their views ahead of the sessions with the planning agencies.</p>
+      <div class="detail-gallery">
+        <img src="assets/img/jpg-42.jpg" alt="Residents seated around tables at the Gillman Barracks and Forest community forum" onclick="openImg(this.src)" loading="lazy" decoding="async">
+        <img src="assets/img/jpg-43.jpg" alt="A resident speaking into a microphone at the forum, before a slide reading The Future of Gillman Barracks: A Community Dialogue" onclick="openImg(this.src)" loading="lazy" decoding="async">
+      </div>
+    </div>
+
+    <div class="detail" id="detail-30">
+      <h3>30 July 2026 &mdash; dialogue with MP Rachel Ong and representatives of HDB, URA and NParks</h3>
+      <img class="detail-photo" src="assets/img/jpg-44.jpg" alt="A resident presenting a poster titled Getting the Balance Right at the 30 July feedback session" onclick="openImg(this.src)" loading="lazy" decoding="async">
+      <button class="res-link" onclick="openPdf('summary',event)">Summary of the dialogue session <span class="res-chip">PDF</span></button>
+      <button class="res-link" onclick="openImg('assets/img/jpg-45.jpg')">Top concerns raised by residents <span class="res-chip">Image</span></button>
+      <button class="res-link" onclick="openPdf('letter',event)">Letter to PM Wong on the dialogue <span class="res-chip">PDF</span></button>
+      <button class="res-link" onclick="openPdf('proposal',event)">Residents&rsquo; feedback &amp; proposal <span class="res-chip">PDF</span></button>
+    </div>
+
+    <div class="detail" id="detail-01">
+      <h3>1 August 2026 &mdash; dialogue with MP David Hoe, MP Lee Hui Ying and the Nature Society</h3>
+      <p class="detail-note">A session at EtonHouse, Orchard Road, hosted by the Young PAP Advisers and moderated by a member of the Nature Society, held under Chatham House rules. It opened with an explanation of how an Environmental Impact Assessment is commissioned and what it covers, then moved to open questions and four smaller discussion groups.</p>
+      <p class="detail-note">Recurring themes from the floor:</p>
+      <ul class="detail-list">
+        <li>The four-week feedback window is too short for a report of this size, and is the same regardless of how large the development is.</li>
+        <li>An EIA is commissioned only after the decision to redevelop has been made, so it can mitigate but not reconsider. The Nature Society noted there is no precedent for such a decision being reversed, and that the time to be heard is during Master Plan brainstorming &mdash; while adding that feedback through the HDB channel is still worth giving.</li>
+        <li>The assessment covers flora and fauna but not urban heat, cultural value, opportunity cost, or the interests of future generations.</li>
+        <li>Doubts about whether mitigation measures are enforced, citing Berlayer Creek at the former Keppel site, where trees and mangroves were lost despite similar assurances.</li>
+        <li>Questions about the transparency of the housing demand figures behind the plans.</li>
+        <li>Calls for the Ministry of Sustainability and the Environment to take a leading role.</li>
+        <li>On Gillman specifically: most of the native-dominated forest would be kept, but a large area of exotic forest would be lost, and the corridor to Labrador Park at 30 m is narrower than it should be. Gillman is the connector between the Southern Ridges and Labrador Park; without it, the forests fragment.</li>
+      </ul>
+      <p class="detail-note">MP David Hoe asked each group for the one question they would most want put to Parliament, and said that public feedback can make a difference &mdash; &ldquo;nothing is cast in stone&rdquo;.</p>
+      <button class="res-link" onclick="openPdf('mpns',event)">Summary of the session <span class="res-chip">PDF</span></button>
+    </div>
+
+    <div class="foot">
+      This record is maintained by residents of Telok Blangah. It is not affiliated with the Housing &amp; Development Board, the Urban Redevelopment Authority, the National Parks Board, or any political party. Documents are published as sent, with the writers&rsquo; permission; personal contact details have been removed.
+    </div>
+  </div>
+</section>
+
+<!-- SIGN ME UP -->
+<section class="page" id="page-signup">
+  <div class="wrap">
+    <div class="signup-box">
+      <p class="eyebrow">Stay in the loop</p>
+      <h2>Join the residents&rsquo; group</h2>
+      <p>Follow what&rsquo;s happening, track the campaign, and lend your voice. The more of us there are, the harder we are to ignore.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn--leaf" href="#REPLACE-TELEGRAM-URL" target="_blank" rel="noopener">Join on Telegram</a>
+        <a class="btn btn--go" href="https://www.change.org/p/save-gillman-barracks-forest-build-homes-in-gsw-instead" target="_blank" rel="noopener">Sign the petition</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-mosaic" aria-hidden="true"><i class="mo mo32"></i><i class="mo mo25"></i><i class="mo mo11"></i><i class="mo mo6"></i><i class="mo mo30"></i><i class="mo mo28"></i><i class="mo mo9"></i><i class="mo mo24"></i><i class="mo mo15"></i><i class="mo mo13"></i><i class="mo mo29"></i><i class="mo mo23"></i><i class="mo mo35"></i><i class="mo mo16"></i><i class="mo mo1"></i><i class="mo mo20"></i><i class="mo mo31"></i><i class="mo mo8"></i><i class="mo mo22"></i><i class="mo mo36"></i><i class="mo mo14"></i><i class="mo mo3"></i><i class="mo mo34"></i><i class="mo mo7"></i><i class="mo mo17"></i><i class="mo mo2"></i><i class="mo mo19"></i><i class="mo mo12"></i><i class="mo mo33"></i><i class="mo mo18"></i><i class="mo mo27"></i><i class="mo mo5"></i><i class="mo mo4"></i><i class="mo mo26"></i><i class="mo mo10"></i><i class="mo mo21"></i><i class="mo mo28"></i><i class="mo mo26"></i><i class="mo mo33"></i><i class="mo mo13"></i><i class="mo mo9"></i><i class="mo mo24"></i><i class="mo mo1"></i><i class="mo mo17"></i><i class="mo mo22"></i><i class="mo mo25"></i><i class="mo mo5"></i><i class="mo mo6"></i><i class="mo mo15"></i><i class="mo mo36"></i><i class="mo mo34"></i><i class="mo mo11"></i><i class="mo mo14"></i><i class="mo mo16"></i><i class="mo mo27"></i><i class="mo mo2"></i><i class="mo mo29"></i><i class="mo mo3"></i><i class="mo mo23"></i><i class="mo mo18"></i><i class="mo mo31"></i><i class="mo mo32"></i><i class="mo mo7"></i><i class="mo mo21"></i><i class="mo mo30"></i><i class="mo mo19"></i><i class="mo mo4"></i><i class="mo mo12"></i><i class="mo mo20"></i><i class="mo mo8"></i><i class="mo mo35"></i><i class="mo mo10"></i><i class="mo mo9"></i><i class="mo mo10"></i><i class="mo mo7"></i><i class="mo mo23"></i><i class="mo mo4"></i><i class="mo mo21"></i><i class="mo mo31"></i><i class="mo mo24"></i><i class="mo mo1"></i><i class="mo mo13"></i><i class="mo mo34"></i><i class="mo mo28"></i><i class="mo mo17"></i><i class="mo mo26"></i><i class="mo mo30"></i><i class="mo mo15"></i><i class="mo mo32"></i><i class="mo mo12"></i><i class="mo mo20"></i><i class="mo mo29"></i><i class="mo mo36"></i><i class="mo mo18"></i><i class="mo mo3"></i><i class="mo mo22"></i><i class="mo mo2"></i><i class="mo mo14"></i><i class="mo mo16"></i><i class="mo mo35"></i><i class="mo mo11"></i><i class="mo mo25"></i><i class="mo mo6"></i><i class="mo mo27"></i><i class="mo mo33"></i><i class="mo mo8"></i><i class="mo mo5"></i><i class="mo mo19"></i></div>
+  <div class="footer-scrim" aria-hidden="true"></div>
+  <div class="footer-wordmark">Save Gillman Forest</div>
+  <div class="cta-row cta-center">
+    <span class="cta-stack"><a class="btn btn--go" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">Feedback to HDB <small class="js-deadline-mini">by 6 Aug 2026</small></a><span class="cta-note">Takes 5 minutes. Carries more weight. Closes on 6 August.</span></span>
+    <a class="btn btn--ghost" href="https://www.change.org/p/save-gillman-barracks-forest-build-homes-in-gsw-instead" target="_blank" rel="noopener">Sign the petition</a>
+  </div>
+  <p class="footer-note">A residents&rsquo; initiative for Telok Blangah. Not affiliated with HDB, URA, NParks, or any political party.</p>
+</footer>
+
+<div class="lightbox" id="lightbox"><button class="lightbox-close" aria-label="Close">&times;</button><img alt="" id="lb-img" loading="lazy" decoding="async"></div>
+
+<script>
+/* ---- embedded PDFs ---- */
+const PDFS = {
+  "proposal": "documents/Gillman_Barracks_Forest_Proposal.pdf",
+  "summary": "documents/Gillman_Dialogue_Summary_30-July-2026.pdf",
+  "letter": "documents/Letter_to_PM_re_Gillman_31-July-2026.pdf",
+  "gracefu": "documents/Letter_to_Minister_Grace_Fu_28-Jul-2026.pdf",
+  "mpns": "documents/Gillman_YoungPAP_Session_Summary_01-Aug-2026.pdf"
+};
+function openPdf(id, ev){
+  const u=PDFS[id]; if(!u) return;
+  if(ev&&ev.preventDefault) ev.preventDefault();
+  window.open(u,'_blank','noopener');
+}
+</script>
+
+<script>
+/* ---- page navigation ---- */
+(function(){
+  const pages=document.querySelectorAll('.page');
+  const navBtns=document.querySelectorAll('.nav-links button');
+  function show(id){
+    document.body.dataset.page=id;
+    pages.forEach(p=>p.classList.toggle('active', p.id==='page-'+id));
+    navBtns.forEach(b=>b.setAttribute('aria-current', b.dataset.page===id ? 'true':'false'));
+    window.scrollTo(0,0);
+    try{ history.replaceState(null,'','#'+id); }catch(e){}
+  }
+  document.querySelectorAll('[data-page]').forEach(el=>{
+    el.addEventListener('click', ()=>show(el.dataset.page));
+  });
+  document.body.dataset.page='home';
+  const start=(location.hash||'').replace('#','');
+  if(start && document.getElementById('page-'+start)) show(start);
+})();
+
+/* ---- letters reader ---- */
+(function(){
+  const DOCS=[
+    {pdf:'proposal', thumb:'assets/img/jpg-41.jpg', kicker:'Report', title:'Residents’ feedback & proposal',
+     desc:'The residents’ case for the forest, reviewing HDB’s environmental and heritage impact assessments, with immediate requests to Parliament and for an extended consultation.', meta:'26 pages · PDF'},
+    {pdf:'summary', thumb:'assets/img/jpg-46.jpg', kicker:'Summary', title:'Summary of the 30 July dialogue',
+     desc:'The eleven-page record of the get-together and dialogue, prepared by residents and submitted to HDB, URA and NParks on 31 July 2026.', meta:'11 pages · PDF'},
+    {pdf:'letter', thumb:'assets/img/jpg-47.jpg', kicker:'Letter', title:'Letter to the Prime Minister',
+     desc:'A resident’s letter to PM Wong conveying the community’s objections from the dialogue and enclosing the summary.', meta:'3 pages · PDF'},
+    {pdf:'gracefu', thumb:'assets/img/jpg-48.jpg', kicker:'Letter', title:'Letter to Minister Grace Fu (MSE)',
+     desc:'A resident’s letter to the Minister for Sustainability and the Environment, questioning MSE’s absence from the dialogue and pointing to Singapore’s pledge under the Glasgow Declaration on Forests.', meta:'3 pages · PDF'}
+  ];
+  let i=0;
+  const el=id=>document.getElementById(id);
+  function render(){
+    const d=DOCS[i];
+    el('rd-thumb').src=d.thumb; el('rd-thumb').alt='First page of '+d.title;
+    el('rd-kicker').textContent=d.kicker; el('rd-title').textContent=d.title;
+    el('rd-desc').textContent=d.desc;
+    el('rd-count').textContent=(i+1)+' of '+DOCS.length+'  ·  '+d.meta;
+    el('rd-open').onclick=(e)=>openPdf(d.pdf,e);
+  }
+  el('rd-prev').onclick=()=>{ i=(i-1+DOCS.length)%DOCS.length; render(); };
+  el('rd-next').onclick=()=>{ i=(i+1)%DOCS.length; render(); };
+  document.querySelectorAll('.doc-card[data-doc]').forEach(c=>{
+    c.addEventListener('click',()=>{ i=+c.dataset.doc; render();
+      try{ document.querySelector('.reader').scrollIntoView({behavior:'smooth',block:'center'}); }catch(e){} });
+  });
+  render();
+})();
+
+/* ---- dialogue detail toggle ---- */
+(function(){
+  document.querySelectorAll('.tl.clickable').forEach(t=>{
+    t.addEventListener('click',()=>{
+      const d=document.getElementById(t.dataset.detail);
+      if(!d) return;
+      const willOpen=!d.classList.contains('open');
+      document.querySelectorAll('.detail.open').forEach(o=>{ if(o!==d) o.classList.remove('open'); });
+      d.classList.toggle('open', willOpen);
+      if(willOpen){ try{ d.scrollIntoView({behavior:'smooth',block:'nearest'}); }catch(e){} }
+    });
+  });
+})();
+
+/* ---- image lightbox ---- */
+(function(){
+  const lb=document.getElementById('lightbox'), img=document.getElementById('lb-img');
+  window.openImg=function(src){ img.src=src; lb.classList.add('open'); document.body.style.overflow='hidden'; };
+  function close(){ lb.classList.remove('open'); document.body.style.overflow=''; img.removeAttribute('src'); }
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') close(); });
+})();
+
+/* ---- countdown ---- */
+(function(){
+  const now=new Date(), today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  const close=new Date(2026,7,6);
+  const days=Math.round((close-today)/86400000);
+  let full,mini;
+  if(days>1){ full='closes 6 August 2026 — '+days+' days left'; mini='by 6 Aug — '+days+' days left'; }
+  else if(days===1){ full='closes tomorrow, 6 August 2026'; mini='closes tomorrow'; }
+  else if(days===0){ full='closes today, 6 August 2026'; mini='closes today'; }
+  else { full='closed on 6 August 2026'; mini='now closed'; }
+  document.querySelectorAll('.js-deadline').forEach(e=>e.textContent=full);
+  document.querySelectorAll('.js-deadline-mini').forEach(e=>e.textContent=mini);
+})();
+
+/* ---- videos: hero loads at once, the film only when scrolled into view ---- */
+(function(){
+  function attach(src){
+    var u=src.getAttribute('data-src'); if(!u) return;
+    var v=src.parentElement;
+    src.setAttribute('src',u); src.removeAttribute('data-src');
+    try{ v.load(); }catch(e){}
+    if(v.hasAttribute('autoplay')){ var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){}); }
+  }
+  document.querySelectorAll('video source[data-src]').forEach(function(src){
+    var v=src.parentElement;
+    if(v.hasAttribute('autoplay') || !('IntersectionObserver' in window)){ attach(src); return; }
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ attach(src); io.disconnect(); } });
+    },{rootMargin:'400px'});
+    io.observe(v);
+  });
+})();
+/* ---- hero video: make autoplay work on every device we can ---- */
+(function(){
+  var v=document.querySelector('.hero-vid-el'); if(!v) return;
+  var hv=document.querySelector('.hero-vid');
+  var userPaused=false, settled=false;
+  /* muted+inline must be set as properties too: attributes alone are not enough in Safari */
+  try{ v.muted=true; v.defaultMuted=true; v.volume=0; v.playsInline=true; }catch(e){}
+  v.setAttribute('muted',''); v.setAttribute('playsinline',''); v.setAttribute('webkit-playsinline','');
+
+  var GEST=['pointerdown','touchstart','click','keydown','scroll','wheel'];
+  function onGesture(){ if(!userPaused && v.paused) tryPlay(); }
+  function ok(){ settled=true;
+    GEST.forEach(function(e){ document.removeEventListener(e,onGesture,true); }); }
+  function fail(){}
+  function tryPlay(){
+    try{ v.muted=true; var p=v.play();
+      if(p && p.then){ p.then(ok)['catch'](fail); } else { ok(); }
+    }catch(e){ fail(); }
+  }
+  GEST.forEach(function(e){ document.addEventListener(e,onGesture,true); });
+  ['loadedmetadata','loadeddata','canplay','canplaythrough'].forEach(function(e){
+    v.addEventListener(e,function(){ if(!userPaused) tryPlay(); });
+  });
+  v.addEventListener('playing', ok);
+  v.addEventListener('stalled', function(){ if(!userPaused) tryPlay(); });
+  document.addEventListener('visibilitychange',function(){ if(!document.hidden && !userPaused && v.paused) tryPlay(); });
+  window.addEventListener('pageshow',function(){ if(!userPaused && v.paused) tryPlay(); });
+  window.addEventListener('load',function(){ if(!userPaused && v.paused) tryPlay(); });
+  if(window.IntersectionObserver){
+    try{ new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting && !userPaused && v.paused) tryPlay(); }); },{threshold:.05}).observe(v); }catch(e){}
+  }
+  var n=0, iv=setInterval(function(){
+    if(!userPaused && v.paused) tryPlay();
+    if(++n>25 || (settled && !v.paused)) clearInterval(iv);
+  },600);
+  if(document.readyState!=='loading') tryPlay();
+  else document.addEventListener('DOMContentLoaded',tryPlay);
+
+  if(hv){ hv.style.cursor='pointer'; hv.addEventListener('click',function(ev){
+    if(v.paused){ userPaused=false; tryPlay(); } else { userPaused=true; v.pause(); }
+  }); }
+})();
+</script>
+</body>
+</html>
