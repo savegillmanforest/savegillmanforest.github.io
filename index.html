@@ -242,7 +242,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .fauna-intro{color:var(--cream);font-size:clamp(16px,1.7vw,18px);line-height:1.55;max-width:58ch;margin:0 auto}
 .fauna-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(16px,2.2vw,26px);margin-top:36px;text-align:left}
 .fauna-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.fauna-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.fauna-card img,.fauna-card video{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#0c0e0d}
 .fauna-txt{padding:16px 18px 20px}
 .fauna-kind{font-size:14px;font-weight:700;letter-spacing:0;color:var(--cream);margin-bottom:6px}
 .fauna-name{font-weight:800;color:var(--amber);font-size:clamp(16px,1.8vw,19px);line-height:1.2;margin-bottom:4px}
@@ -311,7 +311,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
       <p class="fauna-intro">Gillman is somebody&rsquo;s habitat. These are its residents and the layers of forest they depend on, all photographed here by people who walk this ground.</p>
       <div class="fauna-grid">
         <div class="fauna-card">
-          <img src="assets/img/nature/hornbill-pair.webp" alt="A pair of Oriental pied hornbills perched together at Gillman" loading="lazy" decoding="async">
+          <video class="fauna-vid" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture preload="none" poster="assets/img/nature/hornbill-loop-poster.webp" aria-label="An Oriental pied hornbill feeding on palm fruit at Gillman"><source data-src="media/hornbill-loop.mp4" type="video/mp4"></video>
           <div class="fauna-txt">
             <div class="fauna-kind">In the canopy</div>
             <div class="fauna-name">Oriental pied hornbill</div>
@@ -653,8 +653,9 @@ function openPdf(id, ev){
   document.querySelectorAll('.js-deadline-mini').forEach(e=>e.textContent=mini);
 })();
 
-/* ---- videos: hero loads at once, the film only when scrolled into view ---- */
+/* ---- videos: load only when scrolled into view, hold still if motion is unwelcome ---- */
 (function(){
+  var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function attach(src){
     var u=src.getAttribute('data-src'); if(!u) return;
     var v=src.parentElement;
@@ -664,7 +665,8 @@ function openPdf(id, ev){
   }
   document.querySelectorAll('video source[data-src]').forEach(function(src){
     var v=src.parentElement;
-    if(v.hasAttribute('autoplay') || !('IntersectionObserver' in window)){ attach(src); return; }
+    if(still && v.classList.contains('fauna-vid')) return;   /* poster stays, nothing moves */
+    if(!('IntersectionObserver' in window)){ attach(src); return; }
     var io=new IntersectionObserver(function(entries){
       entries.forEach(function(e){ if(e.isIntersecting){ attach(src); io.disconnect(); } });
     },{rootMargin:'400px'});
