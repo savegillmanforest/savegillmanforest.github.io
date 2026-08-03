@@ -300,6 +300,13 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .ev-facts dt{color:var(--amber);font-weight:700;font-size:14px;margin:0}
 .ev-facts dd{color:var(--cream);font-size:15px;margin:0;line-height:1.45}
 .ev-tail{margin-top:22px;color:var(--cream)}
+.ev-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:30px auto 0;max-width:1000px;text-align:left}
+.ev-gallery figure{margin:0}
+.ev-gallery img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;
+  border:1px solid rgba(255,255,255,.14);cursor:zoom-in;background:rgba(255,255,255,.05)}
+.ev-gallery figcaption{color:var(--muted);font-size:13px;line-height:1.4;margin-top:8px}
+.ev-hint{color:var(--muted);font-size:13px;margin-top:14px}
+
 @media(max-width:520px){.ev-facts > div{grid-template-columns:1fr;gap:2px}}
 
 </style>
@@ -503,6 +510,22 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 
       <p class="ev-tail">The walk goes at a leisurely pace, with pauses along the way to take in the
       ecology, the heritage buildings and the community spaces. Do come.</p>
+
+      <div class="ev-gallery">
+        <figure>
+          <img src="assets/img/walk/walk-flyer.webp" alt="The community forest walk flyer, giving the date, time, meeting point and duration" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <figcaption>The flyer</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/walk/walk-meeting-point.webp" alt="Map of Telok Blangah Hill Park marking the Forest Walk entrance where the walk begins" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <figcaption>Meeting point, the Forest Walk entrance at Telok Blangah Hill Park</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/walk/walk-route.webp" alt="Map of the Southern Ridges showing the route from Telok Blangah Hill Park towards Gillman Barracks and Labrador Park" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <figcaption>The route through the Southern Ridges</figcaption>
+        </figure>
+      </div>
+      <p class="ev-hint">Tap any image to enlarge.</p>
     </div>
   </div>
 </section>
