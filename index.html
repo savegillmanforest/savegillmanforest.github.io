@@ -291,6 +291,17 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
   .news-thumb{aspect-ratio:16/9}
 }
 
+
+/* ---- events ---- */
+.ev-facts{margin:26px auto 0;max-width:520px;text-align:left;
+  border-top:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16);padding:6px 0}
+.ev-facts > div{display:grid;grid-template-columns:132px minmax(0,1fr);gap:14px;padding:9px 0}
+.ev-facts > div + div{border-top:1px solid rgba(255,255,255,.10)}
+.ev-facts dt{color:var(--amber);font-weight:700;font-size:14px;margin:0}
+.ev-facts dd{color:var(--cream);font-size:15px;margin:0;line-height:1.45}
+.ev-tail{margin-top:22px;color:var(--cream)}
+@media(max-width:520px){.ev-facts > div{grid-template-columns:1fr;gap:2px}}
+
 </style>
 </head>
 <body>
@@ -475,9 +486,23 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
   <div class="wrap">
     <div class="events-box">
       <p class="eyebrow">Events</p>
-      <h2>The Gillman forest walk has just re-opened</h2>
-      <p>Watch out for upcoming events to be announced soon</p>
-      <div class="events-note">Date, time and meeting place to be confirmed &mdash; details and a map will appear here.</div>
+      <h2>Community forest walk through Gillman Forest and the Southern Ridges</h2>
+      <p>With the Telok Blangah Hill Park Forest Walk reopening, everyone is invited to join a
+      community walk through one of Singapore&rsquo;s most unusual green corridors. The route runs from
+      Telok Blangah Hill Park along the Forest Walk and into Gillman Barracks, following the
+      connections between nature, heritage and community that so many residents spoke about at the
+      30 July dialogue.</p>
+
+      <dl class="ev-facts">
+        <div><dt>Date</dt><dd>Saturday, 8 August 2026</dd></div>
+        <div><dt>Time</dt><dd>8.00am</dd></div>
+        <div><dt>Meeting point</dt><dd>Telok Blangah Hill Park, at the Forest Walk entrance</dd></div>
+        <div><dt>Ends at</dt><dd>Kyuukei Coffee, Gillman Barracks</dd></div>
+        <div><dt>Duration</dt><dd>About 1.5 to 2 hours</dd></div>
+      </dl>
+
+      <p class="ev-tail">The walk goes at a leisurely pace, with pauses along the way to take in the
+      ecology, the heritage buildings and the community spaces. Do come.</p>
     </div>
   </div>
 </section>
@@ -549,6 +574,16 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
         <div class="tl-body">Dialogue with MP David Hoe, MP Lee Hui Ying and the Nature Society on how Environmental Impact Assessments are commissioned, and what residents want asked in Parliament.</div>
         <span class="tl-tag">See details &darr;</span>
       </div>
+      <div class="tl clickable" id="tl-03" data-detail="detail-03">
+        <div class="tl-date">3 August 2026</div>
+        <div class="tl-body">Gillman and Maju discussed on the Teh Tarik with Walid programme, with Melissa Low of the NUS Sustainability Academy and Muhd Nasry of Singapore Youth Voices for Biodiversity.</div>
+        <span class="tl-tag">See details &darr;</span>
+      </div>
+      <div class="tl clickable" id="tl-04" data-detail="detail-04">
+        <div class="tl-date">4 August 2026</div>
+        <div class="tl-body">Parliament sits. More than 20 questions on Gillman Barracks and Maju Forest are on the order paper, the most heavily questioned item of the sitting.</div>
+        <span class="tl-tag">See details &darr;</span>
+      </div>
       <div class="tl future">
         <div class="tl-date">Ongoing</div>
         <div class="tl-body">Agencies have said they will revert in the coming months. Updates will be posted here.</div>
@@ -588,6 +623,26 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
       </ul>
       <p class="detail-note">MP David Hoe asked each group for the one question they would most want put to Parliament, and said that public feedback can make a difference &mdash; &ldquo;nothing is cast in stone&rdquo;.</p>
       <button class="res-link" onclick="openPdf('mpns',event)">Summary of the session <span class="res-chip">PDF</span></button>
+    </div>
+
+    <div class="detail" id="detail-03">
+      <h3>3 August 2026 &mdash; Gillman and Maju on Teh Tarik with Walid</h3>
+      <p class="detail-note">Episode 158 of the programme was given over to a discussion of Maju Forest and Gillman Barracks, with Melissa Low, Head of the NUS Sustainability Academy, and Muhd Nasry, Executive Director of Singapore Youth Voices for Biodiversity. Melissa Low helped organise the residents&rsquo; dialogues at Telok Blangah.</p>
+    </div>
+
+    <div class="detail" id="detail-04">
+      <h3>4 August 2026 &mdash; Parliament</h3>
+      <p class="detail-note">More than 20 questions on Gillman Barracks and Maju Forest appear on the order paper for this sitting, filed by members from both sides of the House. Taken together they ask the questions residents have been putting to the agencies since July.</p>
+      <ul class="detail-list">
+        <li>Which parts of the plan remain open to change, and whether site clearance or tenders will wait for the feedback to be considered.</li>
+        <li>Whether alternative sites were evaluated, and whether a smaller footprint or lower density at Gillman itself was assessed against the current plan.</li>
+        <li>Whether dialogue sessions with residents, heritage groups and nature groups will follow once feedback closes on 6 August.</li>
+        <li>What threshold of harm would set a site aside, given that both assessments rate the biodiversity impact as major negative even after mitigation.</li>
+        <li>Whether under-used state land, including the grounds of black and white bungalows and ageing low-rise estates, was assessed first.</li>
+        <li>What urban heat modelling was done, and what the effect on surrounding homes is expected to be.</li>
+        <li>Whether the phased clearance plan includes checkpoints where monitoring data is reviewed before further clearance is authorised.</li>
+      </ul>
+      <button class="res-link" onclick="openPdf('parlq',event)">Questions on Gillman and Maju, order paper for 4 August <span class="res-chip">PDF</span></button>
     </div>
 
     <div class="foot">
@@ -681,6 +736,14 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
             <div class="news-meta"><span class="news-date">31 Jul 2026</span><span class="news-src">The Online Citizen</span></div>
             <a class="news-title" href="https://theonlinecitizen.com/2026/07/31/m-ps-file-questions-on-gillman-maju-forest-plans-as-public-feedback-deadline-looms-in-one-week" target="_blank" rel="noopener">MPs file questions on Gillman and Maju Forest plans as public feedback deadline looms</a>
             <p class="news-note">Members from both sides of the House file questions on housing demand, consultation and alternatives.</p>
+          </div>
+        </li>
+        <li class="news-item">
+          <span class="news-thumb is-blank" aria-hidden="true"><span class="news-thumb-fb">CNA</span></span>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-date">3 Aug 2026</span><span class="news-src">CNA</span></div>
+            <a class="news-title" href="https://www.channelnewsasia.com/singapore/parliament-gillman-barracks-maju-forest-govtech-layoffs-6294751" target="_blank" rel="noopener">Parliament to discuss Gillman Barracks and Maju Forest housing plans, and GovTech layoffs</a>
+            <p class="news-note">A preview of the 4 August sitting and the questions filed on the two sites.</p>
           </div>
         </li>
         <li class="news-item">
@@ -779,7 +842,8 @@ const PDFS = {
   "summary": "documents/Gillman_Dialogue_Summary_30-July-2026.pdf",
   "letter": "documents/Letter_to_PM_re_Gillman_31-July-2026.pdf",
   "gracefu": "documents/Letter_to_Minister_Grace_Fu_28-Jul-2026.pdf",
-  "mpns": "documents/Gillman_YoungPAP_Session_Summary_01-Aug-2026.pdf"
+  "mpns": "documents/Gillman_YoungPAP_Session_Summary_01-Aug-2026.pdf",
+  "parlq": "documents/Gillman_ParliamentQuestions_04-Aug-2026.pdf"
 };
 function openPdf(id, ev){
   const u=PDFS[id]; if(!u) return;
