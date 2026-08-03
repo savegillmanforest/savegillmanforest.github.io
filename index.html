@@ -30,6 +30,8 @@ img{max-width:100%;display:block}
 .nav-links button:first-child{padding-left:0}
 .nav-links button:hover{color:var(--amber)}
 .nav-links button[aria-current="true"]{color:var(--amber)}
+.nav-sep{display:inline-block;width:1px;height:15px;background:rgba(255,255,255,.34);margin:0 12px;flex:0 0 auto}
+@media(max-width:640px){.nav-sep{margin:0 6px;height:13px}}
 .nav-sep{color:rgba(255,255,255,.5);font-weight:400}
 .signup-btn{display:inline-block;text-decoration:none;text-align:center;background:var(--amber);color:#3a2a00;border:none;border-radius:999px;
   font-family:var(--sans);font-weight:800;font-size:15px;padding:9px 18px;cursor:pointer;white-space:nowrap}
@@ -260,6 +262,37 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .fauna-note{color:var(--cream);font-size:14.5px;line-height:1.55;margin:0}
 .fauna-foot{max-width:62ch;margin:32px auto 0;color:var(--muted);font-size:14px;line-height:1.6}
 
+
+/* ---- news ---- */
+.news-head{font-weight:800;font-size:clamp(19px,2.3vw,24px);color:#fff;margin:38px 0 4px;letter-spacing:-.01em}
+.news-sub{color:var(--muted);font-size:14px;margin:0 0 6px}
+.news-list{list-style:none;padding:0;margin:14px 0 0}
+.news-item{display:grid;grid-template-columns:168px minmax(0,1fr);gap:20px;align-items:start;
+  padding:18px 0;border-top:1px solid rgba(255,255,255,.14)}
+.news-list .news-item:first-child{border-top:0}
+.news-thumb{position:relative;display:block;width:100%;aspect-ratio:16/10;border-radius:10px;overflow:hidden;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.news-thumb img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1}
+.news-thumb-fb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:8px;color:var(--muted);font-size:12.5px;font-weight:700;line-height:1.25}
+.news-thumb.is-blank img{display:none}
+.news-meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+.news-date{color:var(--amber);font-size:12.5px;font-weight:700;letter-spacing:.02em}
+.news-src{color:var(--muted);font-size:12.5px;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:2px 9px}
+.news-title{display:inline-block;color:#fff;text-decoration:none;font-weight:700;
+  font-size:clamp(16px,1.9vw,19px);line-height:1.3;letter-spacing:-.01em;
+  border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:1px}
+.news-title:hover{color:var(--amber);border-bottom-color:var(--amber)}
+.news-note{color:var(--cream);font-size:14.5px;line-height:1.55;margin:7px 0 0;max-width:70ch}
+@media(max-width:700px){
+  .news-item{grid-template-columns:104px minmax(0,1fr);gap:14px}
+  .news-note{font-size:14px}
+}
+@media(max-width:460px){
+  .news-item{grid-template-columns:1fr;gap:11px}
+  .news-thumb{aspect-ratio:16/9}
+}
+
 </style>
 </head>
 <body>
@@ -272,7 +305,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     <button data-page="home" aria-current="true">Home</button><span class="nav-sep">|</span>
     <button data-page="events">Events</button><span class="nav-sep">|</span>
     <button data-page="letters">Letters</button><span class="nav-sep">|</span>
-    <button data-page="dialogue">Dialogue</button>
+    <button data-page="dialogue">Dialogue</button><span class="nav-sep" aria-hidden="true"></span><button data-page="news">News</button>
   </nav>
   <a class="signup-btn" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">Feedback to HDB</a>
   </div>
@@ -561,6 +594,155 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 
     <div class="foot">
       This record is maintained by residents of Telok Blangah. It is not affiliated with the Housing &amp; Development Board, the Urban Redevelopment Authority, the National Parks Board, or any political party. Documents are published as sent, with the writers&rsquo; permission; personal contact details have been removed.
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="page" id="page-news">
+  <div class="wrap-wide">
+    <p class="eyebrow">In the news</p>
+    <div class="letters-intro">
+      <p>What the press has written about Gillman Barracks since HDB released its studies on
+      10 July 2026, including the coverage that deals with Maju Forest alongside it. News reports
+      come first, opinion after. Each headline takes you to the original article.</p>
+    </div>
+
+    <h3 class="news-head">Reporting</h3>
+    <ul class="news-list">
+        <li class="news-item">
+          <a class="news-thumb" href="https://mothership.sg/2026/07/hdb-redevelop-gillman-barracks-sunset-way/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="https://static.mothership.sg/1/2026/07/Gillman.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
+            <span class="news-thumb-fb">Mothership</span>
+          </a>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-date">10 Jul 2026</span><span class="news-src">Mothership</span></div>
+            <a class="news-title" href="https://mothership.sg/2026/07/hdb-redevelop-gillman-barracks-sunset-way/" target="_blank" rel="noopener">HDB to redevelop Gillman Barracks and Sunset Way for housing</a>
+            <p class="news-note">The announcement that began this, published alongside the environmental and heritage studies.</p>
+          </div>
+        </li>
+        <li class="news-item">
+          <span class="news-thumb is-blank" aria-hidden="true"><span class="news-thumb-fb">The Online Citizen</span></span>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-date">20 Jul 2026</span><span class="news-src">The Online Citizen</span></div>
+            <a class="news-title" href="https://theonlinecitizen.com/2026/07/20/online-petitions-opposing-gillman-and-maju-forest-housing-plans-surpass-31-500-endorsements" target="_blank" rel="noopener">Online petitions opposing Gillman and Maju Forest housing plans surpass 31,500 endorsements</a>
+            <p class="news-note">Ten days after the announcement.</p>
+          </div>
+        </li>
+        <li class="news-item">
+          <a class="news-thumb" href="https://news.theonlinecitizen.com/2026/07/23/community-groups-organise-gillman-barracks-events-amid-growing-calls-to-protect-its-green-heritage" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="https://media.onlinecitizenasia.com/Gillman_forest_54a96d2c76.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
+            <span class="news-thumb-fb">The Online Citizen</span>
+          </a>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-date">23 Jul 2026</span><span class="news-src">The Online Citizen</span></div>
+            <a class="news-title" href="https://news.theonlinecitizen.com/2026/07/23/community-groups-organise-gillman-barracks-events-amid-growing-calls-to-protect-its-green-heritage" target="_blank" rel="noopener">Community groups organise Gillman Barracks events amid growing calls to protect its green heritage</a>
+            <p class="news-note">Walks, talks and gatherings organised by residents and heritage groups.</p>
+          </div>
+        </li>
+        <li class="news-item">
+          <a class="news-thumb" href="https://news.theonlinecitizen.com/2026/07/27/online-petitions-against-gillman-barracks-and-maju-forest-housing-plans-pass-40-600-endorsements" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="https://media.onlinecitizenasia.com/Online_petitions_opposing_housing_plans_at_Gillman_and_Maju_Forest_74223a98b8.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
+            <span class="news-thumb-fb">The Online Citizen</span>
+          </a>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-date">27 Jul 2026</span><span class="news-src">The Online Citizen</span></div>
+            <a class="news-title" href="https://news.theonlinecitizen.com/2026/07/27/online-petitions-against-gillman-barracks-and-maju-forest-housing-plans-pass-40-600-endorsements" target="_blank" rel="noopener">Online petitions against Gillman Barracks and Maju Forest housing plans pass 40,600 endorsements</a>
+            <p class="news-note">Nine thousand more signatures in a week.</p>
+          </div>
+        </li>
+        <li class="news-item">
+          <span class="news-thumb is-blank" aria-hidden="true"><span class="news-thumb-fb">The Straits Times</span></span>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-date">31 Jul 2026</span><span class="news-src">The Straits Times</span></div>
+            <a class="news-title" href="https://www.straitstimes.com/singapore/forest-preservation-early-say-in-gillman-barracks-redevelopment-among-issues-raised-at-dialogue" target="_blank" rel="noopener">Forest preservation and an early say among issues raised at Gillman Barracks dialogue</a>
+            <p class="news-note">Reporting from the 30 July dialogue at Telok Blangah Community Club.</p>
+          </div>
+        </li>
+        <li class="news-item">
+          <a class="news-thumb" href="https://news.theonlinecitizen.com/2026/07/31/residents-grill-agencies-on-ecology-trust-at-gillman-barracks-dialogue" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="https://media.onlinecitizenasia.com/HDB_URA_and_N_Parks_fielded_60_resident_questions_at_the_30_July_Gillman_Barracks_dialogue_47e40c52a1.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
+            <span class="news-thumb-fb">The Online Citizen</span>
+          </a>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-date">31 Jul 2026</span><span class="news-src">The Online Citizen</span></div>
+            <a class="news-title" href="https://news.theonlinecitizen.com/2026/07/31/residents-grill-agencies-on-ecology-trust-at-gillman-barracks-dialogue" target="_blank" rel="noopener">Residents grill agencies on ecology and trust at Gillman Barracks dialogue</a>
+            <p class="news-note">Around 300 attended and 60 questions were put to HDB, URA and NParks. Ecology, trust in the consultation and housing need made up roughly three quarters of them.</p>
+          </div>
+        </li>
+        <li class="news-item">
+          <a class="news-thumb" href="https://theonlinecitizen.com/2026/07/31/m-ps-file-questions-on-gillman-maju-forest-plans-as-public-feedback-deadline-looms-in-one-week" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="https://media.theonlinecitizen.com/M_Ps_raise_concern_over_Gillman_and_Maju_development_c4aa857017.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
+            <span class="news-thumb-fb">The Online Citizen</span>
+          </a>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-date">31 Jul 2026</span><span class="news-src">The Online Citizen</span></div>
+            <a class="news-title" href="https://theonlinecitizen.com/2026/07/31/m-ps-file-questions-on-gillman-maju-forest-plans-as-public-feedback-deadline-looms-in-one-week" target="_blank" rel="noopener">MPs file questions on Gillman and Maju Forest plans as public feedback deadline looms</a>
+            <p class="news-note">Members from both sides of the House file questions on housing demand, consultation and alternatives.</p>
+          </div>
+        </li>
+        <li class="news-item">
+          <span class="news-thumb is-blank" aria-hidden="true"><span class="news-thumb-fb">The Online Citizen</span></span>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-date">3 Aug 2026</span><span class="news-src">The Online Citizen</span></div>
+            <a class="news-title" href="https://news.theonlinecitizen.com/2026/08/03/parliament-to-debate-gillman-barracks-and-maju-forest-housing-plans-wp-s-economic-motion" target="_blank" rel="noopener">Parliament to debate Gillman Barracks and Maju Forest housing plans</a>
+            <p class="news-note">More than 20 questions on the two sites make them the most heavily questioned item on the order paper for the sitting on 4 August.</p>
+          </div>
+        </li>
+    </ul>
+
+    <h3 class="news-head">Commentary and opinion</h3>
+    <p class="news-sub">These are the views of their authors and of the publications that carried them.</p>
+    <ul class="news-list">
+        <li class="news-item">
+          <a class="news-thumb" href="https://theonlinecitizen.com/2026/08/01/gillman-dialogue-exposes-the-limits-of-the-nimby-label" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="https://media.theonlinecitizen.com/NIMBY_Gillman_81d632be8e.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
+            <span class="news-thumb-fb">The Online Citizen</span>
+          </a>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-date">1 Aug 2026</span><span class="news-src">The Online Citizen</span></div>
+            <a class="news-title" href="https://theonlinecitizen.com/2026/08/01/gillman-dialogue-exposes-the-limits-of-the-nimby-label" target="_blank" rel="noopener">Gillman dialogue exposes the limits of the NIMBY label</a>
+            <p class="news-note">Argues that the dialogue guest list was narrow, not the public concern, and that the housing assumptions behind the need have not been published.</p>
+          </div>
+        </li>
+        <li class="news-item">
+          <a class="news-thumb" href="https://theonlinecitizen.com/2026/08/01/singapore-saved-a-bungalow-for-the-public-good-why-not-two-forests" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="https://media.theonlinecitizen.com/Oxley_Maju_5905010b79.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
+            <span class="news-thumb-fb">The Online Citizen</span>
+          </a>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-date">1 Aug 2026</span><span class="news-src">The Online Citizen</span></div>
+            <a class="news-title" href="https://theonlinecitizen.com/2026/08/01/singapore-saved-a-bungalow-for-the-public-good-why-not-two-forests" target="_blank" rel="noopener">Singapore saved a bungalow for the public good. Why not two forests?</a>
+            <p class="news-note">On what the state has been willing to protect before now.</p>
+          </div>
+        </li>
+        <li class="news-item">
+          <a class="news-thumb" href="https://theonlinecitizen.com/2026/08/02/the-forest-or-housing-choice-was-never-the-real-one" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="https://media.theonlinecitizen.com/Maju_Forest_Google_Earth_3607e95dbe.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
+            <span class="news-thumb-fb">The Online Citizen</span>
+          </a>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-date">2 Aug 2026</span><span class="news-src">The Online Citizen</span></div>
+            <a class="news-title" href="https://theonlinecitizen.com/2026/08/02/the-forest-or-housing-choice-was-never-the-real-one" target="_blank" rel="noopener">The forest or housing choice was never the real one</a>
+            <p class="news-note">On renewal of older estates as an alternative source of homes.</p>
+          </div>
+        </li>
+    </ul>
+
+    <div class="foot">
+      Links are provided so that readers can go to the original reporting. Listing an article here is not
+      an endorsement of it. Headlines and preview images belong to the publications named, and are shown
+      here to identify the article they link to. If we have missed a piece of coverage, or described one
+      poorly, please write to
+      <a href="mailto:savegillmanforest@proton.me">savegillmanforest@proton.me</a>.
     </div>
   </div>
 </section>
