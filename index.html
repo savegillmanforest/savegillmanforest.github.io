@@ -734,7 +734,9 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 
     <div class="detail" id="detail-04">
       <h3>4 August 2026 &mdash; Parliament</h3>
-      <p class="detail-note">More than 20 questions on Gillman Barracks and Maju Forest appear on the order paper for this sitting, filed by members from both sides of the House. Taken together they ask the questions residents have been putting to the agencies since July.</p>
+      <p class="detail-note">More than 20 questions on Gillman Barracks and Maju Forest were filed for this sitting by members from both sides of the House. Answering for the Ministry of National Development, Minister of State Alvin Tan said the plans for both sites are not final, that engagement with stakeholders will continue after the consultation closes on 6 August, and that agencies will publish a report summarising their responses to the feedback and any changes made to the plans.</p>
+      <p class="detail-note">On Gillman specifically, he said the Government is studying how to retain most of the native dominated secondary forest, how to maintain ecological connections east to west between Telok Blangah Hill Park and HortPark and north to south towards Berlayer Creek and Labrador Nature Reserve, and how to retain all buildings of exceptional heritage significance and most of those rated high. He said the number of homes has not been fixed, that the current conceptual plan already carries fewer homes in order to keep green and heritage areas, and that conserving more would mean building fewer still.</p>
+      <p class="detail-note">The questions residents had asked were these:</p>
       <ul class="detail-list">
         <li>Which parts of the plan remain open to change, and whether site clearance or tenders will wait for the feedback to be considered.</li>
         <li>Whether alternative sites were evaluated, and whether a smaller footprint or lower density at Gillman itself was assessed against the current plan.</li>
@@ -745,6 +747,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
         <li>Whether the phased clearance plan includes checkpoints where monitoring data is reviewed before further clearance is authorised.</li>
       </ul>
       <button class="res-link" onclick="openPdf('parlq',event)">Questions on Gillman and Maju, order paper for 4 August <span class="res-chip">PDF</span></button>
+      <button class="res-link" onclick="openPdf('parlnotes',event)">Notes on the sitting, prepared by members of the public <span class="res-chip">PDF</span></button>
     </div>
 
     <div class="foot">
@@ -997,7 +1000,8 @@ const PDFS = {
   "letter": "documents/Letter_to_PM_re_Gillman_31-July-2026.pdf",
   "gracefu": "documents/Letter_to_Minister_Grace_Fu_28-Jul-2026.pdf",
   "mpns": "documents/Gillman_YoungPAP_Session_Summary_01-Aug-2026.pdf",
-  "parlq": "documents/Gillman_ParliamentQuestions_04-Aug-2026.pdf"
+  "parlq": "documents/Gillman_ParliamentQuestions_04-Aug-2026.pdf",
+  "parlnotes": "documents/Gillman_ParliamentNotes_04-Aug-2026.pdf"
 };
 function openPdf(id, ev){
   const u=PDFS[id]; if(!u) return;
