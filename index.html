@@ -349,15 +349,15 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 
 /* ---- deadline banner ---- */
 .deadline-banner{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0;align-items:stretch;
-  border:1.5px solid rgba(245,176,46,.65);border-radius:16px;overflow:hidden;margin:0 0 22px;
+  border:1.5px solid rgba(245,176,46,.65);border-radius:16px;overflow:hidden;margin:6px 0 34px;
   background:rgba(245,176,46,.07)}
 .db-img{width:100%;height:100%;object-fit:cover;min-height:230px}
-.db-body{padding:clamp(18px,2.6vw,30px);text-align:left}
+.db-body{padding:clamp(24px,3.4vw,40px);text-align:left}
 .db-when{color:var(--amber);font-weight:800;font-size:13.5px;letter-spacing:.03em}
-.db-title{color:#fff;font-weight:800;font-size:clamp(20px,2.6vw,28px);line-height:1.15;letter-spacing:-.01em;margin:8px 0 10px}
-.db-note{color:var(--cream);font-size:15px;line-height:1.55;margin:0 0 16px;max-width:56ch}
+.db-title{color:#fff;font-weight:800;font-size:clamp(20px,2.6vw,28px);line-height:1.2;letter-spacing:-.01em;margin:10px 0 14px}
+.db-note{color:var(--cream);font-size:15px;line-height:1.6;margin:0 0 22px;max-width:56ch}
 .db-btns{display:flex;gap:12px;flex-wrap:wrap}
-.db-tpl{color:var(--muted);font-size:13.5px;margin:14px 0 0}
+.db-tpl{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:13.5px;margin:20px 0 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.12)}
 .db-tpl a{color:var(--amber)}
 @media(max-width:760px){
   .deadline-banner{grid-template-columns:1fr}
@@ -366,6 +366,14 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 
 .cta-after{display:block;margin-top:7px;font-size:13.5px;color:var(--muted)}
 .cta-after a{color:var(--amber)}
+.btn-mini{display:inline-flex;align-items:center;font-weight:700;font-size:12.5px;color:#3a2a00;background:var(--amber);border-radius:999px;padding:6px 14px;text-decoration:none}
+.btn-mini--ghost{background:none;color:var(--amber);border:1px solid rgba(245,176,46,.6)}
+.guide-body{max-width:72ch;margin:0 auto;text-align:left}
+.guide-h{color:var(--amber);font-weight:800;font-size:clamp(17px,2vw,21px);margin:30px 0 8px}
+.guide-link{color:var(--amber)}
+.guide-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.guide-small{color:var(--muted);font-size:13.5px;margin-top:16px}
+.guide-small a{color:var(--amber)}
 </style>
 </head>
 <body>
@@ -415,7 +423,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
           <div class="db-btns">
             <a class="btn btn--go" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">Submit feedback to HDB</a>
           </div>
-          <p class="db-tpl">Done it already? A second form covers heritage. <a href="https://form.gov.sg/69f078611d94834b4d48a308" target="_blank" rel="noopener">Submit heritage feedback</a>, with <a href="documents/Gillman_HIA_FeedbackGuide_26-08-05.pdf" target="_blank" rel="noopener">our short guide</a> if useful.</p>
+          <p class="db-tpl"><span>Done it already? A second form covers heritage.</span><a class="btn-mini" href="https://form.gov.sg/69f078611d94834b4d48a308" target="_blank" rel="noopener">Heritage form</a><a class="btn-mini btn-mini--ghost" href="#guide" data-page="guide">What to say</a></p>
         </div>
       </div>
       <div class="now-grid">
@@ -993,6 +1001,45 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
       Links are provided so that readers can go to the original reporting. Listing an article here is not
       an endorsement of it. Headlines and preview images belong to the publications named, and are shown
       here to identify the article they link to.
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE -->
+<section class="page" id="page-guide">
+  <div class="wrap">
+    <p class="eyebrow">Before Thursday 6pm</p>
+    <h2 class="damage-title" style="text-align:left">What to say in your heritage feedback</h2>
+    <div class="guide-body">
+      <p class="detail-note">The heritage form takes about five minutes: <a class="guide-link" href="https://form.gov.sg/69f078611d94834b4d48a308" target="_blank" rel="noopener">form.gov.sg/69f078611d94834b4d48a308</a>. It closes Thursday 6 August at 6pm.</p>
+
+      <h3 class="guide-h">First, the one rule that matters</h3>
+      <p class="detail-note">Write in your own words. Ten people independently raising similar concerns carry far more weight than ten identical messages, because it shows genuine, widely felt concern rather than one text passed around. Use the prompts below as a starting point, not a script. Even three sentences of your own count.</p>
+
+      <h3 class="guide-h">A simple structure</h3>
+      <ul class="detail-list">
+        <li><b>Who you are.</b> Your connection to the place: how long you have lived nearby, how often you visit, what you use it for.</li>
+        <li><b>What the heritage means to you, specifically.</b> Name places rather than speaking in general terms. The 1935 barracks along Lock Road, among the last of their kind. The Preston Road garrison houses and the old Alexandra School cluster. The galleries and the arts precinct that grew up since 2012. A place where heritage, arts and nature exist together, which is rare in Singapore.</li>
+        <li><b>What you are asking for.</b> Be concrete. See below.</li>
+        <li><b>Keep it courteous and factual.</b> The reader is a civil servant collating feedback. A reasonable tone gets your point into the summary report.</li>
+      </ul>
+
+      <h3 class="guide-h">Asks worth making</h3>
+      <ul class="detail-list">
+        <li>Name the buildings to be retained, so the commitment to all of exceptional significance and most of high significance can be checked against a list.</li>
+        <li>Keep the retained clusters as public, accessible places rather than fenced or privatised spaces, so the arts and community life can continue.</li>
+        <li>Where a building cannot be kept, document it fully before demolition and publish that record.</li>
+        <li>Keep the connection between the heritage buildings and the forest setting, since the two together are what make the character of the place.</li>
+      </ul>
+
+      <h3 class="guide-h">Things worth mentioning if they are true for you</h3>
+      <p class="detail-note">Visits to exhibitions or the galleries. Walks that pass the barracks buildings. Children or grandchildren who know the place. Events you have attended there. What the area felt like before and after the 2022 rejuvenation. Any family connection to the site&rsquo;s military past.</p>
+
+      <div class="guide-ctas">
+        <a class="btn btn--go" href="https://form.gov.sg/69f078611d94834b4d48a308" target="_blank" rel="noopener">Open the heritage form</a>
+        <a class="btn btn--ghost" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">Environmental form</a>
+      </div>
+      <p class="guide-small">Prefer it on paper? <a href="documents/Gillman_HIA_FeedbackGuide_26-08-05.pdf" target="_blank" rel="noopener">Download this guide as a PDF</a>.</p>
     </div>
   </div>
 </section>
