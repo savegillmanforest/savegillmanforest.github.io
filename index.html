@@ -383,7 +383,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
       <a class="btn btn--ghost" href="https://www.change.org/p/save-gillman-barracks-forest-build-homes-in-gsw-instead" target="_blank" rel="noopener">Sign the petition</a>
     </div>
 
-    <div class="film-wrap"><video class="film-el" controls playsinline preload="metadata" poster="assets/img/jpg-39.jpg"><source data-src="media/film.mp4" type="video/mp4">Your browser does not support the video tag.</video><button class="film-play" type="button" aria-label="Play the film"><span class="film-cap">Watch the video</span></button></div>
+    <div class="film-wrap"><video class="film-el" controls muted playsinline webkit-playsinline preload="metadata" poster="assets/img/jpg-39.jpg"><source data-src="media/film.mp4" type="video/mp4">Your browser does not support the video tag.</video><button class="film-play" type="button" aria-label="Turn on the sound"><span class="film-cap">Tap for sound</span></button></div>
 
     <section class="nowbar" aria-label="What is happening now">
       <h2 class="nowbar-head">What&rsquo;s happening</h2>
@@ -1131,12 +1131,38 @@ function openPdf(id, ev){
   }); }
 })();
 
-/* ---- film: overlay label, hidden once it plays ---- */
+/* ---- film: starts silently when scrolled to, tap for sound ---- */
 (function(){
   var wrap=document.querySelector('.film-wrap'); if(!wrap) return;
   var v=wrap.querySelector('video'), btn=wrap.querySelector('.film-play');
-  btn.addEventListener('click',function(){ wrap.classList.add('is-playing'); var p=v.play(); if(p&&p.catch) p.catch(function(){}); });
-  v.addEventListener('play',function(){ wrap.classList.add('is-playing'); });
+  var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var taken=false;   /* the visitor has taken control, so stop managing it */
+
+  function attach(){
+    var s=v.querySelector('source[data-src]');
+    if(s){ s.setAttribute('src', s.getAttribute('data-src')); s.removeAttribute('data-src'); try{ v.load(); }catch(e){} }
+  }
+  btn.addEventListener('click', function(){
+    taken=true; attach(); v.muted=false; v.controls=true;
+    wrap.classList.add('is-playing');
+    var p=v.play(); if(p&&p.catch) p.catch(function(){});
+  });
+  v.addEventListener('volumechange', function(){ if(!v.muted){ wrap.classList.add('is-playing'); } });
+  v.addEventListener('pause', function(){ if(v.currentTime>0) taken=true; });
+
+  if(still || !('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(taken) return;
+      if(e.isIntersecting){
+        attach(); v.muted=true;
+        var p=v.play(); if(p&&p.catch) p.catch(function(){});
+      } else if(!v.paused){
+        v.pause();
+      }
+    });
+  },{threshold:0.55});
+  io.observe(v);
 })();
 </script>
 </body>
