@@ -314,7 +314,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 /* ---- happening now ---- */
 .nowbar{max-width:1080px;margin:clamp(34px,5vw,58px) auto 0;text-align:left}
 .nowbar-head{font-size:14px;font-weight:700;letter-spacing:0;color:var(--cream);margin:0 0 28px;text-align:center}
-.now-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,18px)}
+.now-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,18px)}
 .now-card{display:flex;flex-direction:column;text-decoration:none;cursor:pointer;
   background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden}
 .now-thumb{display:block;position:relative;background:rgba(255,255,255,.06)}
@@ -323,10 +323,8 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .now-title{color:#fff;font-weight:700;font-size:16.5px;line-height:1.25;letter-spacing:-.01em;padding:5px 15px 0}
 .now-sub{color:var(--cream);font-size:13.5px;line-height:1.45;padding:7px 15px 16px}
 .now-card.is-urgent{border-color:rgba(245,176,46,.5)}
-.now-inline{color:var(--amber);text-decoration:underline}
-.cta-hia{color:var(--amber);text-decoration:underline}
 .now-thumb.is-square img{object-position:50% 22%}
-@media(max-width:900px){.now-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:820px){.now-grid{grid-template-columns:1fr}}
 @media(max-width:480px){
   .now-grid{grid-template-columns:1fr}
   .now-thumb img{aspect-ratio:16/7}
@@ -348,6 +346,25 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .tl.future .tl-thumb{opacity:.85}
 @media(max-width:640px){.tl-thumb img{aspect-ratio:16/7}}
 
+
+/* ---- deadline banner ---- */
+.deadline-banner{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0;align-items:stretch;
+  border:1.5px solid rgba(245,176,46,.65);border-radius:16px;overflow:hidden;margin:0 0 22px;
+  background:rgba(245,176,46,.07)}
+.db-img{width:100%;height:100%;object-fit:cover;min-height:230px}
+.db-body{padding:clamp(18px,2.6vw,30px);text-align:left}
+.db-when{color:var(--amber);font-weight:800;font-size:13.5px;letter-spacing:.03em}
+.db-title{color:#fff;font-weight:800;font-size:clamp(20px,2.6vw,28px);line-height:1.15;letter-spacing:-.01em;margin:8px 0 10px}
+.db-note{color:var(--cream);font-size:15px;line-height:1.55;margin:0 0 16px;max-width:56ch}
+.db-btns{display:flex;gap:12px;flex-wrap:wrap}
+.db-tpl{color:var(--muted);font-size:13.5px;margin:14px 0 0}
+.db-tpl a{color:var(--amber)}
+@media(max-width:760px){
+  .deadline-banner{grid-template-columns:1fr}
+  .db-img{min-height:0;aspect-ratio:16/7}
+}
+
+.cta-pair{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 </style>
 </head>
 <body>
@@ -379,7 +396,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     <p class="lede">Gillman Forest has stood for generations. Within months, a decision could be made to clear it. And once a mature forest is lost, no amount of replanting brings it back. Add your voice today, and help us keep Gillman standing for generations to come.</p>
 
     <div class="cta-row cta-center">
-      <span class="cta-stack"><a class="btn btn--go" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">Feedback to HDB <small class="js-deadline-mini">by 6 Aug 2026</small></a><span class="cta-note">Takes 5 minutes. Carries more weight. Closes 6 August, 6pm. Also submit on <a class="cta-hia" href="https://form.gov.sg/69f078611d94834b4d48a308" target="_blank" rel="noopener">heritage</a>.</span></span>
+      <span class="cta-stack"><span class="cta-pair"><a class="btn btn--go" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">Feedback: Environment</a><a class="btn btn--go" href="https://form.gov.sg/69f078611d94834b4d48a308" target="_blank" rel="noopener">Feedback: Heritage</a></span><span class="cta-note">Two HDB forms, five minutes each. Both close 6 August, 6pm.</span></span>
       <a class="btn btn--ghost" href="https://www.change.org/p/save-gillman-barracks-forest-build-homes-in-gsw-instead" target="_blank" rel="noopener">Sign the petition</a>
     </div>
 
@@ -387,6 +404,20 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 
     <section class="nowbar" aria-label="What is happening now">
       <h2 class="nowbar-head">What&rsquo;s happening</h2>
+
+      <div class="deadline-banner">
+        <img class="db-img" src="assets/img/now/land-cleared.webp" alt="Cleared ground beside standing forest, with excavators and lorries at work" loading="lazy" decoding="async">
+        <div class="db-body">
+          <div class="db-when">Closes Thursday 6 August, 6pm</div>
+          <h3 class="db-title">Two HDB feedback forms. Five minutes each.</h3>
+          <p class="db-note">At the last published count Gillman had 860 submissions to Maju&rsquo;s 2,712. Every submission is read and counted, and the response report HDB has promised will have to reflect them. Write in your own words.</p>
+          <div class="db-btns">
+            <a class="btn btn--go" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">Environmental feedback</a>
+            <a class="btn btn--go" href="https://form.gov.sg/69f078611d94834b4d48a308" target="_blank" rel="noopener">Heritage feedback</a>
+          </div>
+          <p class="db-tpl">Not sure what to say on heritage? <a href="documents/Gillman_HIA_FeedbackGuide_26-08-05.pdf" target="_blank" rel="noopener">Use our short guide</a>.</p>
+        </div>
+      </div>
       <div class="now-grid">
 
         <a class="now-card" href="#dialogue" data-page="dialogue">
@@ -396,12 +427,6 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
           <span class="now-sub">More than 20 questions filed on Gillman and Maju</span>
         </a>
 
-        <a class="now-card is-urgent" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">
-          <span class="now-thumb"><img src="assets/img/now/land-cleared.webp" alt="Cleared ground beside standing forest, with excavators and lorries at work" loading="lazy" decoding="async"></span>
-          <span class="now-when">Thu 6 Aug, 6pm</span>
-          <span class="now-title">HDB feedback closes</span>
-          <span class="now-sub">At the last published count, Gillman had 860 submissions to Maju&rsquo;s 2,712. If you have not written in, this is the moment. There are two forms: <u>environmental</u> here, and <a class="now-inline" href="https://form.gov.sg/69f078611d94834b4d48a308" target="_blank" rel="noopener">heritage here</a>.</span>
-        </a>
 
         <a class="now-card" href="#events" data-page="events">
           <span class="now-thumb"><img src="assets/img/walk/walk-flyer.webp" alt="" loading="lazy" decoding="async"></span>
