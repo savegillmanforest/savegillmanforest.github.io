@@ -310,6 +310,29 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 
 @media(max-width:520px){.ev-facts > div{grid-template-columns:1fr;gap:2px}}
 
+
+/* ---- happening now ---- */
+.nowbar{max-width:1080px;margin:clamp(34px,5vw,58px) auto 0;text-align:left}
+.nowbar-head{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 14px}
+.now-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,18px)}
+.now-card{display:flex;flex-direction:column;text-decoration:none;cursor:pointer;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden}
+.now-thumb{display:block;position:relative;background:rgba(255,255,255,.06)}
+.now-thumb img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.now-when{color:var(--amber);font-weight:800;font-size:12.5px;letter-spacing:.03em;padding:13px 15px 0}
+.now-title{color:#fff;font-weight:700;font-size:16.5px;line-height:1.25;letter-spacing:-.01em;padding:5px 15px 0}
+.now-sub{color:var(--cream);font-size:13.5px;line-height:1.45;padding:7px 15px 16px}
+.now-card.is-urgent{border-color:rgba(245,176,46,.5)}
+.now-thumb.is-square img{object-position:50% 22%}
+.now-card.is-urgent .now-thumb img{object-fit:contain;background:#fff;padding:14px}
+@media(max-width:900px){.now-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){
+  .now-grid{grid-template-columns:1fr}
+  .now-thumb img{aspect-ratio:16/7}
+  .now-card.is-urgent .now-thumb img{aspect-ratio:16/9}
+}
+
 </style>
 </head>
 <body>
@@ -346,6 +369,41 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     </div>
 
     <video class="film-el" controls playsinline preload="metadata" poster="assets/img/jpg-39.jpg"><source data-src="media/film.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+
+    <section class="nowbar" aria-label="What is happening now">
+      <h2 class="nowbar-head">Happening now</h2>
+      <div class="now-grid">
+
+        <a class="now-card" href="#dialogue" data-page="dialogue">
+          <span class="now-thumb is-square"><img src="assets/img/now/parliament-4-5-aug.webp" alt="Graphic listing the themes MPs are raising at the 4 and 5 August sitting on Maju Forest and Gillman Barracks" loading="lazy" decoding="async"></span>
+          <span class="now-when">4 and 5 Aug</span>
+          <span class="now-title">Parliament sits</span>
+          <span class="now-sub">More than 20 questions filed on Gillman and Maju</span>
+        </a>
+
+        <a class="now-card is-urgent" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">
+          <span class="now-thumb"><img src="assets/img/png-02.png" alt="" loading="lazy" decoding="async"></span>
+          <span class="now-when">Thu 6 Aug, 6pm</span>
+          <span class="now-title">HDB feedback closes</span>
+          <span class="now-sub">Five minutes, and it carries more weight than a signature</span>
+        </a>
+
+        <a class="now-card" href="#events" data-page="events">
+          <span class="now-thumb"><img src="assets/img/walk/walk-flyer.webp" alt="" loading="lazy" decoding="async"></span>
+          <span class="now-when">Sat 8 Aug, 8am</span>
+          <span class="now-title">Community forest walk</span>
+          <span class="now-sub">Telok Blangah Hill Park through to Gillman Barracks</span>
+        </a>
+
+        <a class="now-card" href="https://www.instagram.com/reel/DblK2DiEzts/" target="_blank" rel="noopener">
+          <span class="now-thumb"><img src="assets/img/jpg-43.jpg" alt="" loading="lazy" decoding="async"></span>
+          <span class="now-when">Listen</span>
+          <span class="now-title">Gillman on Teh Tarik with Walid</span>
+          <span class="now-sub">With Melissa Low and Muhd Nasry</span>
+        </a>
+
+      </div>
+    </section>
 
     <section class="wild">
       <div>
