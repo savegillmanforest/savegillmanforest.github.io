@@ -374,6 +374,15 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .guide-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
 .guide-small{color:var(--muted);font-size:13.5px;margin-top:16px}
 .guide-small a{color:var(--amber)}
+.letters-cta{font-size:16px;line-height:1.6;color:var(--cream)}
+.letters-cta b{color:#fff}
+.letters-priority{margin:14px 0 22px;padding-left:22px;color:var(--cream);font-size:15px;line-height:1.6}
+.letters-priority li{margin-bottom:9px}
+.letters-priority b{color:var(--amber)}
+.letters-priority a{color:var(--amber)}
+.ev-ctas{display:flex;justify-content:center;margin-top:24px}
+.dlg-act{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--cream);font-size:15px;margin:14px 0 4px}
+.cta-pair{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 </style>
 </head>
 <body>
@@ -405,7 +414,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     <p class="lede">Gillman Forest has stood for generations. Within months, a decision could be made to clear it. And once a mature forest is lost, no amount of replanting brings it back. Add your voice today, and help us keep Gillman standing for generations to come.</p>
 
     <div class="cta-row cta-center">
-      <span class="cta-stack"><a class="btn btn--go" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">Feedback to HDB <small class="js-deadline-mini">by 6 Aug, 6pm</small></a><span class="cta-note">Takes 5 minutes. Carries more weight. Closes 6 August, 6pm.</span><span class="cta-after">Already submitted? <a href="https://form.gov.sg/69f078611d94834b4d48a308" target="_blank" rel="noopener">Add your heritage feedback</a></span></span>
+      <span class="cta-stack"><span class="cta-pair"><a class="btn btn--go" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">Feedback to HDB <small class="js-deadline-mini">by 6 Aug, 6pm</small></a><a class="btn btn--ghost" href="#guide" data-page="guide">What to say</a></span><span class="cta-note">Takes 5 minutes. Carries more weight. Closes 6 August, 6pm.</span><span class="cta-after">Already submitted? <a href="https://form.gov.sg/69f078611d94834b4d48a308" target="_blank" rel="noopener">Add your heritage feedback</a></span></span>
       <a class="btn btn--ghost" href="https://www.change.org/p/save-gillman-barracks-forest-build-homes-in-gsw-instead" target="_blank" rel="noopener">Sign the petition</a>
     </div>
 
@@ -601,7 +610,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
   <div class="wrap">
     <div class="events-box">
       <p class="eyebrow">Events</p>
-      <h2>Community forest walk through Gillman Forest and the Southern Ridges</h2>
+      <h2>Walk with us this Saturday</h2>
       <p>With the Telok Blangah Hill Park Forest Walk reopening, everyone is invited to join a
       community walk through one of Singapore&rsquo;s most unusual green corridors. The route runs from
       Telok Blangah Hill Park along the Forest Walk and into Gillman Barracks, following the
@@ -617,7 +626,11 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
       </dl>
 
       <p class="ev-tail">The walk goes at a leisurely pace, with pauses along the way to take in the
-      ecology, the heritage buildings and the community spaces. Do come.</p>
+      ecology, the heritage buildings and the community spaces. Bring your family, bring a friend, bring a
+      camera. Every person who walks it is one more person who has stood in this forest.</p>
+      <div class="ev-ctas">
+        <a class="btn btn--go" href="https://maps.google.com/?q=Forest+Walk+entrance,+Telok+Blangah+Hill+Park,+Singapore" target="_blank" rel="noopener">Get directions to the start</a>
+      </div>
 
       <div class="ev-gallery">
         <figure>
@@ -643,7 +656,14 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
   <div class="wrap-wide">
     <p class="eyebrow">Letters &amp; reports</p>
     <div class="letters-intro">
-      <p>If you have a letter you would like to send, here are the contacts of the MPs covering Tanjong Pagar GRC and key decision maker Minister.</p>
+      <p class="letters-cta"><b>Every letter counts.</b> Letters get read, logged and answered, and each one puts Gillman on another desk. Fifteen minutes, in your own words, is enough. If you are not sure where to start, write to the two people at the top of this list.</p>
+      <ol class="letters-priority">
+        <li><b>Alvin Tan</b>, Minister of State for National Development, who answered for the Government in Parliament on 4 August and is leading the response on both sites.</li>
+        <li><b>Prime Minister Lawrence Wong</b>, via the <a href="https://www.pmo.gov.sg/contact-us" target="_blank" rel="noopener">PMO website</a>, since the final balance between housing and forest is a whole of government decision.</li>
+        <li><b>Grace Fu</b>, Minister for Sustainability and the Environment, whose ministry residents have repeatedly asked to take a leading role.</li>
+        <li><b>Your own MP</b>, whoever that is. MPs raise what their residents write to them about, and 4 August showed they do.</li>
+      </ol>
+      <p>Contacts for the MPs covering the area and the key decision makers:</p>
       <div class="mp-table-wrap">
       <table class="mp-table">
         <thead><tr><th>Name</th><th>Constituency</th><th>Government position</th><th>Email address</th></tr></thead>
@@ -688,6 +708,9 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
   <div class="wrap-wide">
     <p class="eyebrow">The dialogue</p>
     <p class="dlg-intro">The dialogue with our Ministers, MPs and the representatives of HDB, URA, NParks and MSE is ongoing. Here is where it stands.</p>
+    <p class="dlg-act">Read the record below, then act on it: the consultation closes Thursday 6pm.
+      <a class="btn-mini" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">Submit your feedback</a>
+      <a class="btn-mini btn-mini--ghost" href="#guide" data-page="guide">What to say</a></p>
 
     <div class="timeline">
       <div class="tl clickable" id="tl-26" data-detail="detail-26">
