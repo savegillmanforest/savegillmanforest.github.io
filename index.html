@@ -383,6 +383,10 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .ev-ctas{display:flex;justify-content:center;margin-top:24px}
 .dlg-act{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--cream);font-size:15px;margin:14px 0 4px}
 .cta-pair{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.hdr-btns{display:inline-flex;align-items:center;gap:8px}
+.signup-btn--ghost{background:rgba(255,255,255,.10);color:#eaf3e6;border:1px solid rgba(255,255,255,.34)}
+.signup-btn--ghost:hover{background:rgba(255,255,255,.18)}
+@media(max-width:560px){.signup-btn--ghost{display:none}}
 </style>
 </head>
 <body>
@@ -397,7 +401,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     <button data-page="letters">Letters</button><span class="nav-sep">|</span>
     <button data-page="dialogue">Dialogue</button><span class="nav-sep">|</span><button data-page="news">News</button>
   </nav>
-  <a class="signup-btn" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">Feedback to HDB</a>
+  <span class="hdr-btns"><a class="signup-btn signup-btn--ghost" href="#guide" data-page="guide">What to say</a><a class="signup-btn" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">Feedback to HDB</a></span>
   </div>
 </header>
 
