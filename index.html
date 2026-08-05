@@ -402,6 +402,25 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .precedent p:last-child{margin-bottom:0}
 .prec-turn{color:var(--amber) !important;font-weight:700}
 @media(max-width:640px){.precedent{padding:22px 20px;margin:24px auto 32px}}
+
+/* ---- the plan ---- */
+.plan-h{font-weight:800;font-size:clamp(19px,2.3vw,24px);color:#fff;margin:38px 0 12px;letter-spacing:-.01em}
+.plan-facts{max-width:760px;margin-left:0}
+.plan-maps{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin:16px 0 0}
+.plan-maps figure{margin:0}
+.plan-maps img{display:block;width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.16);cursor:zoom-in;background:#0d160f}
+.plan-maps figcaption{color:var(--muted);font-size:13.5px;line-height:1.5;margin-top:10px}
+.plan-maps figcaption b{color:var(--cream);font-weight:700}
+.plan-note{color:var(--muted);font-size:13.5px;line-height:1.55;margin:16px 0 0;max-width:80ch}
+.plan-docs{list-style:none;padding:0;margin:14px 0 0;max-width:900px}
+.plan-docs li{padding:16px 0;border-top:1px solid rgba(255,255,255,.14)}
+.plan-docs li:first-child{border-top:0}
+.plan-docs a{display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:700;
+  font-size:clamp(15.5px,1.8vw,18px);line-height:1.3;border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:2px}
+.plan-docs a:hover{color:var(--amber);border-bottom-color:var(--amber)}
+.plan-chip{font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--muted);border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;padding:2px 8px;flex:0 0 auto}
+.plan-docs p{color:var(--cream);font-size:14.5px;line-height:1.55;margin:8px 0 0;max-width:76ch}
 </style>
 </head>
 <body>
@@ -414,7 +433,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     <button data-page="home" aria-current="true">Home</button><span class="nav-sep">|</span>
     <button data-page="events">Events</button><span class="nav-sep">|</span>
     <button data-page="letters">Letters</button><span class="nav-sep">|</span>
-    <button data-page="dialogue">Dialogue</button><span class="nav-sep">|</span><button data-page="news">News</button>
+    <button data-page="dialogue">Dialogue</button><span class="nav-sep">|</span><button data-page="plan">The plan</button><span class="nav-sep">|</span><button data-page="news">News</button>
   </nav>
   <a class="signup-btn" href="https://form.gov.sg/69f06794cd34ddef1bc75c8d" target="_blank" rel="noopener">Feedback to HDB</a>
   </div>
@@ -922,7 +941,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
           <div class="news-body">
             <div class="news-meta"><span class="news-date">4 Aug 2026</span><span class="news-src">Mothership</span></div>
             <a class="news-title" href="https://mothership.sg/2026/08/gillman-barracks-maju-forest-alvin-tan/" target="_blank" rel="noopener">Govt will proceed to redevelop Maju Forest &amp; Gillman Barracks, but plans not finalised: Alvin Tan</a>
-            <p class="news-note">Answering at least 13 MPs, the Minister of State for National Development said both sites are already zoned for housing and that the government will proceed, while the detailed plans are still open and feedback will be reviewed after 6 August.</p>
+            <p class="news-note">The Government confirmed it will proceed, while stating that the plans are not finalised and that further engagement will follow.</p>
           </div>
         </li>
         <li class="news-item">
@@ -939,18 +958,6 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
             <div class="news-meta"><span class="news-date">3 Aug 2026</span><span class="news-src">The Online Citizen</span></div>
             <a class="news-title" href="https://news.theonlinecitizen.com/2026/08/03/parliament-to-debate-gillman-barracks-and-maju-forest-housing-plans-wp-s-economic-motion" target="_blank" rel="noopener">Parliament to debate Gillman Barracks and Maju Forest housing plans</a>
             <p class="news-note">More than 20 questions on the two sites make them the most heavily questioned item on the order paper for the sitting on 4 August.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://mustsharenews.com/psp-gan-siow-huang-marymount/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://mustsharenews.com/wp-content/uploads/2026/08/psp-gan-cover.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">MS News</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">2 Aug 2026</span><span class="news-src">MS News</span></div>
-            <a class="news-title" href="https://mustsharenews.com/psp-gan-siow-huang-marymount/" target="_blank" rel="noopener">PSP and PAP cross paths at hawker centre in Marymount during Gillman and Maju Forests outreach</a>
-            <p class="news-note">PSP members gathering petition signatures in Marymount met the constituency&rsquo;s PAP MP, a sign the campaign is being taken to neighbourhoods well beyond the two sites.</p>
           </div>
         </li>
         <li class="news-item">
@@ -1034,18 +1041,6 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
           </div>
         </li>
         <li class="news-item">
-          <a class="news-thumb" href="https://stackedhomes.com/gillman-barracks-set-to-become-a-new-housing-estate/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://stacked-editorial.sgp1.digitaloceanspaces.com/editorial/wp-content/uploads/2026/07/11155029/SLA-Gillman-Barracks-Featured-1.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">Stacked Homes</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">11 Jul 2026</span><span class="news-src">Stacked Homes</span></div>
-            <a class="news-title" href="https://stackedhomes.com/gillman-barracks-set-to-become-a-new-housing-estate/" target="_blank" rel="noopener">Gillman Barracks is set to become a new housing estate: here is what we know so far</a>
-            <p class="news-note">A property publication&rsquo;s explainer, published the day after HDB released its studies.</p>
-          </div>
-        </li>
-        <li class="news-item">
           <a class="news-thumb" href="https://mothership.sg/2026/07/hdb-redevelop-gillman-barracks-sunset-way/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
             <img src="https://static.mothership.sg/1/2026/07/Gillman.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
                  onerror="this.closest('.news-thumb').classList.add('is-blank')">
@@ -1062,14 +1057,6 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     <h3 class="news-head">Commentary and opinion</h3>
     <p class="news-sub">These are the views of their authors and of the publications that carried them.</p>
     <ul class="news-list">
-        <li class="news-item">
-          <span class="news-thumb is-blank" aria-hidden="true"><span class="news-thumb-fb">ST Unpacked</span></span>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">3 Aug 2026</span><span class="news-src">ST Unpacked</span></div>
-            <a class="news-title" href="https://unpackedbyst.substack.com/p/maju-forests-fate-and-wps-economic" target="_blank" rel="noopener">Maju Forest&rsquo;s fate and WP&rsquo;s economic vision up for debate in the House</a>
-            <p class="news-note">A Straits Times newsletter previewing the sitting. It revisits the 2021 Dover Forest decision as a precedent for plans being changed, and argues the campaign has not yet settled on a single demand.</p>
-          </div>
-        </li>
         <li class="news-item">
           <a class="news-thumb" href="https://theonlinecitizen.com/2026/08/02/the-forest-or-housing-choice-was-never-the-real-one" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
             <img src="https://media.theonlinecitizen.com/Maju_Forest_Google_Earth_3607e95dbe.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
@@ -1112,6 +1099,63 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
       Links are provided so that readers can go to the original reporting. Listing an article here is not
       an endorsement of it. Headlines and preview images belong to the publications named, and are shown
       here to identify the article they link to.
+    </div>
+  </div>
+</section>
+
+<!-- THE PLAN -->
+<section class="page" id="page-plan">
+  <div class="wrap-wide">
+    <p class="eyebrow">The plan</p>
+    <div class="letters-intro">
+      <p>What the Government has actually proposed for Gillman Barracks, and the official documents it rests on.
+      This page records the plan itself rather than the arguments about it, so that anyone can see the maps,
+      the figures and the sources for themselves.</p>
+    </div>
+
+    <h3 class="plan-h">What is proposed</h3>
+    <dl class="ev-facts plan-facts">
+      <div><dt>Announced</dt><dd>10 July 2026, by HDB, alongside a separate site at Sunset Way</dd></div>
+      <div><dt>What is planned</dt><dd>A residential estate of public and private homes</dd></div>
+      <div><dt>Area</dt><dd>About 40 hectares of indicative future development area</dd></div>
+      <div><dt>Boundary</dt><dd>Depot Road, Alexandra Road, Telok Blangah Road and West Coast Highway, and Telok Blangah Street 31</dd></div>
+      <div><dt>Not included</dt><dd>Telok Blangah Hill Park sits outside the boundary and is not affected</dd></div>
+      <div><dt>Heritage</dt><dd>86 buildings assessed. All four rated of exceptional significance to be retained, and 21 of the 27 rated high</dd></div>
+      <div><dt>Timeframe</dt><dd>Site works expected over 10 to 15 years, subject to review. Existing commercial tenancies run progressively to the second quarter of 2030</dd></div>
+      <div><dt>Number of homes</dt><dd>Not yet stated. The Government told Parliament on 4 August 2026 that the detailed design is not finalised</dd></div>
+    </dl>
+
+    <h3 class="plan-h">Where they plan to build</h3>
+    <div class="plan-maps">
+      <figure>
+        <img src="assets/img/plan/plan-boundary.webp" alt="Aerial map with a yellow dashed line marking the indicative boundary of the future development area at Gillman Barracks" onclick="openImg(this.src)" loading="lazy" decoding="async">
+        <figcaption><b>The development boundary.</b> The yellow dashed line encloses the roughly 40 hectares identified for future development. Figure 2-1 of the Environmental Impact Assessment.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/plan/plan-retained.webp" alt="Aerial map showing habitat types across the site, with hatched areas marking the proposed retained area and areas of habitat creation" onclick="openImg(this.src)" loading="lazy" decoding="async">
+        <figcaption><b>What is proposed to be kept.</b> Green hatching marks the proposed retained area, pink hatching the areas of habitat creation, and the underlying colours the habitat types, from native dominated secondary forest to developed land. Figure 4-21 of the Environmental Impact Assessment.</figcaption>
+      </figure>
+    </div>
+    <p class="plan-note">Tap either map to enlarge it. These are the assessors&rsquo; own maps, reproduced here so that residents can see the proposal, and they show what was proposed in July 2026. The Government has said the plans are not final.</p>
+
+    <h3 class="plan-h">The official documents</h3>
+    <ul class="plan-docs">
+      <li>
+        <a href="https://www.hdb.gov.sg/-/media/about-us/our-role/plan-and-design-towns/planning-with-the-environment-in-mind/Gillman-Barracks-EIA_Main-Report_Final.pdf" target="_blank" rel="noopener">Environmental Impact Assessment at Gillman Barracks, final report<span class="plan-chip">PDF</span></a>
+        <p>Commissioned by the National Parks Board, prepared by CH2M Hill Singapore, part of Jacobs. Dated 8 July 2026, 255 pages. The source for both maps above, for the 10 to 15 year works period, and for the assessment of impact on habitats and species.</p>
+      </li>
+      <li>
+        <a href="https://www.hdb.gov.sg/about-us/our-role/plan-and-design-towns/planning-with-the-environment-in-mind" target="_blank" rel="noopener">Heritage Impact Assessment at Gillman Barracks<span class="plan-chip">HDB</span></a>
+        <p>Prepared by the conservation consultancy Studio Lapis. Assesses all 86 buildings across seven clusters for historical, architectural, social and contextual value. Published on HDB InfoWEB alongside the environmental study.</p>
+      </li>
+      <li>
+        <a href="https://www.hdb.gov.sg/about-us/our-role/plan-and-design-towns/planning-with-the-environment-in-mind" target="_blank" rel="noopener">HDB, planning with the environment in mind<span class="plan-chip">Page</span></a>
+        <p>The HDB page that hosts the impact assessments for Gillman Barracks and other sites. Any revised plans or the promised response to public feedback would be expected to appear here.</p>
+      </li>
+    </ul>
+
+    <div class="foot">
+      Extracts and figures are taken from HDB&rsquo;s Environmental Impact Assessment and Heritage Impact Assessment for Gillman Barracks. Those reports remain the property of their authors and are shown here for the purpose of comment and review, with the source named. The full reports are linked above so that readers can check them.
     </div>
   </div>
 </section>
