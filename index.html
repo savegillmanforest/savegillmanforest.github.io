@@ -408,6 +408,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .plan-facts{max-width:760px;margin-left:0}
 .plan-maps{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin:16px 0 0}
 .plan-maps figure{margin:0}
+@media(max-width:760px){.plan-maps{grid-template-columns:1fr;gap:20px}}
 .plan-maps img{display:block;width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.16);cursor:zoom-in;background:#0d160f}
 .plan-maps figcaption{color:var(--muted);font-size:13.5px;line-height:1.5;margin-top:10px}
 .plan-maps figcaption b{color:var(--cream);font-weight:700}
@@ -1165,11 +1166,11 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     <h3 class="plan-h">Where they plan to build</h3>
     <div class="plan-maps">
       <figure>
-        <img src="assets/img/plan/plan-boundary.webp" alt="Aerial map with a yellow dashed line marking the indicative boundary of the future development area at Gillman Barracks" onclick="openImg(this.src)" loading="lazy" decoding="async">
+        <img src="assets/img/plan/plan-boundary.webp" alt="Aerial map with a yellow dashed line marking the indicative boundary of the future development area at Gillman Barracks" onclick="openImg(this.src)" width="1500" height="1085" decoding="async">
         <figcaption><b>The development boundary.</b> The yellow dashed line encloses the roughly 40 hectares identified for future development. Figure 2-1 of the Environmental Impact Assessment.</figcaption>
       </figure>
       <figure>
-        <img src="assets/img/plan/plan-retained.webp" alt="Aerial map showing habitat types across the site, with hatched areas marking the proposed retained area and areas of habitat creation" onclick="openImg(this.src)" loading="lazy" decoding="async">
+        <img src="assets/img/plan/plan-retained.webp" alt="Aerial map showing habitat types across the site, with hatched areas marking the proposed retained area and areas of habitat creation" onclick="openImg(this.src)" width="1500" height="1085" decoding="async">
         <figcaption><b>What is proposed to be kept.</b> Green hatching marks the proposed retained area, pink hatching the areas of habitat creation, and the underlying colours the habitat types, from native dominated secondary forest to developed land. Figure 4-21 of the Environmental Impact Assessment.</figcaption>
       </figure>
     </div>
@@ -1253,6 +1254,11 @@ function openPdf(id, ev){
   function show(id){
     document.body.dataset.page=id;
     pages.forEach(p=>p.classList.toggle('active', p.id==='page-'+id));
+    var shown=document.getElementById('page-'+id);
+    if(shown){ shown.querySelectorAll('img[loading="lazy"]').forEach(function(im){
+      im.loading='eager';
+      if(!im.complete || im.naturalWidth===0){ var s=im.getAttribute('src'); if(s){ im.setAttribute('src',s); } }
+    }); }
     navBtns.forEach(b=>b.setAttribute('aria-current', b.dataset.page===id ? 'true':'false'));
     window.scrollTo(0,0);
     try{ history.replaceState(null,'','#'+id); }catch(e){}
