@@ -1943,6 +1943,36 @@ function openPdf(id, ev){
     });
   });
 })();
+
+/* ---- keep outbound links opening in a new tab ---- */
+(function(){
+  function outward(a){
+    var h=a.getAttribute('href')||'';
+    if(/\.pdf($|\?)/i.test(h)) return true;
+    if(!/^https?:\/\//i.test(h)) return false;
+    try{ return new URL(h, location.href).host !== location.host; }
+    catch(e){ return false; }
+  }
+  function fix(root){
+    (root||document).querySelectorAll('a[href]').forEach(function(a){
+      if(!outward(a)) return;
+      if(!a.getAttribute('target')) a.setAttribute('target','_blank');
+      var rel=a.getAttribute('rel')||'';
+      if(rel.indexOf('noopener')===-1) a.setAttribute('rel',(rel+' noopener').trim());
+    });
+  }
+  fix(document);
+  if(window.MutationObserver){
+    new MutationObserver(function(muts){
+      muts.forEach(function(m){
+        m.addedNodes && [].forEach.call(m.addedNodes, function(n){
+          if(n.nodeType!==1) return;
+          if(n.tagName==='A') fix(n.parentNode); else fix(n);
+        });
+      });
+    }).observe(document.body,{childList:true,subtree:true});
+  }
+})();
 </script>
 </body>
 </html>
