@@ -429,6 +429,63 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
   border-radius:999px;padding:2px 8px;flex:0 0 auto}
 .plan-docs p{color:var(--cream);font-size:14.5px;line-height:1.55;margin:8px 0 0;max-width:76ch}
 .ev-later{margin-top:44px;padding-top:38px;border-top:1px solid rgba(255,255,255,.16)}
+
+/* ---- findings ---- */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.fx{margin-top:54px;padding-top:40px;border-top:1px solid rgba(255,255,255,.20)}
+.fx-lead{color:var(--cream);font-size:clamp(15px,1.8vw,17px);line-height:1.6;margin:0 0 4px;max-width:80ch}
+.fx-by{color:var(--muted);font-size:13.5px;line-height:1.55;margin:12px 0 0;max-width:80ch}
+.fx-nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin:28px 0 0;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);border-radius:12px;overflow:hidden}
+.fx-num{background:#101a13;padding:18px 18px 20px}
+.fx-num b{display:block;color:var(--amber);font-weight:800;font-size:clamp(24px,3.4vw,34px);line-height:1.05;letter-spacing:-.02em}
+.fx-num span{display:block;color:var(--cream);font-size:14px;line-height:1.4;margin-top:7px}
+.fx-pairs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin:18px 0 0}
+.fx-pairs figure{margin:0}
+.fx-pairs img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,.16);cursor:zoom-in;background:#0d160f}
+.fx-pairs figcaption{color:var(--muted);font-size:13.5px;line-height:1.5;margin-top:10px}
+.fx-pairs figcaption b{color:var(--cream);font-weight:700}
+.fx-tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  border-radius:999px;padding:3px 10px;margin-bottom:9px}
+.fx-tag--off{color:var(--muted);border:1px solid rgba(255,255,255,.28)}
+.fx-tag--res{color:#3a2a00;background:var(--amber)}
+.fx-list{list-style:none;padding:0;margin:22px 0 0;max-width:900px}
+.fx-item{border-top:1px solid rgba(255,255,255,.14);padding:0}
+.fx-item:first-child{border-top:0}
+.fx-item summary{cursor:pointer;list-style:none;padding:20px 34px 20px 0;position:relative}
+.fx-item summary::-webkit-details-marker{display:none}
+.fx-item summary::after{content:"+";position:absolute;right:4px;top:19px;color:var(--amber);font-size:22px;font-weight:700;line-height:1}
+.fx-item[open] summary::after{content:"\2013"}
+.fx-n{color:var(--muted);font-size:12.5px;font-weight:700;letter-spacing:.04em}
+.fx-claim{color:#fff;font-weight:700;font-size:clamp(16px,1.9vw,19px);line-height:1.3;letter-spacing:-.01em;margin:5px 0 0}
+.fx-item summary:hover .fx-claim{color:var(--amber)}
+.fx-sum{color:var(--cream);font-size:14.5px;line-height:1.55;margin:7px 0 0;max-width:76ch}
+.fx-body{padding:0 0 22px}
+.fx-body p{color:var(--cream);font-size:14.5px;line-height:1.62;margin:0 0 12px;max-width:76ch}
+.fx-body p:last-child{margin-bottom:0}
+.fx-ask{border-left:3px solid var(--amber);background:rgba(245,176,46,.08);border-radius:0;
+  padding:14px 16px;margin:16px 0 0;max-width:76ch}
+.fx-ask b{display:block;color:var(--amber);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px}
+.fx-ask p{color:#fff;font-size:14.5px;line-height:1.55;margin:0}
+.fx-vs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:26px 0 0}
+.fx-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:18px 20px}
+.fx-card h4{color:#fff;font-size:16.5px;font-weight:800;margin:0 0 8px;letter-spacing:-.01em}
+.fx-card p{color:var(--cream);font-size:14.5px;line-height:1.55;margin:0}
+.fx-birds{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin:22px 0 0}
+.fx-bird img{display:block;width:100%;height:250px;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.16);cursor:zoom-in}
+.fx-bird h4{color:#fff;font-size:17px;font-weight:800;margin:14px 0 2px;letter-spacing:-.01em}
+.fx-bird .fx-sci{color:var(--muted);font-size:13px;font-style:italic;margin:0 0 8px}
+.fx-bird p{color:var(--cream);font-size:14.5px;line-height:1.55;margin:0 0 8px}
+.fx-credit{color:var(--muted);font-size:12.5px;line-height:1.45;margin:8px 0 0}
+.fx-tablewrap{margin:24px 0 0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.fx-table{border-collapse:collapse;width:100%;min-width:640px;font-size:13.5px}
+.fx-table th,.fx-table td{text-align:left;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.14);color:var(--cream);vertical-align:top}
+.fx-table th{color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
+.fx-table td i{font-style:italic;color:#fff}
+.fx-table .fx-flag{color:var(--amber);font-weight:800}
+.fx-table tr.is-hl td{background:rgba(245,176,46,.07)}
+@media(max-width:820px){ .fx-nums{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media(max-width:520px){ .fx-nums{grid-template-columns:1fr} .fx-bird img{height:210px} }
 </style>
 </head>
 <body>
@@ -1275,9 +1332,9 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
   <div class="wrap-wide">
     <p class="eyebrow">The plan</p>
     <div class="letters-intro">
-      <p>What the Government has actually proposed for Gillman Barracks, and the official documents it rests on.
-      This page records the plan itself rather than the arguments about it, so that anyone can see the maps,
-      the figures and the sources for themselves.</p>
+      <p>What the Government has actually proposed for Gillman Barracks, the official documents it rests on,
+      and what residents found when they read those documents in full. The maps, the figures and the sources
+      are set out here so that anyone can check them.</p>
     </div>
 
     <h3 class="plan-h">What is proposed</h3>
@@ -1304,6 +1361,302 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
       </figure>
     </div>
     <p class="plan-note">Tap either map to enlarge it. These are the assessors&rsquo; own maps, reproduced here so that residents can see the proposal, and they show what was proposed in July 2026. The Government has said the plans are not final.</p>
+
+    <div class="fx">
+    <h3 class="plan-h">What residents found in the report</h3>
+    <p class="fx-lead">The assessment above runs to 255 pages plus appendices. A resident read all of it, alongside
+    NParks&rsquo; own Biodiversity Impact Assessment Guidelines, and found five things worth putting to the agencies.
+    Every point below is drawn from those primary sources, and each ends with a specific, practical ask.</p>
+    <p class="fx-by">Compiled by a resident from CH2M Hill/Jacobs, &ldquo;Specialist Consultancy Services for Environmental
+    Impact Assessment (EIA) at Gillman Barracks&rdquo;, final report, 8 July 2026 and its appendices, commissioned by
+    NParks on behalf of HDB; and National Parks Board, &ldquo;Biodiversity Impact Assessment (BIA) Guidelines&rdquo;, May 2024.
+    These are residents&rsquo; findings, not an official document.</p>
+
+    <div class="fx-nums">
+      <div class="fx-num"><b>1</b><span>forest patch with rare flora left outside the retained area</span></div>
+      <div class="fx-num"><b>30m</b><span>narrowest point of the wildlife corridor, against the report&rsquo;s own 60m recommendation</span></div>
+      <div class="fx-num"><b>20&ndash;30m</b><span>how far edge effects reach into forest, by the report&rsquo;s own account</span></div>
+      <div class="fx-num"><b>1</b><span>season covered by the entire fauna survey, where NParks asks for two</span></div>
+      <div class="fx-num"><b>0</b><span>mentions of the Oriental pied hornbill in the 255-page main report</span></div>
+      <div class="fx-num"><b>2</b><span>globally Critically Endangered parrots left out of the headline count</span></div>
+    </div>
+
+    <h3 class="plan-h">The same map, marked up</h3>
+    <div class="fx-pairs">
+      <figure>
+        <span class="fx-tag fx-tag--off">As published</span>
+        <img src="assets/img/plan/plan-retained.webp" alt="The official EIA map showing the proposed retained area and areas of habitat creation" onclick="openImg(this.src)" loading="lazy" decoding="async">
+        <figcaption><b>What is proposed to be kept.</b> Figure 4-21 of the Environmental Impact Assessment, exactly as published.</figcaption>
+      </figure>
+      <figure>
+        <span class="fx-tag fx-tag--res">Residents&rsquo; markings</span>
+        <img src="assets/img/findings/map-retained-annotated.webp" alt="The same EIA map with four red circles marking areas of conservation-significant flora that fall outside the proposed retained area" onclick="openImg(this.src)" loading="lazy" decoding="async">
+        <figcaption><b>The same map, with the gaps circled.</b> The rings mark ground holding conservation-significant flora that falls outside both the retained area and the areas of habitat creation.</figcaption>
+      </figure>
+    </div>
+    <div class="fx-pairs">
+      <figure>
+        <img src="assets/img/findings/map-flora-annotated.webp" alt="EIA map of the distribution of flora species of conservation significance, with clusters circled in red" onclick="openImg(this.src)" loading="lazy" decoding="async">
+        <figcaption><b>Flora of conservation significance.</b> Red markers are Critically Endangered, orange Endangered, yellow Vulnerable. The circled cluster between two streams on the eastern boundary holds three of the site&rsquo;s eight Critically Endangered <i>Ficus sinuata</i>, two clusters of the Vulnerable <i>Cissus repens</i>, and an Endangered <i>Cratoxylum cochinchinense</i>.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/findings/map-fauna-annotated.webp" alt="EIA map of the distribution of faunal species of conservation significance, with areas circled in red" onclick="openImg(this.src)" loading="lazy" decoding="async">
+        <figcaption><b>Fauna of conservation significance.</b> The same ground read against the animal records, including the survey routes and the roadkill and avian connectivity survey route.</figcaption>
+      </figure>
+    </div>
+    <p class="plan-note">Base maps are the assessors&rsquo; own figures. The red markings were added by residents to show where
+    the findings below apply. Tap any map to enlarge it.</p>
+
+    <h3 class="plan-h">Five findings</h3>
+    <ul class="fx-list">
+
+      <li class="fx-item"><details>
+        <summary>
+          <span class="fx-n">FINDING 1</span>
+          <p class="fx-claim">A cluster of rare plants next to Telok Blangah Street 31 falls outside the retained area, with no explanation given</p>
+          <p class="fx-sum">Critically Endangered, Endangered and Vulnerable flora, together in one small patch, entirely outside the boundary the report itself calls its answer to &ldquo;Avoid&rdquo;.</p>
+        </summary>
+        <div class="fx-body">
+          <p>The raw specimen records for the ground between two streams on the eastern boundary show a real concentration
+          of conservation-significant flora, and the report&rsquo;s own maps show no retained-area or habitat-creation coverage
+          there at all. It holds three of the site&rsquo;s eight <i>Ficus sinuata</i>, which is Critically Endangered, forming a
+          distinct cluster roughly 100m from the rest of that population, which does fall inside the retained area. It also
+          holds two clusters of <i>Cissus repens</i>, a Vulnerable climber, and <i>Cratoxylum cochinchinense</i>, an Endangered
+          tree, specimen GB0435.</p>
+          <p>The <i>Ficus sinuata</i> specimens here are young, actively regenerating individuals, under 5cm girth and under
+          1.4m tall, described in the report&rsquo;s own salvage records as saplings rather than mature trees. That points to
+          something worth taking seriously: this location is not just holding rare plants, it appears to be producing new ones.
+          Transplanting saplings elsewhere may keep the individual plants alive, but it does nothing to preserve whatever soil,
+          moisture or microhabitat conditions at this exact spot are allowing a Critically Endangered species to regenerate.</p>
+          <p>The stated fate differs by species, and none is reassuring. <i>Cissus repens</i> is slated for full removal:
+          &ldquo;Transplant/salvage 2 of 2 clusters&hellip; transplanted from site.&rdquo; <i>Ficus sinuata</i> sees partial retention
+          across the site, five of eight individuals remaining inside the retained area, though not these three.
+          <i>Cratoxylum cochinchinense</i> has no documented mortality, salvage or retention outcome anywhere in the report.
+          Its fate is simply unstated.</p>
+          <p>The EIA structures its mitigation around a four-tier hierarchy, in order of preference: Avoid, Minimise, Restore,
+          Compensate (Section 4.5, Figure 4-20), mirroring NParks&rsquo; own guidelines. Section 4.5.1, titled &ldquo;Avoid&rdquo;,
+          names the 14.6ha retained area and area of habitat creation as the report&rsquo;s answer to that top tier. By the
+          report&rsquo;s own definition this cluster sits outside that measure, and the response, salvage, is the bottom tier,
+          described as a last resort for use &ldquo;where site clearance is unavoidable&rdquo; (BIA Guidelines, Table 5.1,
+          p.75&ndash;76). No Minimise or Restore step appears in between, and the report never explains why.</p>
+          <p>Any suggestion that this matters less because the area is exotic-dominated forest does not hold up against
+          NParks&rsquo; own framework, which ranks habitat value on both vegetation type and importance to species of
+          conservation concern (Section 2.4, p.36). The guidelines&rsquo; own worked example (Figure 2.2, p.37) captures species
+          markers adjacent to higher-value habitat within the priority boundary even where the immediate area is lower-value.
+          This cluster fits that pattern: it sits immediately alongside native-dominated forest. Where there is genuine
+          uncertainty, the guidelines call for caution rather than proceeding regardless: &ldquo;The precautionary principle and
+          worst-case scenarios should always be applied when there is any doubt&rdquo; (Section 7, p.89).</p>
+          <div class="fx-ask">
+            <b>What we would like considered</b>
+            <p>Extending the proposed retained area by roughly 40m at this specific location, which would appear to cover the
+            cluster in full. A modest adjustment against a 40ha development area, for a disproportionate gain in protecting
+            Critically Endangered, Endangered and Vulnerable flora, including <i>Cratoxylum cochinchinense</i>, whose status
+            under the current plan remains unclear.</p>
+          </div>
+        </div>
+      </details></li>
+
+      <li class="fx-item"><details>
+        <summary>
+          <span class="fx-n">FINDING 2</span>
+          <p class="fx-claim">The fauna survey appears to fall short of NParks&rsquo; own published standards, for both birds and mammals</p>
+          <p class="fx-sum">Neither point depends on any species&rsquo; conservation status. Both are structural gaps in survey design, checkable against the guidelines.</p>
+        </summary>
+        <div class="fx-body">
+          <p>NParks&rsquo; guidelines require bird surveys to sample across both seasonal windows. Whether by point count or line
+          transect, &ldquo;each point should minimally be sampled once a month during the non-migratory season (April to August),
+          and twice a month during the migratory season (September to March)&rdquo; (Section 2.3.2, Tables 2.6&ndash;2.7). The
+          EIA&rsquo;s faunistic field surveys, including birds, ran from 21 October 2024 to 7 March 2025 (Section 4.2.4.2),
+          entirely within the migratory season as NParks defines it, with no overlap with the April to August window at all.
+          On the dates alone, the survey appears to have missed one of the two seasonal windows the guidelines call for.</p>
+          <p>A similar gap applies to the mammal survey. All seven camera traps were terrestrial only, mounted
+          &ldquo;approximately 20&ndash;30 cm above ground&rdquo; and labelled &ldquo;Terrestrial Camera Trap Set up&rdquo;,
+          despite the report elsewhere naming &ldquo;birds (including forest interior species) and arboreal mammals&rdquo; as the
+          target species groups for its proposed ecological corridor (Section 4.5.1(g)). The guidelines describe camera trapping
+          as having two distinct components, terrestrial at 30&ndash;50cm and a separate arboreal method mounted at least 3m above
+          ground specifically to detect canopy-dwelling species (Section 2.3.4, Table 2.10, p.28). No arboreal cameras appear
+          anywhere in the report. Camera density also falls short: the report states approximately one camera for every 6.25ha
+          of forest, sparser than the recommended one every 3 to 5ha.</p>
+          <div class="fx-ask">
+            <b>What we would like considered</b>
+            <p>A supplementary bird survey covering the non-migratory season, April to August, and a supplementary arboreal
+            camera trap survey at the height and density NParks&rsquo; own guidelines specify, to complete the seasonal and
+            methodological coverage the current survey appears to be missing.</p>
+          </div>
+        </div>
+      </details></li>
+
+      <li class="fx-item"><details>
+        <summary>
+          <span class="fx-n">FINDING 3</span>
+          <p class="fx-claim">Two globally Critically Endangered parrots, and a celebrated hornbill, are missing from the headline count</p>
+          <p class="fx-sum">All three are in the EIA&rsquo;s own appendix. A definition applied in this report, but not found in NParks&rsquo; guidelines, keeps them out of the total.</p>
+        </summary>
+        <div class="fx-body">
+          <p>The Oriental pied hornbill, a species NParks has publicly credited as a Singapore conservation success, is barely
+          present in the assessment. The field survey recorded it once, incidentally, in nearly five months. It is absent from
+          the 255-page main report entirely, since it was downlisted to Near Threatened in 2023 and no longer meets the technical
+          bar for discussion. As set out in Finding 2, the survey window may not have been well suited to detecting it in the
+          first place: a single incidental sighting is exactly what an incomplete survey design would produce. Residents have
+          reported juvenile hornbills in Telok Blangah more recently than the survey period, which the study could not have
+          captured.</p>
+          <p>Two globally Critically Endangered parrots, the Yellow-crested and Citron-crested cockatoo, do not appear in the
+          official count at all. Both are recorded in the EIA&rsquo;s own appendix (Appendix 1, Birds: Yellow-crested cockatoo,
+          entry 15, p.7; Citron-crested cockatoo, entry 56, p.8). They are excluded because the report&rsquo;s definition of
+          conservation significance requires a species to be both native to Singapore and threatened, an &ldquo;and&rdquo; test
+          that NParks&rsquo; own baseline guidelines do not call for. The guidelines define species of conservation interest purely
+          by extinction risk, &ldquo;at the global and/or local level&rdquo; (p.19), and treat native or exotic status as a
+          separate fact to report rather than a gate on conservation interest, confirmed across every taxon section including
+          birds (p.25). Both cockatoos carry IUCN&rsquo;s most severe classification regardless of origin.</p>
+          <p>The report classifies the hornbill and the Yellow-crested cockatoo identically, both &ldquo;introduced resident
+          breeder&rdquo;, despite very different treatment elsewhere. NParks has repeatedly called the hornbill&rsquo;s return a
+          conservation success story. The cockatoo, under the same classification and more severely threatened globally, does not
+          count at all, even though Earth.org (2024) notes that feral populations like Singapore&rsquo;s could play a role in the
+          species&rsquo; global recovery.</p>
+          <div class="fx-ask">
+            <b>What we would like considered</b>
+            <p>That all three species be discussed explicitly regardless of the technical threshold; that a follow-up survey
+            across more than one season establish whether the hornbill is actually breeding on site, given the current record is
+            a single incidental sighting; and clarification on whether the &ldquo;native and threatened&rdquo; test reflects
+            NParks&rsquo; own methodology or a narrower construction adopted for this report.</p>
+          </div>
+        </div>
+      </details></li>
+
+      <li class="fx-item"><details>
+        <summary>
+          <span class="fx-n">FINDING 4</span>
+          <p class="fx-claim">Even after mitigation, nine plant species still face declining health from edge effects alone</p>
+          <p class="fx-sum">Being inside the retained area is not the same as being unaffected, and protection along Malan Road is deferred rather than confirmed.</p>
+        </summary>
+        <div class="fx-body">
+          <p>This is a quantified risk, not a hypothetical one. Even after mitigation, nine plant species still face a
+          &ldquo;Moderate Negative&rdquo; risk of declining health during construction from edge effects alone, not from direct
+          clearance. The Endangered <i>Litsea</i> cf. <i>castanea</i>, for example, sits 16m from a forest edge, well inside the
+          20 to 30m range the report itself identifies as the zone edge effects reach into (Section 4.5.1(g), p.95, citing
+          Beschta et al. 1987; Johnson and Ryba 1992; Matlack 1993; Murphy 1995).</p>
+          <p><i>Archidendron contortum</i> and <i>Macaranga griffithiana</i> were initially assessed as facing no impact, since
+          their specimens sit outside the cleared area, but the report downgrades this to &ldquo;Moderate Negative&rdquo; because
+          at least half their individuals fall within 30m of the new forest margin. <i>Ficus sinuata</i>, <i>Ficus vasculosa</i>
+          and <i>Horsfieldia polyspherula</i> remain &ldquo;Moderate Negative&rdquo; after salvage for the same reason. For
+          <i>Litsea</i> cf. <i>castanea</i> the report states it &ldquo;may be marked for salvation or transplantation during the
+          environmental monitoring and management phase&rdquo;, which defers the decision rather than settling it.</p>
+          <p>One specific illustration is the native-dominated forest along Malan Road. It could be argued that because this
+          forest currently survives well, no additional buffer is needed. That does not hold up against the report&rsquo;s own
+          findings. The EIA defines forest edge effects as changes in microclimate &ldquo;due to vegetation removal&rdquo;
+          (Section 4.4.5.1.2), meaning they are triggered by nearby clearing rather than showing up in advance of it. Today this
+          forest borders low-intensity interim uses, event spaces, art galleries, dining and the Academy of Singapore Teachers
+          (Section 2.2.2), not the construction activity and completed housing estate to come. Its current good health reflects
+          the absence of that trigger so far, not resilience to it, and the report already predicts forest edge effects are
+          &ldquo;Likely&rdquo; in native-dominated secondary forest at &ldquo;Medium&rdquo; intensity.</p>
+          <div class="fx-ask">
+            <b>What we would like considered</b>
+            <p>A wider buffer wherever native-dominated forest and conservation-significant flora sit close to the construction
+            boundary, including specifically along Malan Road, where current conditions do not reflect what construction and the
+            completed estate will bring, and confirmed protection measures now rather than deferred to a later monitoring phase.</p>
+          </div>
+        </div>
+      </details></li>
+
+      <li class="fx-item"><details>
+        <summary>
+          <span class="fx-n">FINDING 5</span>
+          <p class="fx-claim">The corridor linking Gillman to the wider forest network may be too narrow to function</p>
+          <p class="fx-sum">A corridor works at its narrowest passable point, not its average. The generous 200m width sits inside the block already being kept.</p>
+        </summary>
+        <div class="fx-body">
+          <p>Gillman Barracks is not isolated. The report places it partially within the Southern Ridges, a 10km corridor linking
+          Mount Faber Park, Telok Blangah Hill Park, HortPark, Kent Ridge Park and Labrador Nature Reserve. Based on its own
+          Straw-headed bulbul mapping, the EIA suggests Gillman Barracks itself &ldquo;serves as a corridor between the Southern
+          Ridges and Berlayar Creek&rdquo;, potentially extending to Labrador Nature Reserve.</p>
+          <p>The report goes further than shared habitat and raises a shared population. Straw-headed bulbul and Changeable
+          hawk-eagle have been recorded at both Gillman Barracks and the former Keppel Club site, leading the EIA to suggest these
+          birds &ldquo;could belong to the same metapopulation utilising this ecological corridor&rdquo;. NParks has independently
+          identified the same path in its own Ecological Profiling Exercise.</p>
+          <p>One might reasonably point out that most of the native forest here is being retained, but the report&rsquo;s own
+          conclusion anticipates that response. It states the corridor &ldquo;expand[s] to approximately 200m within the
+          native-dominated secondary forest&rdquo;, so the generous width sits specifically within the forest block already being
+          retained. The 30m minimum, by its own account, falls in the narrower connecting sections instead. The report concludes
+          that &ldquo;the wider retained areas compensate&rdquo; for these, but a corridor&rsquo;s function depends on its
+          narrowest passable point, not its average. A well-preserved core does not help wildlife reach neighbouring parks if the
+          stretch connecting them is constricted. Loss of connectivity is listed as a standard category of ecosystem impact in
+          NParks&rsquo; own guidelines (Table 4.1, p.62), so this is a recognised impact type every assessment is expected to
+          consider.</p>
+          <div class="fx-ask">
+            <b>What we would like considered</b>
+            <p>That the corridor&rsquo;s narrowest sections be widened toward the report&rsquo;s own 60m recommendation, rather
+            than relying on wider areas elsewhere to compensate, given the report&rsquo;s own suggestion that a shared
+            metapopulation, not just shared habitat, may depend on it.</p>
+          </div>
+        </div>
+      </details></li>
+
+    </ul>
+
+    <h3 class="plan-h">Two things that do not sit together</h3>
+    <div class="fx-vs">
+      <div class="fx-card">
+        <h4>Same number. Opposite conclusions.</h4>
+        <p>The report uses &ldquo;30 years&rdquo; to say native forest cannot be recreated and, in the same section, that exotic
+        forest easily can. Neither claim carries a citation.</p>
+      </div>
+      <div class="fx-card">
+        <h4>Same label. Different treatment.</h4>
+        <p>The hornbill and the Yellow-crested cockatoo are both classified &ldquo;introduced resident breeder&rdquo;. NParks has
+        called one a conservation success. The other does not make the count.</p>
+      </div>
+    </div>
+
+    <h3 class="plan-h">Two birds, one classification</h3>
+    <div class="fx-birds">
+      <div class="fx-bird">
+        <img src="assets/img/findings/bird-hornbill.webp" alt="An Oriental pied hornbill photographed at Gillman Barracks in June 2022" onclick="openImg(this.src)" loading="lazy" decoding="async">
+        <h4>Oriental pied hornbill</h4>
+        <p class="fx-sci">Anthracoceros albirostris</p>
+        <p>Recorded once, incidentally, in nearly five months of surveying, and not mentioned anywhere in the 255-page main
+        report. Juvenile hornbills were seen in Telok Blangah in July 2026, after the survey period closed.</p>
+        <p class="fx-credit">Photographed at Gillman Barracks, June 2022.</p>
+      </div>
+      <div class="fx-bird">
+        <img src="assets/img/findings/bird-cockatoo.webp" alt="A Yellow-crested cockatoo photographed at Mount Faber" onclick="openImg(this.src)" loading="lazy" decoding="async">
+        <h4>Yellow-crested cockatoo</h4>
+        <p class="fx-sci">Cacatua sulphurea</p>
+        <p>Critically Endangered globally. The EIA&rsquo;s own checklist classifies it as an established, breeding population in
+        Singapore. Earth.org (2024) notes that feral populations like this one could play a role in the species&rsquo; global
+        recovery.</p>
+        <p class="fx-credit">Photographed at Mount Faber. Photo credit: Francis Yap.</p>
+      </div>
+    </div>
+
+    <div class="fx-tablewrap">
+      <table class="fx-table">
+        <caption class="sr-only">Rows from the EIA&rsquo;s own bird checklist showing conservation status against whether the species was counted as of conservation significance</caption>
+        <thead>
+          <tr><th>#</th><th>Species</th><th>Common name</th><th>IUCN global</th><th>Singapore</th><th>Counted?</th><th>Status in report</th></tr>
+        </thead>
+        <tbody>
+          <tr class="is-hl"><td>13</td><td><i>Anthracoceros albirostris</i></td><td>Oriental pied hornbill</td><td>Least Concern</td><td>Near Threatened</td><td class="fx-flag">No</td><td>Introduced resident breeder</td></tr>
+          <tr><td>14</td><td><i>Cacatua goffiniana</i></td><td>Tanimbar corella</td><td>Near Threatened</td><td>NA</td><td class="fx-flag">No</td><td>Introduced resident breeder</td></tr>
+          <tr class="is-hl"><td>15</td><td><i>Cacatua sulphurea</i></td><td>Yellow-crested cockatoo</td><td>Critically Endangered</td><td>NA</td><td class="fx-flag">No</td><td>Introduced resident breeder</td></tr>
+          <tr class="is-hl"><td>56</td><td><i>Cacatua citrinocristata</i></td><td>Citron-crested cockatoo</td><td>Critically Endangered</td><td>Not Evaluated</td><td class="fx-flag">No</td><td>Introduced</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="plan-note">Rows reproduced from the EIA&rsquo;s own species checklist, Appendix 1, Birds. Two species carrying
+    IUCN&rsquo;s most severe global classification are marked &ldquo;No&rdquo; under species of conservation significance.</p>
+
+    <h3 class="plan-h">Read the findings in full</h3>
+    <ul class="plan-docs">
+      <li>
+        <a href="documents/Gillman_EIAFindings_26-08-14.pdf" target="_blank" rel="noopener">Findings from HDB&rsquo;s own report, in full<span class="plan-chip">PDF</span></a>
+        <p>All five findings with their citations, as submitted. Four pages.</p>
+      </li>
+      <li>
+        <a href="documents/Gillman_FindingsPoster_26-08-14.pdf" target="_blank" rel="noopener">Getting the balance right, the poster<span class="plan-chip">PDF</span></a>
+        <p>The same findings as two display boards, with the marked-up maps at full size. Used at residents&rsquo; sessions.</p>
+      </li>
+    </ul>
+    </div>
 
     <h3 class="plan-h">The official documents</h3>
     <ul class="plan-docs">
