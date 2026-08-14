@@ -52,6 +52,9 @@ img{max-width:100%;display:block}
 .signup-btn{display:inline-block;text-decoration:none;text-align:center;background:var(--amber);color:#3a2a00;border:none;border-radius:999px;
   font-family:var(--sans);font-weight:800;font-size:15px;padding:9px 18px;cursor:pointer;white-space:nowrap}
 .signup-btn:hover{background:#ffc24d}
+.nav-ctas{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.signup-btn--ghost{background:rgba(255,255,255,.10);color:#eaf3e6;border:1px solid rgba(255,255,255,.34);font-weight:700}
+.signup-btn--ghost:hover{background:rgba(255,255,255,.18);color:#fff}
 
 /* pages */
 .page{display:none;min-height:100vh;padding:96px 0 64px;animation:fade .35s ease both}
@@ -241,6 +244,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
   .nav-links button{font-size:14px;padding:5px 8px}
   .nav-sep{display:none}
   .signup-btn{font-size:13px;padding:8px 12px}
+  .signup-btn--ghost{display:none}
   .page{padding:110px 16px 56px}
   .wild{grid-template-columns:1fr}
   .wild-strip{grid-template-columns:repeat(2,1fr)}
@@ -450,6 +454,50 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .plan-docs p{color:var(--cream);font-size:14.5px;line-height:1.55;margin:8px 0 0;max-width:76ch}
 .ev-later{margin-top:44px;padding-top:38px;border-top:1px solid rgba(255,255,255,.16)}
 
+/* ---- guide ---- */
+.gd-h1{font-size:clamp(28px,4.2vw,44px);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.1;margin:6px 0 16px;max-width:20ch}
+.gd-lead{color:var(--cream);font-size:clamp(16px,2vw,19px);line-height:1.6;margin:0;max-width:70ch}
+.gd-status{border-left:3px solid var(--amber);background:rgba(245,176,46,.09);padding:16px 18px;margin:26px 0 0;max-width:80ch}
+.gd-status b{display:block;color:var(--amber);font-size:15.5px;margin-bottom:7px}
+.gd-status p{color:var(--cream);font-size:14.5px;line-height:1.6;margin:0}
+.gd-h{font-weight:800;font-size:clamp(19px,2.3vw,25px);color:#fff;margin:42px 0 14px;letter-spacing:-.01em}
+.gd-step{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:26px;align-items:start;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:20px 22px;max-width:900px}
+.gd-step-body p{color:var(--cream);font-size:16px;line-height:1.6;margin:0 0 10px}
+.gd-hl{color:var(--amber)}
+.gd-small{color:var(--muted);font-size:13.5px}
+.gd-qr{display:block;text-decoration:none;text-align:center}
+.gd-qr img{display:block;width:100%;height:auto;border-radius:10px;background:#fff;padding:8px}
+.gd-qr span{display:block;color:var(--muted);font-size:12.5px;margin-top:8px;line-height:1.4}
+.gd-facts{max-width:820px;margin-left:0}
+.gd-facts > div{grid-template-columns:150px minmax(0,1fr)}
+.gd-note{color:var(--muted);font-size:14.5px;line-height:1.6;margin:0 0 18px;max-width:76ch}
+.gd-note--lead{margin-top:-4px}
+.gd-group{color:var(--amber);font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin:26px 0 12px}
+.gd-asks{list-style:none;counter-reset:none;padding:0;margin:0;max-width:860px}
+.gd-asks li{counter-increment:gdask;position:relative;padding:16px 0 16px 44px;border-top:1px solid rgba(255,255,255,.14);
+  color:var(--cream);font-size:15.5px;line-height:1.6}
+.gd-asks li:first-child{border-top:0}
+.gd-asks li::before{content:counter(gdask);position:absolute;left:0;top:16px;width:28px;height:28px;border-radius:50%;
+  background:rgba(245,176,46,.18);color:var(--amber);font-weight:800;font-size:13.5px;display:flex;align-items:center;justify-content:center}
+.gd-asks b{color:#fff;font-weight:700}
+.gd-asks{counter-reset:gdask}
+.gd-asks[start="4"]{counter-reset:gdask 3}
+.gd-tips{list-style:none;padding:0;margin:0;max-width:820px}
+.gd-tips li{padding:13px 0;border-top:1px solid rgba(255,255,255,.14);color:var(--cream);font-size:15.5px;line-height:1.55}
+.gd-tips li:first-child{border-top:0}
+.gd-tips b{color:#fff}
+.gd-close{margin:40px 0 0;padding:22px;border:1px solid rgba(255,255,255,.16);border-radius:14px;background:rgba(255,255,255,.05);max-width:900px}
+.gd-close p{color:var(--cream);font-size:16px;line-height:1.6;margin:0 0 16px}
+.gd-close b{color:#fff}
+.gd-src{color:var(--muted);font-size:13px;line-height:1.55;margin:22px 0 0;max-width:80ch}
+.gd-inline{background:none;border:none;padding:0;color:var(--amber);font:inherit;text-decoration:underline;cursor:pointer}
+@media(max-width:700px){
+  .gd-step{grid-template-columns:1fr;gap:18px}
+  .gd-qr{max-width:210px;margin:0 auto}
+  .gd-facts > div{grid-template-columns:1fr;gap:4px}
+}
+
 /* ---- findings ---- */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .fx{margin-top:54px;padding-top:40px;border-top:1px solid rgba(255,255,255,.20)}
@@ -522,7 +570,10 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     <button data-page="letters">Letters</button><span class="nav-sep">|</span>
     <button data-page="dialogue">Dialogue</button><span class="nav-sep">|</span><button data-page="plan">The plan</button><span class="nav-sep">|</span><button data-page="news">News</button>
   </nav>
-  <a class="signup-btn" href="https://www.change.org/p/save-gillman-barracks-forest-build-homes-in-gsw-instead" target="_blank" rel="noopener">Sign the petition</a>
+  <span class="nav-ctas">
+    <a class="signup-btn" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Write to HDB</a>
+    <button class="signup-btn signup-btn--ghost" type="button" data-page="guide">How to write it</button>
+  </span>
   </div>
 </header>
 
@@ -539,7 +590,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     <p class="lede">Gillman Forest has stood for generations. Within months, a decision could be made to clear it. And once a mature forest is lost, no amount of replanting brings it back. Add your voice today, and help us keep Gillman standing for generations to come.</p>
 
     <div class="cta-row cta-center">
-      <span class="cta-stack"><a class="btn btn--go" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Send your feedback to HDB</a><span class="cta-note">The written channel is open. Under &ldquo;Category of Feedback&rdquo; choose <b>Land Use Plans</b>.</span></span>
+      <span class="cta-stack"><a class="btn btn--go" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Send your feedback to HDB</a><span class="cta-note">The written channel is open. Under &ldquo;Category of Feedback&rdquo; choose <b>Land Use Plans</b>. <button class="gd-inline" type="button" data-page="guide">Not sure what to write?</button></span></span>
       <span class="cta-stack"><a class="btn btn--ghost" href="https://www.change.org/p/save-gillman-barracks-forest-build-homes-in-gsw-instead" target="_blank" rel="noopener">Sign the petition</a><span class="cta-note">No deadline. It stays open while the plans are decided.</span></span>
     </div>
 
@@ -554,7 +605,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
           <div class="db-when">You can write to HDB again</div>
           <h3 class="db-title">The consultation closed.<br>The channel is open.</h3>
           <p class="db-note">The formal window ended on 6 August, but HDB has said engagement does not end there and has pointed residents to its written feedback channel. Nothing about the plan is settled: how much forest is cleared, how wide the wildlife corridor to Labrador will be, how many homes and in what mix, and which heritage buildings stay. HDB has committed to publishing a report answering the feedback and setting out any changes. Every letter that arrives before that report is written is a letter it has to answer.</p>
-          <div class="db-btns"><a class="btn btn--go" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Send your feedback to HDB</a></div>
+          <div class="db-btns"><a class="btn btn--go" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Send your feedback to HDB</a><button class="btn btn--ghost" type="button" data-page="guide">How to write it</button></div>
           <div class="db-tpl"><span>Under &ldquo;Category of Feedback&rdquo; choose <b style="color:var(--amber)">Land Use Plans</b>, write in your own words, then submit your enquiry.</span><a class="btn-mini btn-mini--ghost" href="#dialogue" data-page="dialogue">See what is still open</a></div>
         </div>
       </div>
@@ -736,7 +787,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
         <div class="qr-title">Feedback to HDB</div>
         <div class="qr-sub"><b>Open again</b></div>
         <div class="qr-sub">Under &ldquo;Category of Feedback&rdquo; choose <b>Land Use Plans</b>, write in your own words, then submit your enquiry.</div>
-        <div class="pet-actions"><a class="btn btn--ghost" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Open the form</a></div>
+        <div class="pet-actions"><a class="btn btn--ghost" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Open the form</a><button class="btn-mini btn-mini--ghost" type="button" data-page="guide" style="margin-top:10px">How to write it</button></div>
       </div>
     </div>
   </div>
@@ -886,6 +937,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
       <p>The feedback window closed on 6 August at 6pm, with thousands of residents having written in. The next test is the report HDB publishes in response, and what it changes.</p>
       <p>Writing in is still possible. HDB has said engagement does not end with the deadline and has pointed residents to its written feedback channel, so submissions made now are still on the record before that report is written. Under &ldquo;Category of Feedback&rdquo; choose <b style="color:var(--amber)">Land Use Plans</b>.</p>
       <a class="btn-mini" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Send your feedback to HDB</a>
+      <button class="btn-mini btn-mini--ghost" type="button" data-page="guide">How to write it</button>
     </div>
 
     <div class="timeline">
@@ -1707,6 +1759,103 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
   </div>
 </section>
 
+<!-- GUIDE -->
+<section class="page" id="page-guide">
+  <div class="wrap-wide">
+    <p class="eyebrow">Write to HDB</p>
+    <h2 class="gd-h1">A guide to filling in the HDB feedback</h2>
+    <p class="gd-lead">Fifteen minutes, in your own words, is enough. This page sets out where to send it,
+    what to put in it, and the specific things worth asking for. You do not have to live nearby. Gillman
+    belongs to all of Singapore.</p>
+
+    <div class="gd-status">
+      <b>The formal window closed on 6 August. The written channel is still open.</b>
+      <p>The two consultation forms that ran until 6 August have been taken down. HDB has said engagement
+      does not end with that deadline and has pointed residents to its general written feedback channel, and
+      it has committed to publishing a report answering the feedback and setting out any changes to the plans.
+      That report has not been published. Anything that arrives before it is written is something HDB has to
+      answer.</p>
+    </div>
+
+    <h3 class="gd-h">Step one. Open the form</h3>
+    <div class="gd-step">
+      <div class="gd-step-body">
+        <p>Go to HDB&rsquo;s Write to Us form. Under <b>Category of Feedback</b> choose
+        <b class="gd-hl">Land Use Plans</b>, then write in your own words and submit.</p>
+        <p class="gd-small">One entry per person. Every adult at home can send their own.</p>
+        <div class="ev-ctas">
+          <a class="btn btn--go" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Open the HDB feedback form</a>
+        </div>
+      </div>
+      <a class="gd-qr" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">
+        <img src="assets/img/hdb-feedback-qr.png" alt="QR code opening the HDB written feedback form" width="600" height="600" loading="lazy" decoding="async">
+        <span>Scan to open it on your phone</span>
+      </a>
+    </div>
+
+    <h3 class="gd-h">Step two. Five short lines</h3>
+    <dl class="ev-facts gd-facts">
+      <div><dt>Who you are</dt><dd>&ldquo;I live in Telok Blangah and walk in Gillman Forest every week.&rdquo; Or: &ldquo;I don&rsquo;t live nearby, but Gillman Barracks is part of my Singapore.&rdquo;</dd></div>
+      <div><dt>What you ask</dt><dd>Pick one or two of the asks below. Two made well beat eight listed.</dd></div>
+      <div><dt>Why</dt><dd>In your own words. The walks, the birds, the shade, the old buildings, what your children would lose. Or the bigger picture, forest after forest going one by one.</dd></div>
+      <div><dt>What you support</dt><dd>&ldquo;I&rsquo;m not against new homes. I&rsquo;m against losing what can never be rebuilt.&rdquo;</dd></div>
+      <div><dt>What happens next</dt><dd>&ldquo;Please hold dialogue sessions with residents, heritage groups and nature groups, and publish what the feedback changed.&rdquo;</dd></div>
+    </dl>
+
+    <h3 class="gd-h">Step three. Choose your asks</h3>
+    <p class="gd-note">These are prompts, not a script. Copied letters get counted once, so put them in your
+    own words and they count on their own.</p>
+
+    <p class="gd-group">On the forest</p>
+    <ol class="gd-asks">
+      <li><b>Put Gillman last in the queue, not first.</b> Build the sites already cleared and zoned before
+      touching fifty-year-old forest. In land-scarce Singapore, forest is the one thing we cannot make more of.</li>
+      <li><b>Keep more of the forest.</b> Replanting is not replacement. Decades to grow, months to clear.</li>
+      <li><b>Even after mitigation, the harm remains.</b> HDB&rsquo;s own Environmental Impact Assessment says
+      58 of 83 species will still face &ldquo;Major Negative&rdquo; impact. Please think again while the plan
+      can still be changed.</li>
+    </ol>
+
+    <p class="gd-group">On the barracks and the setting</p>
+    <p class="gd-note gd-note--lead">Heritage is the argument almost nobody is making. The Heritage Impact
+    Assessment is a separate study from the environmental one, and these asks are specific enough to need a
+    specific answer.</p>
+    <ol class="gd-asks" start="4">
+      <li><b>Publish which six buildings are going, and why.</b> The study rates 86 buildings and elements.
+      Four are Exceptional and 27 are High, but only 21 of those 27 are being kept.</li>
+      <li><b>Keep the Preston Road houses as a group.</b> All 16 are rated High. They are a rare intact set of
+      1930s military family homes, and their value is in the whole cluster, not in single blocks left standing
+      inside a new estate.</li>
+      <li><b>Moderate does not mean expendable.</b> Twenty-four buildings rated Moderate have no stated future.
+      Please say what happens to them.</li>
+      <li><b>Setting is heritage too.</b> Lock Road, Malan Road, Preston Road and the ravine are all rated High
+      in the study itself. Please keep the landscape that makes the buildings legible.</li>
+      <li><b>The woodland east of Malan Road covers the site of the original barrack cluster and parade
+      square.</b> Clearing it is a heritage loss as well as an environmental one.</li>
+    </ol>
+
+    <h3 class="gd-h">Three things that matter</h3>
+    <ul class="gd-tips">
+      <li><b>Use your own words.</b> Copied letters are counted once. Yours counts on its own.</li>
+      <li><b>Keep it real and factual.</b> What you see and use there beats any slogan.</li>
+      <li><b>Leave politics out.</b> We are residents giving planning feedback. That is our strength.</li>
+    </ul>
+
+    <div class="gd-close">
+      <p><b>It has worked before.</b> In 2021, Dover Forest drew around 50,000 signatures and nearly 1,800
+      written submissions. The plans changed and the western half of the forest was kept.</p>
+      <div class="ev-ctas">
+        <a class="btn btn--go" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Write to HDB now</a>
+        <a class="btn btn--ghost" href="https://www.change.org/p/save-gillman-barracks-forest-build-homes-in-gsw-instead" target="_blank" rel="noopener">Sign the petition too</a>
+      </div>
+    </div>
+
+    <p class="gd-src">Species figure from HDB&rsquo;s published Environmental Impact Assessment (CH2M Hill/Jacobs,
+    8 July 2026), Table 4-37. Building ratings from the Heritage Impact Assessment prepared by Studio Lapis.
+    Both are linked in full on <button class="gd-inline" type="button" data-page="plan">The plan</button>.</p>
+  </div>
+</section>
+
 <!-- SIGN ME UP -->
 <section class="page" id="page-signup">
   <div class="wrap">
@@ -1732,7 +1881,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
   <div class="footer-scrim" aria-hidden="true"></div>
   <div class="footer-wordmark">Save Gillman Forest</div>
   <div class="cta-row cta-center">
-    <span class="cta-stack"><a class="btn btn--go" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Send your feedback to HDB</a><span class="cta-note">Choose &ldquo;Land Use Plans&rdquo; as the category.</span></span>
+    <span class="cta-stack"><a class="btn btn--go" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Send your feedback to HDB</a><span class="cta-note">Choose &ldquo;Land Use Plans&rdquo; as the category. <button class="gd-inline" type="button" data-page="guide">How to write it</button></span></span>
     <span class="cta-stack"><a class="btn btn--ghost" href="https://www.change.org/p/save-gillman-barracks-forest-build-homes-in-gsw-instead" target="_blank" rel="noopener">Sign the petition</a><span class="cta-note">No deadline. It stays open while the plans are decided.</span></span>
   </div>
   <p class="footer-note">A residents&rsquo; initiative for Telok Blangah. Not affiliated with HDB, URA, NParks, or any political party.</p>
