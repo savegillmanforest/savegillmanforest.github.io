@@ -1623,7 +1623,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
         <span class="ba-tag ba-tag--l">Today</span><span class="ba-tag ba-tag--r">If cleared</span>
         <input class="ba-range" type="range" min="0" max="100" value="50" step="0.1" aria-label="Drag to compare Gillman today with a visualisation of the site cleared">
       </div>
-      <figcaption><b>Drag the handle.</b> On the left, Gillman as it stands today. On the right, a visualisation prepared by residents of the same view if the land inside the development boundary were cleared, with a green strip left through the middle. It is an illustration, not a photograph and not an official plan. The July plan keeps 40 per cent of the green spaces here, the Government has said it will now keep more, and how much more is the question still open.</figcaption>
+      <figcaption><b>The view sweeps on its own. Drag the handle to compare at your own pace.</b> On the left, Gillman as it stands today. On the right, a visualisation prepared by residents of the same view if the land inside the development boundary were cleared, with a green strip left through the middle. It is an illustration, not a photograph and not an official plan. The July plan keeps 40 per cent of the green spaces here, the Government has said it will now keep more, and how much more is the question still open.</figcaption>
     </figure>
 
     <div class="fx">
@@ -2100,7 +2100,28 @@ function openPdf(id, ev){
 /* ---- before/after slider ---- */
 document.querySelectorAll('.ba').forEach(function(el){
   const r=el.querySelector('.ba-range');
-  if(r) r.addEventListener('input', function(){ el.style.setProperty('--pos', r.value+'%'); });
+  if(!r) return;
+  let auto=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let raf=null, last=null, phase=0;
+  function set(p){ el.style.setProperty('--pos', p+'%'); r.value=p; }
+  function tick(ts){
+    if(last!==null) phase+=(ts-last)/9000*2*Math.PI; /* one full sweep every 9s */
+    last=ts;
+    set((50+35*Math.sin(phase)).toFixed(2));
+    raf=requestAnimationFrame(tick);
+  }
+  function pause(){ if(raf) cancelAnimationFrame(raf); raf=null; last=null; }
+  function stop(){ auto=false; pause(); }
+  r.addEventListener('pointerdown', stop);
+  r.addEventListener('keydown', stop);
+  r.addEventListener('input', function(){ stop(); el.style.setProperty('--pos', r.value+'%'); });
+  const io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting && auto && !raf) raf=requestAnimationFrame(tick);
+      else if(!e.isIntersecting) pause();
+    });
+  },{threshold:0.25});
+  io.observe(el);
 });
 </script>
 
