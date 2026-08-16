@@ -2148,9 +2148,9 @@ document.querySelectorAll('.ba').forEach(function(el){
   let raf=null, last=null, phase=0;
   function set(p){ el.style.setProperty('--pos', p+'%'); r.value=p; }
   function tick(ts){
-    if(last!==null) phase+=(ts-last)/9000*2*Math.PI; /* one full sweep every 9s */
+    if(last!==null) phase+=(ts-last)/13000*2*Math.PI; /* edge to edge and back every 13s */
     last=ts;
-    set((50+35*Math.sin(phase)).toFixed(2));
+    set((50+50*Math.sin(phase)).toFixed(2));
     raf=requestAnimationFrame(tick);
   }
   function pause(){ if(raf) cancelAnimationFrame(raf); raf=null; last=null; }
