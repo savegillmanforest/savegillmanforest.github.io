@@ -451,6 +451,19 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .precedent a:hover,.footer-note a:hover{color:#fff}
 @media(max-width:640px){.precedent{padding:22px 20px;margin:24px auto 32px}}
 
+/* ---- before/after slider ---- */
+.ba-fig{max-width:680px;margin:26px auto 8px}
+.ba{position:relative;overflow:hidden;border-radius:14px;aspect-ratio:1053/1494;background:#000;touch-action:none}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.ba-top{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.ba-line{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:#fff;transform:translateX(-50%);pointer-events:none;box-shadow:0 0 8px rgba(0,0,0,.6)}
+.ba-knob{position:absolute;top:50%;left:var(--pos,50%);transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(12,14,13,.85);border:2px solid #fff;color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;pointer-events:none}
+.ba-range{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba-tag{position:absolute;top:12px;padding:5px 11px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.04em;background:rgba(12,14,13,.72);color:var(--cream);pointer-events:none}
+.ba-tag--l{left:12px}
+.ba-tag--r{right:12px;color:var(--amber)}
+.ba-fig figcaption{margin-top:12px;font-size:14px;line-height:1.55;color:var(--muted)}
+
 /* ---- the plan ---- */
 .plan-h{font-weight:800;font-size:clamp(19px,2.3vw,24px);color:#fff;margin:38px 0 12px;letter-spacing:-.01em}
 .plan-facts{max-width:760px;margin-left:0}
@@ -1601,6 +1614,18 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     </div>
     <p class="plan-note">Tap either map to enlarge it. These are the assessors&rsquo; own maps, reproduced here so that residents can see the proposal, and they show what was proposed in July 2026. The Government has said the plans are not final.</p>
 
+    <h3 class="plan-h">The choice, seen from the air</h3>
+    <figure class="ba-fig">
+      <div class="ba" style="--pos:50%">
+        <img src="assets/img/plan/aerial-cleared.webp" alt="Visualisation of the same aerial view with the land inside the development boundary cleared to bare earth, leaving a green strip through the middle" loading="lazy" decoding="async">
+        <img class="ba-top" src="assets/img/plan/aerial-today.webp" alt="Aerial view of Gillman Forest today, a continuous green canopy between the surrounding roads and estates" loading="lazy" decoding="async">
+        <span class="ba-line"></span><span class="ba-knob">&#8596;</span>
+        <span class="ba-tag ba-tag--l">Today</span><span class="ba-tag ba-tag--r">If cleared</span>
+        <input class="ba-range" type="range" min="0" max="100" value="50" step="0.1" aria-label="Drag to compare Gillman today with a visualisation of the site cleared">
+      </div>
+      <figcaption><b>Drag the handle.</b> On the left, Gillman as it stands today. On the right, a visualisation prepared by residents of the same view if the land inside the development boundary were cleared, with a green strip left through the middle. It is an illustration, not a photograph and not an official plan. The July plan keeps 40 per cent of the green spaces here, the Government has said it will now keep more, and how much more is the question still open.</figcaption>
+    </figure>
+
     <div class="fx">
     <h3 class="plan-h">What residents found in the report</h3>
     <p class="fx-lead">The assessment above runs to 255 pages plus appendices. A resident read all of it, alongside
@@ -2068,6 +2093,12 @@ function openPdf(id, ev){
   if(ev&&ev.preventDefault) ev.preventDefault();
   window.open(u,'_blank','noopener');
 }
+
+/* ---- before/after slider ---- */
+document.querySelectorAll('.ba').forEach(function(el){
+  const r=el.querySelector('.ba-range');
+  if(r) r.addEventListener('input', function(){ el.style.setProperty('--pos', r.value+'%'); });
+});
 </script>
 
 <script>
