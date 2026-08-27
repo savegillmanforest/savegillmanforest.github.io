@@ -2475,12 +2475,17 @@ document.querySelectorAll('.ba').forEach(function(el){
 /* ---- videos: load only when scrolled into view, hold still if motion is unwelcome ---- */
 (function(){
   var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function tryPlay(v){
+    if(!v.hasAttribute('autoplay')) return;
+    v.muted=true; v.playsInline=true;   /* Safari needs these as properties, not just attributes */
+    var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){});
+  }
   function attach(src){
     var u=src.getAttribute('data-src'); if(!u) return;
     var v=src.parentElement;
     src.setAttribute('src',u); src.removeAttribute('data-src');
     try{ v.load(); }catch(e){}
-    if(v.hasAttribute('autoplay')){ var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){}); }
+    tryPlay(v);
   }
   document.querySelectorAll('video source[data-src]').forEach(function(src){
     var v=src.parentElement;
@@ -2491,6 +2496,18 @@ document.querySelectorAll('.ba').forEach(function(el){
     },{rootMargin:'400px'});
     io.observe(v);
   });
+  /* The loader above fires 400px early, and Safari refuses to start a muted video that is
+     still offscreen. It says no once and the rejection is swallowed, so a card low in the
+     grid keeps its poster for ever. Ask again when the card is genuinely in view. */
+  if(!still && 'IntersectionObserver' in window){
+    var vis=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting && e.target.paused) tryPlay(e.target); });
+    },{threshold:.15});
+    document.querySelectorAll('video.fauna-vid').forEach(function(v){
+      vis.observe(v);
+      v.addEventListener('loadeddata',function(){ tryPlay(v); });
+    });
+  }
 })();
 /* ---- hero video: make autoplay work on every device we can ---- */
 (function(){
