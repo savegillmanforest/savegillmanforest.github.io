@@ -191,8 +191,8 @@ h1,h2,h3{margin:0}
 .reader{margin-top:30px;display:grid;grid-template-columns:48px 1fr 48px;gap:14px;align-items:center;max-width:900px}
 .reader-arrow{width:48px;height:64px;border:none;background:rgba(255,255,255,.1);color:#fff;font-size:26px;border-radius:10px;cursor:pointer}
 .reader-arrow:hover{background:rgba(255,255,255,.22)}
-.reader-card{background:var(--panel);color:var(--ink);border-radius:14px;padding:22px;display:grid;grid-template-columns:172px 1fr;gap:22px;align-items:center;min-height:220px}
-.reader-card img{width:172px;height:196px;object-fit:contain;background:#fff;padding:5px;border:1px solid #d9d7cf;border-radius:6px;box-shadow:0 2px 10px rgba(0,0,0,.16)}
+.reader-card{background:var(--panel);color:var(--ink);border-radius:14px;padding:22px;display:grid;grid-template-columns:190px 1fr;gap:24px;align-items:center;min-height:220px}
+.reader-card img{width:190px;height:auto;max-height:250px;object-fit:contain;background:none;padding:0;border:0;border-radius:4px;box-shadow:0 6px 20px rgba(0,0,0,.28),0 1px 3px rgba(0,0,0,.18)}
 .rc-kicker{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9e6b1f}
 .rc-title{font-size:22px;font-weight:800;margin:6px 0 8px;line-height:1.2}
 .rc-desc{font-size:15px;color:#4a4a44;line-height:1.55;margin:0 0 16px}
@@ -252,6 +252,10 @@ h1,h2,h3{margin:0}
 .res-link:first-of-type{border-top:none}
 .res-link:hover{color:var(--amber)}
 a.res-link{text-decoration:none}
+.res-link--thumb{align-items:center;gap:16px;padding:12px 0}
+.res-txt{flex:1 1 auto}
+.res-thumb{flex:0 0 auto;width:44px;height:60px;object-fit:cover;object-position:top;border-radius:4px;background:#fff;box-shadow:0 3px 12px rgba(0,0,0,.32)}
+.res-thumb--wide{width:80px;height:45px;object-fit:cover;object-position:center}
 .res-chip{font-size:12px;font-weight:800;letter-spacing:.04em;background:rgba(255,255,255,.9);color:var(--ink);padding:5px 12px;border-radius:6px;white-space:nowrap}
 .detail-note{color:var(--cream);font-size:15px;line-height:1.55;margin:0 0 14px}
 .detail-list{color:var(--cream);font-size:15px;line-height:1.55;margin:0 0 16px;padding-left:20px}
@@ -416,10 +420,13 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .now-when{color:var(--amber);font-weight:800;font-size:12.5px;letter-spacing:.03em;padding:13px 15px 0}
 .now-title{color:#fff;font-weight:700;font-size:16.5px;line-height:1.25;letter-spacing:-.01em;padding:5px 15px 0}
 .now-sub{color:var(--cream);font-size:13.5px;line-height:1.45;padding:7px 15px 16px}
-.now-card.is-urgent{border-color:rgba(245,176,46,.5)}
+.now-card.is-urgent{border-color:rgba(245,176,46,.5);grid-column:span 2}
+.now-card.is-urgent .now-thumb img{aspect-ratio:16/8}
+.now-card.is-urgent .now-title{font-size:19px}
+.now-card.is-urgent .now-sub{font-size:14.5px}
 .now-thumb.is-square img{object-position:50% 22%}
 @media(max-width:1080px){.now-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:820px){.now-grid{grid-template-columns:1fr}}
+@media(max-width:820px){.now-grid{grid-template-columns:1fr} .now-card.is-urgent{grid-column:span 1}}
 @media(max-width:480px){
   .now-grid{grid-template-columns:1fr}
   .now-thumb img{aspect-ratio:16/7}
@@ -503,6 +510,11 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .precedent a,.footer-note a{color:var(--amber);text-decoration:underline;text-underline-offset:2px}
 .precedent a:hover,.footer-note a:hover{color:#fff}
 @media(max-width:640px){.precedent{padding:22px 20px;margin:24px auto 32px}}
+.prec-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch;margin:26px auto 6px;max-width:1080px}
+.prec-pair .precedent{margin:0;padding:22px 24px;max-width:none;height:100%}
+.prec-pair .prec-h{font-size:clamp(20px,2.3vw,26px);margin:0 0 10px}
+.prec-pair .precedent p{font-size:15.5px;line-height:1.55;max-width:none}
+@media(max-width:860px){.prec-pair{grid-template-columns:1fr;gap:18px}}
 
 /* ---- before/after slider ---- */
 .ba-fig{max-width:680px;margin:26px auto 8px}
@@ -723,6 +735,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
         </div>
       </div>
 
+      <div class="prec-pair">
       <div class="precedent">
         <h3 class="prec-h">This is not unprecedented.</h3>
         <p>In 2021, Dover Forest drew 50,000 signatures and nearly 1,800 written submissions. The plans changed, and the western half of the forest was kept.</p>
@@ -734,15 +747,9 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
         <p>At <a href="https://majuforest.com/" target="_blank" rel="noopener">Maju</a>, the Nature Society has named a figure: two thirds of the forest. Gillman has no number of its own, and the plan being redrawn now will fill that silence one way or another. Residents have set out five things to ask for, every one of them drawn from the Government&rsquo;s own reports: a contiguous forest rather than a strip, a 60m corridor by the report&rsquo;s own rule, an answer on what can actually cross the road, the eastern flora cluster brought inside the line, and the arithmetic behind &ldquo;fewer homes&rdquo;.</p>
         <p class="prec-turn">Two of these, in your own words, is a strong letter. <button class="gd-inline" type="button" data-page="plan">Read the five asks in full</button></p>
       </div>
+      </div>
 
       <div class="now-grid">
-
-        <a class="now-card" href="https://theonlinecitizen.com/2026/08/18/what-planning-parameter-is-singapore-s-entire-housing-pipeline-actually-sized-for" target="_blank" rel="noopener">
-          <span class="now-thumb"><img src="https://media.theonlinecitizen.com/Artist_s_impression_from_URA_s_website_of_proposed_housing_at_the_former_Keppel_Golf_Course_map_showing_new_housing_areas_within_the_Greater_Southern_Waterfront_900ff0e861.jpg" alt="Artist&rsquo;s impression of proposed housing at the former Keppel Golf Course within the Greater Southern Waterfront" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.src='assets/img/now/land-cleared.webp'"></span>
-          <span class="now-when">Read</span>
-          <span class="now-title">What is the whole housing pipeline being sized for?</span>
-          <span class="now-sub">The Government calls 6.9 million a planning parameter, not a target. No figures have been published for the far larger pipeline Gillman sits inside.</span>
-        </a>
 
         <a class="now-card is-urgent" href="#dialogue" data-page="dialogue">
           <span class="now-thumb"><img src="assets/img/now/hdb-dialogue-1sep-16x10.webp" alt="HDB invitation headed Building A Shared Future at Sunset Way and Gillman Barracks" loading="lazy" decoding="async"></span>
@@ -751,6 +758,14 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
           <span class="now-sub">At HortPark, HDB, URA and NParks were shown an alternative that builds the homes and keeps the forest. NParks will study two parts of it. Four questions went unanswered. Read the record.</span>
         </a>
 
+        <a class="now-card" href="https://theonlinecitizen.com/2026/08/18/what-planning-parameter-is-singapore-s-entire-housing-pipeline-actually-sized-for" target="_blank" rel="noopener">
+          <span class="now-thumb"><img src="https://media.theonlinecitizen.com/Artist_s_impression_from_URA_s_website_of_proposed_housing_at_the_former_Keppel_Golf_Course_map_showing_new_housing_areas_within_the_Greater_Southern_Waterfront_900ff0e861.jpg" alt="Artist&rsquo;s impression of proposed housing at the former Keppel Golf Course within the Greater Southern Waterfront" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.src='assets/img/now/land-cleared.webp'"></span>
+          <span class="now-when">Read</span>
+          <span class="now-title">What is the whole housing pipeline being sized for?</span>
+          <span class="now-sub">The Government calls 6.9 million a planning parameter, not a target. No figures have been published for the far larger pipeline Gillman sits inside.</span>
+        </a>
+
+        
         <a class="now-card" href="https://www.academia.sg/academic-views/gilman-maju-controversy-public-consultation-planning/" target="_blank" rel="noopener">
           <span class="now-thumb"><img src="https://www.academia.sg/wp-content/uploads/2026/08/petitions-parliament.jpg" alt="Petitions and the parliamentary debate on Gillman Barracks and Maju Forest" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.src='assets/img/now/parliament-4-5-aug.webp'"></span>
           <span class="now-when">Read</span>
@@ -1094,8 +1109,8 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
           <p class="detail-note">An HDB dialogue in the Multi-Purpose Hall at HortPark, the continued engagement the Government promised during the 4 August sitting. Residents brought a worked alternative to the table: <b>A Better Plan for Gillman</b>, prepared by residents representative of the local community, setting out up to 2,400 homes on 538,000 m&sup2; of buildable land across two sites, against 340,000 m&sup2; in the July plan, with the forest kept.</p>
           <p class="detail-note">What follows is the residents&rsquo; record of what was asked and what was answered. It is written at agency level and names no individual officer. Corrections are welcome from anyone who was in the room, including the agencies, and will be published here.</p>
           <p class="detail-note">The twelve questions and topics residents put to the agencies, and what happened to each of them, are set out at the top of this page. One further note from the evening: 7,800 hectares of green space are safeguarded nationally, a figure offered in answer to the concern about forest loss. Residents replied that safeguarded green space and mature forest are not the same thing.</p>
-          <a class="res-link" href="documents/Gillman_MeetingRecord_26-09-01.pdf" target="_blank" rel="noopener">The full record of the session <span class="res-chip">PDF</span></a>
-          <a class="res-link" href="documents/Gillman_ABetterPlan_26-08-30.pdf" target="_blank" rel="noopener">A Better Plan for Gillman, the residents&rsquo; proposal <span class="res-chip">PDF</span></a>
+          <a class="res-link res-link--thumb" href="documents/Gillman_MeetingRecord_26-09-01.pdf" target="_blank" rel="noopener"><img class="res-thumb" src="assets/img/betterplan/record-cover.webp" alt="First page of the record of the 1 September session" loading="lazy" decoding="async"><span class="res-txt">The full record of the session</span><span class="res-chip">PDF</span></a>
+          <a class="res-link res-link--thumb" href="documents/Gillman_ABetterPlan_26-08-30.pdf" target="_blank" rel="noopener"><img class="res-thumb res-thumb--wide" src="assets/img/betterplan/deck-cover.webp" alt="Cover of A Better Plan for Gillman" loading="lazy" decoding="async"><span class="res-txt">A Better Plan for Gillman, the residents&rsquo; proposal</span><span class="res-chip">PDF</span></a>
         </div>
       </div>
       <div class="acc-item">
@@ -2264,10 +2279,10 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
       </div>
     </div>
 
-    <a class="res-link" href="documents/Gillman_MeetingRecord_26-09-01.pdf" target="_blank" rel="noopener">Download the full record of the session <span class="res-chip">PDF</span></a>
+    <a class="res-link res-link--thumb" href="documents/Gillman_MeetingRecord_26-09-01.pdf" target="_blank" rel="noopener"><img class="res-thumb" src="assets/img/betterplan/record-cover.webp" alt="First page of the record of the 1 September session" loading="lazy" decoding="async"><span class="res-txt">Download the full record of the session</span><span class="res-chip">PDF</span></a>
     <a class="res-link" href="#dialogue" data-page="dialogue">See it alongside everything that came before <span class="res-chip">Where we stand</span></a>
 
-    <a class="res-link" href="documents/Gillman_ABetterPlan_26-08-30.pdf" target="_blank" rel="noopener">Read A Better Plan for Gillman in full <span class="res-chip">PDF</span></a>
+    <a class="res-link res-link--thumb" href="documents/Gillman_ABetterPlan_26-08-30.pdf" target="_blank" rel="noopener"><img class="res-thumb res-thumb--wide" src="assets/img/betterplan/deck-cover.webp" alt="Cover of A Better Plan for Gillman" loading="lazy" decoding="async"><span class="res-txt">Read A Better Plan for Gillman in full</span><span class="res-chip">PDF</span></a>
 
     <div class="foot">
       A Better Plan for Gillman is a residents&rsquo; proposal, prepared independently and submitted to MND, URA, HDB and NParks. It is not a government document and carries no official standing. Figures for the July 2026 plan are as published on 10 July 2026. Visualisations and maps are residents&rsquo; own work and are indicative.
