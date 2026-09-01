@@ -213,6 +213,13 @@ h1,h2,h3{margin:0}
 
 .acc{margin:30px 0 10px;border-top:1px solid rgba(255,255,255,.18)}
 .acc--flush{margin:20px 0 0}
+.acc--topics .acc-head{padding:13px 4px;gap:14px}
+.acc--topics .acc-title{font-size:16.5px;margin-top:5px}
+.acc--topics .acc-st{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;display:inline-block;width:auto;padding:2px 10px;border-radius:999px;border:1px solid currentColor;line-height:1.7}
+.acc--topics .acc-st--yes{color:#8fd694}
+.acc--topics .acc-st--ans{color:var(--amber)}
+.acc--topics .acc-st--no{color:#c9cdc4}
+.acc--topics .acc-panel{padding-top:0;padding-bottom:22px}
 .acc-item{border-bottom:1px solid rgba(255,255,255,.18)}
 .acc-head{display:flex;align-items:center;gap:16px;width:100%;background:none;border:0;padding:16px 4px;text-align:left;cursor:pointer;color:inherit;font:inherit}
 .acc-head:hover .acc-title,.acc-head:focus-visible .acc-title{color:var(--amber)}
@@ -957,7 +964,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
         </button>
         <div class="acc-panel" id="acc-01sep">
           <p class="detail-note">An HDB dialogue in the Multi-Purpose Hall at HortPark, the continued engagement the Government promised during the 4 August sitting. Residents brought a worked alternative to the table: <b>A Better Plan for Gillman</b>, prepared by residents representative of the local community, setting out up to 2,400 homes on 538,000 m&sup2; of buildable land across two sites, against 340,000 m&sup2; in the July plan, with the forest kept.</p>
-          <p class="detail-note">What follows is the residents&rsquo; record of what was asked and what was answered. It is written at agency level and names no individual officer. It has been sent to HDB, URA and NParks with a request to correct anything reported wrongly, and any correction will be published here.</p>
+          <p class="detail-note">What follows is the residents&rsquo; record of what was asked and what was answered. It is written at agency level and names no individual officer. Corrections are welcome from anyone who was in the room, including the agencies, and will be published here.</p>
           <p class="detail-note"><b>Three things the agencies offered to study.</b> NParks said it had read the proposal and is prepared to study the sensory boardwalk along the stream and the nature trail into the park, subject to what building there would do to the trees and the soil. Agencies undertook to look at whether connectivity through the site can be widened, and to look at minimising forest loss so that a meaningful and sizable forest remains. There was a qualified willingness to consult the Singapore Tourism Board.</p>
           <p class="detail-note"><b>One answer that matters beyond Gillman.</b> Asked directly whether an environmental impact assessment is carried out when the island wide land use plan is drawn, the answer was no. Assessment comes after a site has been selected. Upstream, NParks contributes information on flora and fauna. Asked whether urban heat and climate impact are assessed at that stage, no such assessment was described.</p>
           <p class="detail-note"><b>Four questions that went unanswered.</b> The projected yield for the site, which has never been published. What residents would have to give up in order to keep the forest whole, put four separate times. Access to the underlying planning data, offered to be analysed by a resident. And any date at all, asked three times.</p>
@@ -2025,23 +2032,119 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     would have to give up in order to keep the forest whole. The agencies will rework the conceptual plan and
     share a summary findings report, for which no date has been given.</p>
 
-    <div class="acc acc--flush">
+    <div class="acc acc--flush acc--topics">
       <div class="acc-item">
-        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-bp-record">
-          <span class="acc-thumb"><img src="assets/img/now/hdb-dialogue-1sep.webp" alt="HDB invitation headed Building A Shared Future at Sunset Way and Gillman Barracks" loading="lazy" decoding="async"></span>
-          <span class="acc-txt"><span class="acc-date">1 September 2026</span><span class="acc-title">The record of the session, in full</span></span>
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-q01">
+          <span class="acc-txt"><span class="acc-date acc-st acc-st--yes">Will study</span><span class="acc-title">Will you study the sensory boardwalk and the forest trails?</span></span>
           <span class="acc-chev" aria-hidden="true"></span>
         </button>
-        <div class="acc-panel" id="acc-bp-record" hidden>
-          <p class="detail-note">The residents&rsquo; record of what was asked and what was answered at HortPark. It is written at agency level and names no individual officer. It has been sent to HDB, URA and NParks with a request to correct anything reported wrongly, and any correction will be published.</p>
-          <p class="detail-note"><b>Three things the agencies offered to study.</b> NParks said it had read the proposal and is prepared to study the sensory boardwalk along the stream and the nature trail into the park, subject to what building there would do to the trees and the soil. Agencies undertook to look at whether connectivity through the site can be widened, and at minimising forest loss so that a meaningful and sizable forest remains. There was a qualified willingness to consult the Singapore Tourism Board.</p>
-          <p class="detail-note"><b>One answer that matters beyond Gillman.</b> Asked directly whether an environmental impact assessment is carried out when the island wide land use plan is drawn, the answer was no. Assessment comes after a site has been selected. Upstream, NParks contributes information on flora and fauna. Asked whether urban heat and climate impact are assessed at that stage, no such assessment was described.</p>
-          <p class="detail-note"><b>Four questions that went unanswered.</b> The projected yield for the site, which has never been published. What residents would have to give up in order to keep the forest whole, put four separate times. Access to the underlying planning data, offered to be analysed by a resident. And any date at all, asked three times.</p>
-          <a class="res-link" href="documents/Gillman_MeetingRecord_26-09-01.pdf" target="_blank" rel="noopener">Download the full record <span class="res-chip">PDF</span></a>
-          <a class="res-link" href="#dialogue" data-page="dialogue">See it alongside everything that came before <span class="res-chip">Where we stand</span></a>
+        <div class="acc-panel" id="acc-q01" hidden>
+          <p class="detail-note">NParks said it had read the proposal, found parts of it interesting, and is prepared to study the boardwalk along stream WQ1 and the nature trail into the park. It attached a technical caveat: building into the forest can affect the trees in the area and the soil condition, so the exact alignment would have to be assessed. We accept that caveat. We are asking for the study, not for a guarantee.</p>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-q02">
+          <span class="acc-txt"><span class="acc-date acc-st acc-st--yes">Will look at it</span><span class="acc-title">Can the corridor through the site be widened?</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-q02" hidden>
+          <p class="detail-note">Agencies undertook to examine whether the connectivity through the site can be widened. No figure was discussed in the room. The published baseline to widen from is the 30 metre minimum ecological corridor announced on 10 July 2026.</p>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-q03">
+          <span class="acc-txt"><span class="acc-date acc-st acc-st--yes">Will look at it</span><span class="acc-title">Can less of the forest be taken?</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-q03" hidden>
+          <p class="detail-note">The undertaking was that if forest has to be taken, they will look at minimising it as far as possible, so that a meaningful and sizable forest remains.</p>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-q04">
+          <span class="acc-txt"><span class="acc-date acc-st acc-st--yes">Qualified yes</span><span class="acc-title">Will you bring in the Singapore Tourism Board?</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-q04" hidden>
+          <p class="detail-note">There was a qualified willingness to bring STB into the conversation, or at least to consult it. Agencies also agreed that connectivity through Gillman Barracks should be made more pedestrian friendly.</p>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-q05">
+          <span class="acc-txt"><span class="acc-date acc-st acc-st--ans">Answered: no</span><span class="acc-title">Is an environmental impact assessment done when the land use plan is drawn?</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-q05" hidden>
+          <p class="detail-note">Residents asked directly whether an EIA is carried out at master plan stage, or only once a site has been selected for development. The answer was no. Island wide planning was described as too early a stage for an EIA, with the scale of planning narrowing progressively as it moves towards a specific site. Upstream, we were told, EIAs are not done.</p>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-q06">
+          <span class="acc-txt"><span class="acc-date acc-st acc-st--ans">No assessment described</span><span class="acc-title">Is urban heat or climate impact assessed at that stage?</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-q06" hidden>
+          <p class="detail-note">Asked what NParks provides at the planning stage, the agency described its role as providing information on the flora and fauna within different sites, and as one of several agencies feeding into cluster planning alongside HDB and LTA. Residents then asked specifically whether urban heat and climate impact are assessed. No assessment of either was described. If we have misunderstood the scope of that input, we would like to be corrected, because it matters a great deal.</p>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-q07">
+          <span class="acc-txt"><span class="acc-date acc-st acc-st--ans">Answered</span><span class="acc-title">Why is density lower in some areas nearby?</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-q07" hidden>
+          <p class="detail-note">The explanation given was proximity to an MRT station and, in some locations, height constraints. Asked whether height constraints apply near Tanglin, the answer was that they do not.</p>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-q08">
+          <span class="acc-txt"><span class="acc-date acc-st acc-st--no">Unanswered</span><span class="acc-title">How many homes is the forest being cleared for?</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-q08" hidden>
+          <p class="detail-note">No yield for the government&rsquo;s own plan has been published, and none was given. Residents have proposed 10 to 12 blocks near Labrador MRT, roughly 2,400 units, and have said openly that they are not planners and want the domain experts to develop the figure properly. Without a published yield there is no way for anyone outside government to compare the two plans.</p>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-q09">
+          <span class="acc-txt"><span class="acc-date acc-st acc-st--no">Unanswered, asked four times</span><span class="acc-title">What would we have to give up in order to keep the forest whole?</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-q09" hidden>
+          <p class="detail-note">This was the central question of the evening. Residents said explicitly that their position is not zero or a hundred, that compromise is expected, and that they cannot negotiate a compromise without knowing what they are being asked to give up. The request was simple: tell us what we would have to accept in order to keep the forest whole, and we will take it to our neighbours. It was not answered.</p>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-q10">
+          <span class="acc-txt"><span class="acc-date acc-st acc-st--no">No commitment</span><span class="acc-title">Will you open the planning data?</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-q10" hidden>
+          <p class="detail-note">A resident offered to run the numbers if the planning data were opened. No commitment was given.</p>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-q11">
+          <span class="acc-txt"><span class="acc-date acc-st acc-st--no">No reasoning given</span><span class="acc-title">Why not build higher, or bring the brownfield sites forward?</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-q11" hidden>
+          <p class="detail-note">Residents asked why the existing blocks around the site are not built higher, why the vacated Depot Road industrial site and the other brownfield sites in Annex C of the proposal are not brought forward, and why the phasing could not be reordered to hold the housing pipeline steady while sparing the forest. No reasoning was given in the room for why these alternatives had been set aside.</p>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-q12">
+          <span class="acc-txt"><span class="acc-date acc-st acc-st--no">No date, asked three times</span><span class="acc-title">When do we hear back?</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-q12" hidden>
+          <p class="detail-note">The agencies will process the feedback, rework the conceptual plan and share a summary findings report. No date was given for it, and it was not established whether that report ends the process or whether residents will see a revised plan in time to respond to it.</p>
         </div>
       </div>
     </div>
+
+    <a class="res-link" href="documents/Gillman_MeetingRecord_26-09-01.pdf" target="_blank" rel="noopener">Download the full record of the session <span class="res-chip">PDF</span></a>
+    <a class="res-link" href="#dialogue" data-page="dialogue">See it alongside everything that came before <span class="res-chip">Where we stand</span></a>
 
     <a class="res-link" href="documents/Gillman_ABetterPlan_26-08-30.pdf" target="_blank" rel="noopener">Read A Better Plan for Gillman in full <span class="res-chip">PDF</span></a>
 
@@ -2244,7 +2347,7 @@ document.querySelectorAll('.ba').forEach(function(el){
     {pdf:'betterplan', thumb:'assets/img/betterplan/map-better-plan.webp', kicker:'Proposal', title:'A Better Plan for Gillman',
      desc:'The residents’ alternative, put to HDB, URA and NParks on 1 September. Up to 2,400 homes on 538,000 m² across two sites, against 340,000 m² in the July plan, with the forest kept.', meta:'21 pages · PDF'},
     {pdf:'record01sep', thumb:'assets/img/now/hdb-dialogue-1sep.webp', kicker:'Record', title:'Record of the 1 September session',
-     desc:'What residents asked and what the agencies answered at HortPark, written at agency level and sent to HDB, URA and NParks for correction.', meta:'3 pages · PDF'},
+     desc:'What residents asked and what the agencies answered at HortPark, written at agency level, naming no individual officer.', meta:'3 pages · PDF'},
     {pdf:'proposal', thumb:'assets/img/jpg-41.jpg', kicker:'Report', title:'Residents’ feedback & proposal',
      desc:'The residents’ case for the forest, reviewing HDB’s environmental and heritage impact assessments, with immediate requests to Parliament and for an extended consultation.', meta:'26 pages · PDF'},
     {pdf:'summary', thumb:'assets/img/jpg-46.jpg', kicker:'Summary', title:'Summary of the 30 July dialogue',
