@@ -211,6 +211,27 @@ h1,h2,h3{margin:0}
 .tl.future{opacity:.7}
 .tl.future .tl-date{color:var(--muted)}
 
+.acc{margin:30px 0 10px;border-top:1px solid rgba(255,255,255,.18)}
+.acc-item{border-bottom:1px solid rgba(255,255,255,.18)}
+.acc-head{display:flex;align-items:center;gap:16px;width:100%;background:none;border:0;padding:16px 4px;text-align:left;cursor:pointer;color:inherit;font:inherit}
+.acc-head:hover .acc-title,.acc-head:focus-visible .acc-title{color:var(--amber)}
+.acc-head:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:8px}
+.acc-thumb{flex:0 0 64px;width:64px;height:64px;border-radius:10px;overflow:hidden;background:#0d160f;border:1px solid rgba(255,255,255,.16)}
+.acc-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.acc-thumb--none{background:rgba(255,255,255,.05)}
+.acc-txt{flex:1 1 auto;min-width:0}
+.acc-date{display:block;font-size:13px;font-weight:800;letter-spacing:.04em;color:var(--amber)}
+.acc-title{display:block;font-size:16px;line-height:1.4;color:#fff;margin-top:3px;transition:color .15s ease}
+.acc-chev{flex:0 0 auto;width:11px;height:11px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin:0 8px 4px 6px;transition:transform .2s ease}
+.acc-head[aria-expanded="true"] .acc-chev{transform:rotate(-135deg);margin-bottom:-2px;border-color:var(--amber)}
+.acc-head[aria-expanded="true"] .acc-date{color:var(--amber)}
+.acc-panel{padding:2px 4px 26px;max-width:820px}
+.acc-panel .res-link:first-of-type{border-top:1px solid rgba(255,255,255,.14)}
+@media(max-width:560px){
+  .acc-thumb{flex-basis:48px;width:48px;height:48px}
+  .acc-head{gap:12px;padding:14px 2px}
+  .acc-title{font-size:15px}
+}
 .detail{margin-top:14px;max-width:760px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:22px 24px;display:none}
 .detail.open{display:block}
 .detail h3{font-size:19px;font-weight:800;margin:0 0 14px;color:#fff}
@@ -331,6 +352,19 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .news-more{margin-top:0}
 .news-more .news-item:first-child{border-top:1px solid rgba(255,255,255,.14)}
 .news-morewrap{margin-top:16px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14)}
+.rep-note{color:var(--muted);font-size:14px;margin:0 0 12px;max-width:70ch}
+.rep-list{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.14)}
+.rep-list li{border-bottom:1px solid rgba(255,255,255,.14)}
+.rep-list a{display:grid;grid-template-columns:96px 210px 1fr;gap:16px;align-items:baseline;padding:11px 4px;text-decoration:none;color:inherit}
+.rep-list a:hover .rp-title,.rep-list a:focus-visible .rp-title{color:var(--amber)}
+.rp-date{font-size:12.5px;font-weight:700;color:var(--muted);white-space:nowrap}
+.rp-src{font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--amber);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rp-title{font-size:15px;line-height:1.45;color:var(--cream);transition:color .15s ease}
+@media(max-width:700px){
+  .rep-list a{grid-template-columns:1fr;gap:3px;padding:12px 2px}
+  .rp-src{display:inline}
+  .rp-date{display:inline;margin-right:10px}
+}
 .news-more-btn{cursor:pointer;font-family:inherit}
 @media(max-width:700px){
   .news-item{grid-template-columns:104px minmax(0,1fr);gap:14px}
@@ -433,6 +467,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 @media(max-width:560px){.signup-btn--ghost{display:none}}
 .dlg-stand{border:1px solid rgba(245,176,46,.5);border-radius:14px;background:rgba(245,176,46,.06);padding:20px 24px;margin:18px 0 8px;max-width:900px}
 .dlg-stand-h{color:var(--amber);font-weight:800;font-size:clamp(17px,2vw,21px);margin:0 0 10px}
+.stand-asof{font-size:11.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
 .dlg-stand p{color:var(--cream);font-size:15px;line-height:1.6;margin:0 0 10px}
 .dlg-stand p:last-child{margin-bottom:0}
 .dlg-stand .btn-mini{display:inline-block;margin-top:16px}
@@ -611,9 +646,10 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
   <div class="nav-inner">
   <nav class="nav-links" aria-label="Main">
     <button data-page="home" aria-current="true">Home</button><span class="nav-sep">|</span>
-    <button data-page="events">Events</button><span class="nav-sep">|</span>
-    <button data-page="letters">Letters</button><span class="nav-sep">|</span>
-    <button data-page="dialogue">Dialogue</button><span class="nav-sep">|</span><button data-page="plan">Deforestation plan</button><span class="nav-sep">|</span><button data-page="betterplan">A Better Plan</button><span class="nav-sep">|</span><button data-page="news">News</button>
+    <button data-page="dialogue">Where we stand</button><span class="nav-sep">|</span>
+    <button data-page="plan">Deforestation Plan</button><span class="nav-sep">|</span>
+    <button data-page="betterplan">A Better Plan</button><span class="nav-sep">|</span>
+    <button data-page="news">News</button>
   </nav>
   <span class="nav-ctas">
     <a class="signup-btn" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Write to HDB</a>
@@ -647,11 +683,11 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
       <div class="deadline-banner">
         <img class="db-img" src="assets/img/now/land-cleared.webp" alt="Cleared ground beside standing forest, with excavators and lorries at work" loading="lazy" decoding="async">
         <div class="db-body">
-          <div class="db-when">14 August. The plan is being redrawn.</div>
+          <div class="db-when">As of 2 September. The plan is being redrawn.</div>
           <h3 class="db-title">They have agreed to keep more.<br>Nobody has said how much.</h3>
-          <p class="db-note">On 14 August the Minister of State for National Development said more greenery will be kept at Gillman than the July plan showed. No figure was given. In his own words, the government will &ldquo;work out exactly how much more&rdquo;, and the plans are to be finalised over the coming month or so. The July plan keeps 40 per cent of the green spaces here. Everything above that number is being decided in the next few weeks, which means a letter sent now arrives while the line is still being drawn.</p>
-          <div class="db-btns"><a class="btn btn--go" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Send your feedback to HDB</a><button class="btn btn--ghost" type="button" data-page="guide">How to write it</button></div>
-          <div class="db-tpl"><span>Under &ldquo;Category of Feedback&rdquo; choose <b style="color:var(--amber)">Land Use Plans</b>, write in your own words, then submit your enquiry.</span><a class="btn-mini btn-mini--ghost" href="#dialogue" data-page="dialogue">See what is still open</a></div>
+          <p class="db-note">On 14 August the Government said more greenery will be kept at Gillman and fewer homes built. Three weeks on, no figure has been published. On 1 September residents put a worked alternative to HDB, URA and NParks that builds the homes and keeps the forest. The agencies will now redraw the plan, and have given no date for it. A letter sent today still arrives while the line is being drawn.</p>
+          <div class="db-btns"><a class="btn btn--go" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Send your feedback to HDB</a><button class="btn btn--ghost" type="button" data-page="dialogue">Where we stand, in full</button></div>
+          <div class="db-tpl"><span>Under &ldquo;Category of Feedback&rdquo; choose <b style="color:var(--amber)">Land Use Plans</b>, write in your own words, then submit your enquiry.</span><button class="btn-mini btn-mini--ghost" type="button" data-page="guide">How to write it</button></div>
         </div>
       </div>
 
@@ -663,30 +699,8 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 
       <div class="precedent">
         <h3 class="prec-h">So what should they keep?</h3>
-        <p>At <a href="https://majuforest.com/" target="_blank" rel="noopener">Maju</a>, the Nature Society has named a figure: two thirds of the forest. Gillman has no number of its own, and the adjustment being drawn this month will fill that silence one way or another. Here is what to ask for, all of it drawn from the Government&rsquo;s own reports.</p>
-        <div class="damage-list">
-          <div class="dmg">
-            <p class="dmg-lead">A forest, not a strip</p>
-            <p class="dmg-body">The July plan retains 14.6ha inside a 40ha boundary. Ask for a single contiguous block of forest large enough to work as habitat. The president of the Nature Society put it plainly on 14 August: a slice of land and a patch of stream is not a home for anything.</p>
-          </div>
-          <div class="dmg">
-            <p class="dmg-lead">A 60m corridor, by the report&rsquo;s own rule</p>
-            <p class="dmg-body">The Environmental Impact Assessment does not merely suggest 60m. It calls 60m the minimum needed to protect a corridor&rsquo;s core from edge effects, and it sets out when that minimum applies. At the former Keppel Club site, 30m was used where development sat on one side of the habitat, and a 60m central corridor where development sat on both sides, to account for the double edge. The report says Gillman&rsquo;s context is similar. Gillman&rsquo;s new corridor is the spine of a housing estate, with development on both sides, so by that rule it is a 60m corridor. The plan gives it 30m.</p>
-          </div>
-          <div class="dmg">
-            <p class="dmg-lead">Say what crosses the road</p>
-            <p class="dmg-body">The corridor is aligned, in the report&rsquo;s own words, to suit &ldquo;volant fauna&rdquo;, with birds and arboreal mammals named as the target species. No eco-link, land bridge or wildlife underpass appears anywhere in the plan. The link to Labrador rests on birds flying across a highway, and the evidence given for that is a personal communication about a single species. The report itself rates loss of connectivity as Moderate Negative for 63 species, including the Sunda pangolin, which it names as vulnerable to roadkill moving between forests. Ask which animals can actually reach Labrador on foot.</p>
-          </div>
-          <div class="dmg">
-            <p class="dmg-lead">Bring the eastern cluster inside the line</p>
-            <p class="dmg-body">The ground between two drain channels off Telok Blangah Street 31 holds a narrow strip of native-dominated forest, three Critically Endangered <i>Ficus sinuata</i>, two clusters of the Vulnerable <i>Cissus repens</i> and a Vulnerable <i>Litsea umbellata</i>, and it sits outside the retained area with no explanation given. The figs are young epiphytes that established on a living host tree, which is something no transplant can carry with it.</p>
-          </div>
-          <div class="dmg">
-            <p class="dmg-lead">Publish the arithmetic behind &ldquo;fewer homes&rdquo;</p>
-            <p class="dmg-body">More greenery is only a cost to other Singaporeans if the number of homes and the density were fixed to begin with, and neither has been published. Ask how many units were assumed at Gillman, at what density, and what the same homes would cost on land already cleared and already zoned.</p>
-          </div>
-        </div>
-        <p class="prec-turn">Two of these, in your own words, is a strong letter.</p>
+        <p>At <a href="https://majuforest.com/" target="_blank" rel="noopener">Maju</a>, the Nature Society has named a figure: two thirds of the forest. Gillman has no number of its own, and the plan being redrawn now will fill that silence one way or another. Residents have set out five things to ask for, every one of them drawn from the Government&rsquo;s own reports: a contiguous forest rather than a strip, a 60m corridor by the report&rsquo;s own rule, an answer on what can actually cross the road, the eastern flora cluster brought inside the line, and the arithmetic behind &ldquo;fewer homes&rdquo;.</p>
+        <p class="prec-turn">Two of these, in your own words, is a strong letter. <button class="gd-inline" type="button" data-page="plan">Read the five asks in full</button></p>
       </div>
 
       <div class="now-grid">
@@ -701,8 +715,8 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
         <a class="now-card is-urgent" href="#dialogue" data-page="dialogue">
           <span class="now-thumb"><img src="assets/img/now/hdb-dialogue-1sep-16x10.webp" alt="HDB invitation headed Building A Shared Future at Sunset Way and Gillman Barracks" loading="lazy" decoding="async"></span>
           <span class="now-when">1 September</span>
-          <span class="now-title">HDB has called a dialogue on the plans</span>
-          <span class="now-sub">An invited session at HortPark, while the plans are still being redrawn. The agenda and format have not been published. See what is worth asking for.</span>
+          <span class="now-title">Residents put a better plan to the agencies</span>
+          <span class="now-sub">At HortPark, HDB, URA and NParks were shown an alternative that builds the homes and keeps the forest. NParks will study two parts of it. Four questions went unanswered. Read the record.</span>
         </a>
 
         <a class="now-card" href="https://www.academia.sg/academic-views/gilman-maju-controversy-public-consultation-planning/" target="_blank" rel="noopener">
@@ -728,18 +742,6 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
         <p>Gillman is not empty land. It is a <b>mature forest decades in the making</b> that cannot be recreated, a <b>living link</b> between Berlayer Creek, Labrador and the Southern Ridges, and one of Singapore&rsquo;s most effective <b>natural cooling landscapes</b>. It is a sanctuary where people walk, breathe and restore their health, and one of the rare places where <b>heritage, art and nature meet</b>. Clear it, and <b>none of it comes back</b>.</p>
       </div>
     </section>
-    <figure class="ba-fig">
-      <div class="ba" style="--pos:50%">
-        <img src="assets/img/plan/aerial-cleared.webp" alt="Visualisation of the same aerial view with the land inside the development boundary cleared to bare earth, leaving a green strip through the middle" loading="lazy" decoding="async">
-        <img class="ba-top" src="assets/img/plan/aerial-today.webp" alt="Aerial view of Gillman Forest today, a continuous green canopy between the surrounding roads and estates" loading="lazy" decoding="async">
-        <span class="ba-line"></span><span class="ba-knob">&#8596;</span>
-        <span class="ba-tag ba-tag--l">Today</span><span class="ba-tag ba-tag--r">If cleared</span>
-        <span class="ba-credit">Right: indicative, residents&rsquo; visualisation. Base imagery &copy; Google</span>
-        <input class="ba-range" type="range" min="0" max="100" value="50" step="0.1" aria-label="Drag to compare Gillman today with a visualisation of the site cleared">
-      </div>
-      <figcaption><b>Drag the handle to compare.</b> Gillman today, against the indicative extent of forest that would be cleared under the plan published on 10 July 2026, drawn by residents from the Environmental Impact Assessment. It maps forest area, not individual buildings. On 14 August the Government said more will be kept, without saying how much, and no revised plan has been published. <button class="gd-inline" type="button" data-page="plan">See the deforestation plan</button></figcaption>
-    </figure>
-
     <section class="damage">
       <img class="damage-img" src="assets/img/jpg-40.jpg" alt="Aerial view of the forest canopy and an elevated walkway along the Southern Ridges near Gillman" loading="lazy" decoding="async">
       <div class="damage-list">
@@ -895,166 +897,264 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
   </div>
 </section>
 
-<!-- PETITION -->
-<section class="page" id="page-petition">
-  <div class="wrap">
-    <p class="eyebrow">Be counted</p>
-    <h2 class="hero-title" style="font-size:clamp(30px,5vw,52px)">Make your voice count</h2>
-    <div class="pet-grid">
-      <div class="qr-tile">
-        <a class="qr-frame" href="https://www.change.org/p/save-gillman-barracks-forest-build-homes-in-gsw-instead" target="_blank" rel="noopener" aria-label="Sign the petition">
-          <img src="assets/img/png-01.png" alt="QR code linking to the Change.org petition to save Gillman Barracks and Forest" loading="lazy" decoding="async">
-        </a>
-        <div class="qr-title">Sign the petition</div>
-        <div class="qr-sub">No deadline</div>
-        <div class="pet-actions"><a class="btn btn--ghost" href="https://www.change.org/p/save-gillman-barracks-forest-build-homes-in-gsw-instead" target="_blank" rel="noopener">Open petition</a></div>
-      </div>
-      <div class="qr-tile">
-        <a class="qr-frame" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener" aria-label="Send feedback to HDB">
-          <img src="assets/img/hdb-feedback-qr.png" alt="QR code linking to the HDB written feedback form" loading="lazy" decoding="async">
-        </a>
-        <div class="qr-title">Feedback to HDB</div>
-        <div class="qr-sub"><b>Open again</b></div>
-        <div class="qr-sub">Under &ldquo;Category of Feedback&rdquo; choose <b>Land Use Plans</b>, write in your own words, then submit your enquiry.</div>
-        <div class="pet-actions"><a class="btn btn--ghost" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Open the form</a><button class="btn-mini btn-mini--ghost" type="button" data-page="guide" style="margin-top:10px">How to write it</button></div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- EVENTS -->
-<section class="page" id="page-events">
-  <div class="wrap">
-    <div class="events-box">
-      <p class="eyebrow">Coming up</p>
-      <h2>The HDB dialogue, 1 September</h2>
-      <p>HDB held a dialogue on the plans for Gillman Barracks and Sunset Way at HortPark, inside the few weeks
-      in which the adjusted plans are being finalised.</p>
-      <p>Residents brought something of their own to it: <button class="gd-inline" type="button" data-page="betterplan">A Better Plan for Gillman</button>,
-      showing where the homes can go without clearing the forest. NParks said it is prepared to study the
-      boardwalk and the forest trails, agencies undertook to look at widening connectivity and minimising forest
-      loss, and four questions went unanswered. Both the plan and the record of the session are now published.</p>
 
-      <dl class="ev-facts">
-        <div><dt>Date</dt><dd>Monday, 1 September 2026</dd></div>
-        <div><dt>Time</dt><dd>6.30pm &ndash; 8.30pm, registration from 6pm</dd></div>
-        <div><dt>Where</dt><dd>Multi-Purpose Hall, HortPark</dd></div>
-        <div><dt>Organised by</dt><dd>HDB, by invitation. Invitations went out by email on 23 August</dd></div>
-      </dl>
 
-      <p class="ev-tail">Places were not offered publicly and how invitees were selected has not been
-      explained. Some residents have written to HDB to ask for one. The alternative will be published
-      here after the evening, for everyone who could not be in the hall.</p>
 
-      <div class="ev-ctas">
-        <a class="btn btn--go" href="#dialogue" data-page="dialogue">See what is worth asking for</a>
-      </div>
+
+
+<!-- DIALOGUE -->
+<section class="page" id="page-dialogue">
+  <div class="wrap-wide">
+    <p class="eyebrow">Where we stand</p>
+    <p class="dlg-intro">Everything that has passed between residents, our MPs and the agencies, in order, with the current position at the top. This is the page kept up to date.</p>
+    <div class="dlg-stand">
+      <p class="stand-asof">As of 2 September 2026</p>
+      <h3 class="dlg-stand-h">The plan is being redrawn, and nobody has published a number</h3>
+      <p>On 14 August the Government said more greenery will be kept at Gillman and fewer homes built than the
+      July plan showed. Three weeks on there is still no revised percentage, no revised hectarage and no revised
+      corridor width. The only published position remains the July one: 40 per cent of the green spaces retained,
+      at least 10 hectares of forest cleared, ecological corridors of at least 30 metres.</p>
+      <p>On 1 September, at HortPark, residents put a worked alternative to HDB, URA and NParks:
+      <button class="gd-inline" type="button" data-page="betterplan">A Better Plan for Gillman</button>, which builds
+      up to 2,400 homes on more land than the July plan uses, and keeps the forest. NParks said it is prepared to
+      study the boardwalk and the forest trails. Agencies undertook to look at widening connectivity through the
+      site and at minimising forest loss. Four questions went unanswered, including what residents would have to
+      give up in order to keep the forest whole.</p>
+      <p>The agencies will now rework the conceptual plan and share a summary findings report. <b>No date has been
+      given for it</b>, and it was not established whether that report ends the process. HDB&rsquo;s written channel
+      stays open, so a letter sent now still arrives while the line is being drawn. Under &ldquo;Category of
+      Feedback&rdquo; choose <b style="color:var(--amber)">Land Use Plans</b>.</p>
+      <a class="btn-mini" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Send your feedback to HDB</a>
+      <button class="btn-mini btn-mini--ghost" type="button" data-page="guide">How to write it</button>
     </div>
 
-    <div class="events-box ev-later">
-      <p class="eyebrow">Already happened</p>
-      <h2>The gathering at Hong Lim Park, 16 August</h2>
-      <p>SG Climate Rally called a gathering at Hong Lim Park in response to the redevelopment
-      plans, covering Gillman Barracks and Maju Forest alongside other sites. On Sunday afternoon
-      the lawn filled. People came to speak about access to nature, the loss of forests and natural
-      spaces, and to ask that decisions on land use are made with transparency and genuine public
-      involvement, with residents from the Gillman and Maju campaigns running booths at the edge of
-      the crowd.</p>
-
-      <div class="ev-gallery">
-        <figure>
-          <img src="assets/img/events/hong-lim-16aug.webp" style="aspect-ratio:auto" alt="A large crowd filling the lawn at Hong Lim Park on 16 August 2026, seated on picnic mats and standing under the trees, with the city skyline behind" onclick="openImg(this.src)" loading="lazy" decoding="async">
-          <figcaption>The lawn at Hong Lim Park on Sunday afternoon, 16 August. Photographs shared by participants.</figcaption>
-        </figure>
-      </div>
-      <div class="ev-gallery">
-        <figure>
-          <img src="assets/img/events/hong-lim-crowd.webp" alt="The crowd at Hong Lim Park seen from within, people talking in groups between the booths and the stage" onclick="openImg(this.src)" loading="lazy" decoding="async">
-          <figcaption>Between the booths and the stage.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/events/hong-lim-banner.webp" alt="A Save Gillman Forest banner reading Build homes. Keep the forest. standing on the lawn as people walk past" onclick="openImg(this.src)" loading="lazy" decoding="async">
-          <figcaption>Build homes. Keep the forest. The Gillman banners on the lawn.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/events/hong-lim-board.webp" alt="People placing green dot stickers on a board titled Important Considerations for Future Decisions, with columns for publishing alternative sites assessments, true housing needs, listening to public feedback, urban heat, community impact and open communications" onclick="openImg(this.src)" loading="lazy" decoding="async">
-          <figcaption>Green dots on the residents&rsquo; board, marking what people want weighed in the decisions ahead.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/events/hong-lim-print.webp" alt="People block-printing t-shirts at a booth table, one shirt reading Maju for the people" onclick="openImg(this.src)" loading="lazy" decoding="async">
-          <figcaption>Printing shirts at the campaign booths.</figcaption>
-        </figure>
-      </div>
-
-      <dl class="ev-facts">
-        <div><dt>Date</dt><dd>Sunday, 16 August 2026</dd></div>
-        <div><dt>Time</dt><dd>3.30pm &ndash; 6.30pm</dd></div>
-        <div><dt>Where</dt><dd>Hong Lim Park</dd></div>
-        <div><dt>Organised by</dt><dd>SG Climate Rally, not by this group</dd></div>
-      </dl>
-
-      <div class="ev-ctas">
-        <a class="btn btn--go" href="https://mothership.sg/2026/08/hong-lim-park-gathering-maju-forest-gillman-barracks/" target="_blank" rel="noopener">Read the report on this</a>
-      </div>
-    </div>
-
-    <div class="events-box ev-later">
-      <p class="eyebrow">Already happened</p>
-      <h2>The community walk, 8 August</h2>
-      <p>Residents walked from Telok Blangah Hill Park along the Forest Walk and into Gillman Barracks,
-      following the connections between nature, heritage and community that so many people spoke about at
-      the 30 July dialogue. The route, the flyer and the meeting point are kept here as a record, and for
-      anyone who wants to walk it on their own.</p>
-
-      <dl class="ev-facts">
-        <div><dt>Date</dt><dd>Saturday, 8 August 2026</dd></div>
-        <div><dt>Time</dt><dd>8.00am</dd></div>
-        <div><dt>Meeting point</dt><dd>Telok Blangah Hill Park, at the Forest Walk entrance</dd></div>
-        <div><dt>Ends at</dt><dd>Kyuukei Coffee, Gillman Barracks</dd></div>
-        <div><dt>Duration</dt><dd>About 1.5 to 2 hours</dd></div>
-      </dl>
-
-      <p class="ev-tail">The route goes at a leisurely pace, with pauses along the way to take in the
-      ecology, the heritage buildings and the community spaces. It is worth walking at any time. Every person
-      who walks it is one more person who has stood in this forest.</p>
-      <div class="ev-ctas">
-        <a class="btn btn--go" href="https://www.google.com/maps/dir/?api=1&amp;destination=1.279142,103.809579" target="_blank" rel="noopener">Get directions to the start</a>
-      </div>
-
-      <div class="ev-qr">
-        <a class="ev-qr-img" href="https://www.google.com/maps/dir/?api=1&amp;destination=1.279142,103.809579" target="_blank" rel="noopener">
-          <img src="assets/img/walk/walk-start-qr.png" alt="QR code opening Google Maps directions to the Forest Walk entrance, the starting point of the walk" loading="lazy" decoding="async">
-        </a>
-        <div class="ev-qr-txt">
-          <h4>Google Maps directions to starting point</h4>
-          <p>Scan this with your phone and Google Maps will route you from wherever you are to the exact spot we are meeting.</p>
+        <div class="acc" id="dlg-acc">
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="true" aria-controls="acc-01sep">
+          <span class="acc-thumb"><img src="assets/img/now/hdb-dialogue-1sep.webp" alt="HDB invitation headed Building A Shared Future at Sunset Way and Gillman Barracks" loading="lazy" decoding="async"></span>
+          <span class="acc-txt"><span class="acc-date">1 September 2026</span><span class="acc-title">The HDB dialogue at HortPark, and the residents&rsquo; record of it</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-01sep">
+          <p class="detail-note">An HDB dialogue in the Multi-Purpose Hall at HortPark, the continued engagement the Government promised during the 4 August sitting. Residents brought a worked alternative to the table: <b>A Better Plan for Gillman</b>, prepared by residents representative of the local community, setting out up to 2,400 homes on 538,000 m&sup2; of buildable land across two sites, against 340,000 m&sup2; in the July plan, with the forest kept.</p>
+          <p class="detail-note">What follows is the residents&rsquo; record of what was asked and what was answered. It is written at agency level and names no individual officer. It has been sent to HDB, URA and NParks with a request to correct anything reported wrongly, and any correction will be published here.</p>
+          <p class="detail-note"><b>Three things the agencies offered to study.</b> NParks said it had read the proposal and is prepared to study the sensory boardwalk along the stream and the nature trail into the park, subject to what building there would do to the trees and the soil. Agencies undertook to look at whether connectivity through the site can be widened, and to look at minimising forest loss so that a meaningful and sizable forest remains. There was a qualified willingness to consult the Singapore Tourism Board.</p>
+          <p class="detail-note"><b>One answer that matters beyond Gillman.</b> Asked directly whether an environmental impact assessment is carried out when the island wide land use plan is drawn, the answer was no. Assessment comes after a site has been selected. Upstream, NParks contributes information on flora and fauna. Asked whether urban heat and climate impact are assessed at that stage, no such assessment was described.</p>
+          <p class="detail-note"><b>Four questions that went unanswered.</b> The projected yield for the site, which has never been published. What residents would have to give up in order to keep the forest whole, put four separate times. Access to the underlying planning data, offered to be analysed by a resident. And any date at all, asked three times.</p>
+          <ul class="detail-list">
+          <li>Density was explained as a function of proximity to an MRT station and, in places, height constraints. Asked whether height constraints apply near Tanglin, the answer was that they do not.</li>
+          <li>7,800 hectares of green space are safeguarded nationally. Residents noted that safeguarded green space and mature forest are not the same thing.</li>
+          <li>The agencies will process the feedback, rework the conceptual plan and share a summary findings report. No date was given, and it was not established whether that report ends the process.</li>
+          </ul>
+          <a class="res-link" href="documents/Gillman_MeetingRecord_26-09-01.pdf" target="_blank" rel="noopener">The full record of the session <span class="res-chip">PDF</span></a>
+          <a class="res-link" href="documents/Gillman_ABetterPlan_26-08-30.pdf" target="_blank" rel="noopener">A Better Plan for Gillman, the residents&rsquo; proposal <span class="res-chip">PDF</span></a>
         </div>
       </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-16aug">
+          <span class="acc-thumb"><img src="assets/img/events/hong-lim-16aug.webp" alt="A large crowd filling the lawn at Hong Lim Park on 16 August 2026" loading="lazy" decoding="async"></span>
+          <span class="acc-txt"><span class="acc-date">16 August 2026</span><span class="acc-title">The gathering at Hong Lim Park, called by SG Climate Rally</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-16aug" hidden>
+          <p>SG Climate Rally called a gathering at Hong Lim Park in response to the redevelopment
+          plans, covering Gillman Barracks and Maju Forest alongside other sites. On Sunday afternoon
+          the lawn filled. People came to speak about access to nature, the loss of forests and natural
+          spaces, and to ask that decisions on land use are made with transparency and genuine public
+          involvement, with residents from the Gillman and Maju campaigns running booths at the edge of
+          the crowd.</p>
 
-      <div class="ev-gallery">
-        <figure>
+          <div class="ev-gallery">
+          <figure>
+          <img src="assets/img/events/hong-lim-16aug.webp" style="aspect-ratio:auto" alt="A large crowd filling the lawn at Hong Lim Park on 16 August 2026, seated on picnic mats and standing under the trees, with the city skyline behind" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <figcaption>The lawn at Hong Lim Park on Sunday afternoon, 16 August. Photographs shared by participants.</figcaption>
+          </figure>
+          </div>
+          <div class="ev-gallery">
+          <figure>
+          <img src="assets/img/events/hong-lim-crowd.webp" alt="The crowd at Hong Lim Park seen from within, people talking in groups between the booths and the stage" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <figcaption>Between the booths and the stage.</figcaption>
+          </figure>
+          <figure>
+          <img src="assets/img/events/hong-lim-banner.webp" alt="A Save Gillman Forest banner reading Build homes. Keep the forest. standing on the lawn as people walk past" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <figcaption>Build homes. Keep the forest. The Gillman banners on the lawn.</figcaption>
+          </figure>
+          <figure>
+          <img src="assets/img/events/hong-lim-board.webp" alt="People placing green dot stickers on a board titled Important Considerations for Future Decisions, with columns for publishing alternative sites assessments, true housing needs, listening to public feedback, urban heat, community impact and open communications" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <figcaption>Green dots on the residents&rsquo; board, marking what people want weighed in the decisions ahead.</figcaption>
+          </figure>
+          <figure>
+          <img src="assets/img/events/hong-lim-print.webp" alt="People block-printing t-shirts at a booth table, one shirt reading Maju for the people" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <figcaption>Printing shirts at the campaign booths.</figcaption>
+          </figure>
+          </div>
+
+          <dl class="ev-facts">
+          <div><dt>Date</dt><dd>Sunday, 16 August 2026</dd></div>
+          <div><dt>Time</dt><dd>3.30pm &ndash; 6.30pm</dd></div>
+          <div><dt>Where</dt><dd>Hong Lim Park</dd></div>
+          <div><dt>Organised by</dt><dd>SG Climate Rally, not by this group</dd></div>
+          </dl>
+
+          <div class="ev-ctas">
+          <a class="btn btn--go" href="https://mothership.sg/2026/08/hong-lim-park-gathering-maju-forest-gillman-barracks/" target="_blank" rel="noopener">Read the report on this</a>
+          </div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-14aug">
+          <span class="acc-thumb"><img src="assets/img/now/land-cleared.webp" alt="Cleared ground beside standing forest, with excavators and lorries at work" loading="lazy" decoding="async"></span>
+          <span class="acc-txt"><span class="acc-date">14 August 2026</span><span class="acc-title">The Government says more greenery will be kept, without saying how much</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-14aug" hidden>
+          <p class="detail-note">Minister of State for National Development Alvin Tan said at a doorstop that the plans for both Gillman Barracks and Maju Forest will be adjusted to retain more greenery than the July plans showed, at the cost of fewer homes. He said the plans were never final, that the Government would &ldquo;work out exactly how much more&rdquo;, and that they would be finalised over the coming month or so.</p>
+          <p class="detail-note">No figure has been published since. The July plan remains the only published position: 40 per cent of the green spaces retained, at least 10 hectares of forest cleared, and ecological corridors of at least 30 metres. The 30 metre figure is not a new concession, as it was in HDB&rsquo;s original announcement of 10 July.</p>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-08aug">
+          <span class="acc-thumb"><img src="assets/img/walk/walk-route.webp" alt="Map of the Southern Ridges showing the route from Telok Blangah Hill Park towards Gillman Barracks" loading="lazy" decoding="async"></span>
+          <span class="acc-txt"><span class="acc-date">8 August 2026</span><span class="acc-title">The community walk, from Telok Blangah Hill Park into Gillman Barracks</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-08aug" hidden>
+          <p>Residents walked from Telok Blangah Hill Park along the Forest Walk and into Gillman Barracks,
+          following the connections between nature, heritage and community that so many people spoke about at
+          the 30 July dialogue. The route, the flyer and the meeting point are kept here as a record, and for
+          anyone who wants to walk it on their own.</p>
+
+          <dl class="ev-facts">
+          <div><dt>Date</dt><dd>Saturday, 8 August 2026</dd></div>
+          <div><dt>Time</dt><dd>8.00am</dd></div>
+          <div><dt>Meeting point</dt><dd>Telok Blangah Hill Park, at the Forest Walk entrance</dd></div>
+          <div><dt>Ends at</dt><dd>Kyuukei Coffee, Gillman Barracks</dd></div>
+          <div><dt>Duration</dt><dd>About 1.5 to 2 hours</dd></div>
+          </dl>
+
+          <p class="ev-tail">The route goes at a leisurely pace, with pauses along the way to take in the
+          ecology, the heritage buildings and the community spaces. It is worth walking at any time. Every person
+          who walks it is one more person who has stood in this forest.</p>
+          <div class="ev-ctas">
+          <a class="btn btn--go" href="https://www.google.com/maps/dir/?api=1&amp;destination=1.279142,103.809579" target="_blank" rel="noopener">Get directions to the start</a>
+          </div>
+
+          <div class="ev-qr">
+          <a class="ev-qr-img" href="https://www.google.com/maps/dir/?api=1&amp;destination=1.279142,103.809579" target="_blank" rel="noopener">
+          <img src="assets/img/walk/walk-start-qr.png" alt="QR code opening Google Maps directions to the Forest Walk entrance, the starting point of the walk" loading="lazy" decoding="async">
+          </a>
+          <div class="ev-qr-txt">
+          <h4>Google Maps directions to starting point</h4>
+          <p>Scan this with your phone and Google Maps will route you from wherever you are to the exact spot we are meeting.</p>
+          </div>
+          </div>
+
+          <div class="ev-gallery">
+          <figure>
           <img src="assets/img/walk/walk-flyer.webp" alt="The community forest walk flyer, giving the date, time, meeting point and duration" onclick="openImg(this.src)" loading="lazy" decoding="async">
           <figcaption>The flyer</figcaption>
-        </figure>
-        <figure>
+          </figure>
+          <figure>
           <img src="assets/img/walk/walk-meeting-point.webp" alt="Map of Telok Blangah Hill Park marking the Forest Walk entrance where the walk begins" onclick="openImg(this.src)" loading="lazy" decoding="async">
           <figcaption>Meeting point, the Forest Walk entrance at Telok Blangah Hill Park</figcaption>
-        </figure>
-        <figure>
+          </figure>
+          <figure>
           <img src="assets/img/walk/walk-route.webp" alt="Map of the Southern Ridges showing the route from Telok Blangah Hill Park towards Gillman Barracks and Labrador Park" onclick="openImg(this.src)" loading="lazy" decoding="async">
           <figcaption>The route through the Southern Ridges</figcaption>
-        </figure>
+          </figure>
+          </div>
+          <p class="ev-hint">Tap any image to enlarge.</p>
+        </div>
       </div>
-      <p class="ev-hint">Tap any image to enlarge.</p>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-04aug">
+          <span class="acc-thumb"><img src="assets/img/now/parliament-4-5-aug.webp" alt="Graphic on the 4 and 5 August parliamentary sitting" loading="lazy" decoding="async"></span>
+          <span class="acc-txt"><span class="acc-date">4 August 2026</span><span class="acc-title">Parliament sits, with more than 20 questions on Gillman and Maju on the order paper</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-04aug" hidden>
+          <p class="detail-note">More than 20 questions on Gillman Barracks and Maju Forest were filed for this sitting by members from both sides of the House. Answering for the Ministry of National Development, Minister of State Alvin Tan said the plans for both sites are not final, that engagement with stakeholders will continue after the consultation closes on 6 August, and that agencies will publish a report summarising their responses to the feedback and any changes made to the plans.</p>
+          <p class="detail-note">On Gillman specifically, he said the Government is studying how to retain most of the native dominated secondary forest, how to maintain ecological connections east to west between Telok Blangah Hill Park and HortPark and north to south towards Berlayer Creek and Labrador Nature Reserve, and how to retain all buildings of exceptional heritage significance and most of those rated high. He said the number of homes has not been fixed, that the current conceptual plan already carries fewer homes in order to keep green and heritage areas, and that conserving more would mean building fewer still.</p>
+          <p class="detail-note">The questions residents had asked were these:</p>
+          <ul class="detail-list">
+          <li>Which parts of the plan remain open to change, and whether site clearance or tenders will wait for the feedback to be considered.</li>
+          <li>Whether alternative sites were evaluated, and whether a smaller footprint or lower density at Gillman itself was assessed against the current plan.</li>
+          <li>Whether dialogue sessions with residents, heritage groups and nature groups will follow once feedback closes on 6 August.</li>
+          <li>What threshold of harm would set a site aside, given that both assessments rate the biodiversity impact as major negative even after mitigation.</li>
+          <li>Whether under-used state land, including the grounds of black and white bungalows and ageing low-rise estates, was assessed first.</li>
+          <li>What urban heat modelling was done, and what the effect on surrounding homes is expected to be.</li>
+          <li>Whether the phased clearance plan includes checkpoints where monitoring data is reviewed before further clearance is authorised.</li>
+          </ul>
+          <button class="res-link" onclick="openPdf('parlq',event)">Questions on Gillman and Maju, order paper for 4 August <span class="res-chip">PDF</span></button>
+          <button class="res-link" onclick="openPdf('parlnotes',event)">Notes on the sitting, prepared by members of the public <span class="res-chip">PDF</span></button>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-03aug">
+          <span class="acc-thumb"><img src="assets/img/now/teh-tarik-ep158.webp" alt="Teh Tarik with Walid, episode 158" loading="lazy" decoding="async"></span>
+          <span class="acc-txt"><span class="acc-date">3 August 2026</span><span class="acc-title">Gillman and Maju discussed on Teh Tarik with Walid</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-03aug" hidden>
+          <p class="detail-note">Episode 158 of the programme was given over to a discussion of Maju Forest and Gillman Barracks, with Melissa Low, Head of the NUS Sustainability Academy, and Muhd Nasry, Executive Director of Singapore Youth Voices for Biodiversity. Melissa Low helped organise the residents&rsquo; dialogues at Telok Blangah.</p>
+          <a class="res-link" href="https://www.instagram.com/reel/DblK2DiEzts/" target="_blank" rel="noopener">Watch the discussion <span class="res-chip">Instagram</span></a>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-01aug">
+          <span class="acc-thumb"><img src="assets/img/nature/canopy-golden.webp" alt="The forest canopy at Gillman in late afternoon light" loading="lazy" decoding="async"></span>
+          <span class="acc-txt"><span class="acc-date">1 August 2026</span><span class="acc-title">Dialogue with MP David Hoe, MP Lee Hui Ying and the Nature Society</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-01aug" hidden>
+          <p class="detail-note">A session at EtonHouse, Orchard Road, hosted by the Young PAP Advisers and moderated by a member of the Nature Society, held under Chatham House rules. It opened with an explanation of how an Environmental Impact Assessment is commissioned and what it covers, then moved to open questions and four smaller discussion groups.</p>
+          <p class="detail-note">Recurring themes from the floor:</p>
+          <ul class="detail-list">
+          <li>The four-week feedback window is too short for a report of this size, and is the same regardless of how large the development is.</li>
+          <li>An EIA is commissioned only after the decision to redevelop has been made, so it can mitigate but not reconsider. The Nature Society noted there is no precedent for such a decision being reversed, and that the time to be heard is during Master Plan brainstorming &mdash; while adding that feedback through the HDB channel is still worth giving.</li>
+          <li>The assessment covers flora and fauna but not urban heat, cultural value, opportunity cost, or the interests of future generations.</li>
+          <li>Doubts about whether mitigation measures are enforced, citing Berlayer Creek at the former Keppel site, where trees and mangroves were lost despite similar assurances.</li>
+          <li>Questions about the transparency of the housing demand figures behind the plans.</li>
+          <li>Calls for the Ministry of Sustainability and the Environment to take a leading role.</li>
+          <li>On Gillman specifically: most of the native-dominated forest would be kept, but a large area of exotic forest would be lost, and the corridor to Labrador Park at 30 m is narrower than it should be. Gillman is the connector between the Southern Ridges and Labrador Park; without it, the forests fragment.</li>
+          </ul>
+          <p class="detail-note">MP David Hoe asked each group for the one question they would most want put to Parliament, and said that public feedback can make a difference &mdash; &ldquo;nothing is cast in stone&rdquo;.</p>
+          <button class="res-link" onclick="openPdf('mpns',event)">Summary of the session <span class="res-chip">PDF</span></button>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-30jul">
+          <span class="acc-thumb"><img src="assets/img/jpg-44.jpg" alt="A resident presenting a poster at the 30 July session" loading="lazy" decoding="async"></span>
+          <span class="acc-txt"><span class="acc-date">30 July 2026</span><span class="acc-title">Dialogue with MP Rachel Ong and representatives of HDB, URA and NParks</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-30jul" hidden>
+          <img class="detail-photo" src="assets/img/jpg-44.jpg" alt="A resident presenting a poster titled Getting the Balance Right at the 30 July feedback session" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <button class="res-link" onclick="openPdf('summary',event)">Summary of the dialogue session <span class="res-chip">PDF</span></button>
+          <button class="res-link" onclick="openImg('assets/img/jpg-45.jpg')">Top concerns raised by residents <span class="res-chip">Image</span></button>
+          <button class="res-link" onclick="openPdf('letter',event)">Letter to PM Wong on the dialogue <span class="res-chip">PDF</span></button>
+          <button class="res-link" onclick="openPdf('proposal',event)">Residents&rsquo; feedback &amp; proposal <span class="res-chip">PDF</span></button>
+        </div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-26jul">
+          <span class="acc-thumb"><img src="assets/img/jpg-42.jpg" alt="Residents seated around tables at the community forum" loading="lazy" decoding="async"></span>
+          <span class="acc-txt"><span class="acc-date">26 July 2026</span><span class="acc-title">The Gillman Barracks and Forest Community Forum</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-26jul" hidden>
+          <p class="detail-note">Residents came together for a community-led dialogue, &ldquo;The Future of Gillman Barracks&rdquo;, to understand the plans and share their views ahead of the sessions with the planning agencies.</p>
+          <div class="detail-gallery">
+          <img src="assets/img/jpg-42.jpg" alt="Residents seated around tables at the Gillman Barracks and Forest community forum" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <img src="assets/img/jpg-43.jpg" alt="A resident speaking into a microphone at the forum, before a slide reading The Future of Gillman Barracks: A Community Dialogue" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
 
-<!-- LETTERS -->
-<section class="page" id="page-letters">
-  <div class="wrap-wide">
-    <p class="eyebrow">Letters &amp; reports</p>
-    <div class="letters-intro">
+    <h3 class="plan-h" style="margin-top:44px">The documents, and who to write to</h3>
+<div class="letters-intro">
       <p class="letters-cta"><b>Every letter counts.</b> Letters get read, logged and answered, and each one puts Gillman on another desk. Fifteen minutes, in your own words, is enough. If you are not sure where to start, write to the two people at the top of this list.</p>
       <ol class="letters-priority">
         <li><b>Alvin Tan</b>, Minister of State for National Development, who answered for the Government in Parliament on 4 August and is leading the response on both sites.</li>
@@ -1080,11 +1180,13 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     </div>
 
     <div class="doc-cards" id="doc-cards">
-      <button class="doc-card" data-doc="0"><div class="dc-kicker">Report</div><div class="dc-title">Residents&rsquo; feedback &amp; proposal on the redevelopment</div><div class="dc-meta">26pp &middot; PDF</div></button>
-      <button class="doc-card" data-doc="1"><div class="dc-kicker">Summary</div><div class="dc-title">Summary of the 30 July dialogue session</div><div class="dc-meta">11pp &middot; PDF</div></button>
-      <button class="doc-card" data-doc="2"><div class="dc-kicker">Letter</div><div class="dc-title">Letter to PM Wong on the 30 July dialogue</div><div class="dc-meta">3pp &middot; PDF</div></button>
-      <button class="doc-card" data-doc="3"><div class="dc-kicker">Letter</div><div class="dc-title">Letter to Minister Grace Fu (MSE)</div><div class="dc-meta">3pp &middot; PDF</div></button>
-      <button class="doc-card" data-doc="4"><div class="dc-kicker">Official</div><div class="dc-title">HDB&rsquo;s Environmental Impact Assessment</div><div class="dc-meta">255pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="0"><div class="dc-kicker">Proposal</div><div class="dc-title">A Better Plan for Gillman</div><div class="dc-meta">21pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="1"><div class="dc-kicker">Record</div><div class="dc-title">Record of the 1 September session</div><div class="dc-meta">3pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="2"><div class="dc-kicker">Report</div><div class="dc-title">Residents&rsquo; feedback &amp; proposal on the redevelopment</div><div class="dc-meta">26pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="3"><div class="dc-kicker">Summary</div><div class="dc-title">Summary of the 30 July dialogue session</div><div class="dc-meta">11pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="4"><div class="dc-kicker">Letter</div><div class="dc-title">Letter to PM Wong on the 30 July dialogue</div><div class="dc-meta">3pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="5"><div class="dc-kicker">Letter</div><div class="dc-title">Letter to Minister Grace Fu (MSE)</div><div class="dc-meta">3pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="6"><div class="dc-kicker">Official</div><div class="dc-title">HDB&rsquo;s Environmental Impact Assessment</div><div class="dc-meta">255pp &middot; PDF</div></button>
     </div>
 
     <div class="reader">
@@ -1100,148 +1202,6 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
         </div>
       </div>
       <button class="reader-arrow" id="rd-next" aria-label="Next">&#8250;</button>
-    </div>
-  </div>
-</section>
-
-<!-- DIALOGUE -->
-<section class="page" id="page-dialogue">
-  <div class="wrap-wide">
-    <p class="eyebrow">The dialogue</p>
-    <p class="dlg-intro">The dialogue with our Ministers, MPs and the representatives of HDB, URA, NParks and MSE is ongoing. Here is where it stands.</p>
-    <div class="dlg-stand">
-      <h3 class="dlg-stand-h">Where things stand: the plan is being redrawn</h3>
-      <p>On 14 August, Minister of State Alvin Tan announced that the plans have been adjusted. More green space will be kept at Gillman Barracks and at Maju Forest than the July plans showed, at the cost of fewer homes. He said the plans were never final, gave no figure for how much more will be kept, and said the Government will &ldquo;work out exactly how much more&rdquo;, with the plans to be finalised over the coming month or so.</p>
-      <p>The adjustment is the product of the dialogue this page records. It was worked out with the nature groups which responded to the environmental assessments, and it follows residents drafting their own proposals, organising dialogues and petitioning their MPs, and nineteen MPs putting questions to Parliament on 4 August. Engagement has carried on after the formal feedback window closed on 6 August. What the nature groups have asked for at Gillman is a wider central corridor with real volume, strengthening the links north towards Telok Blangah Hill Park, Labrador Nature Reserve and Berlayer Creek, and east and west towards HortPark and Mount Faber Park.</p>
-      <p>That leaves one question open, and about a month to answer it: how much more. The July plan keeps 40 per cent of the green spaces here, and everything above that number is being decided now, so a letter sent in this window arrives while the line is still being drawn. HDB&rsquo;s written channel remains open, and HDB has committed to publishing a report answering the public feedback and setting out the changes. Under &ldquo;Category of Feedback&rdquo; choose <b style="color:var(--amber)">Land Use Plans</b>.</p>
-      <p>That dialogue was held on 1 September at HortPark. Residents put a worked alternative on the table, agencies offered to study three parts of it, and no date was given for anything. Our record of what was asked and what was answered is below, and it has gone to the three agencies for correction.</p>
-      <a class="btn-mini" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Send your feedback to HDB</a>
-      <button class="btn-mini btn-mini--ghost" type="button" data-page="guide">How to write it</button>
-    </div>
-
-    <div class="timeline">
-      <div class="tl clickable" id="tl-01sep" data-detail="detail-01sep">
-        <span class="tl-thumb"><img src="assets/img/now/hdb-dialogue-1sep.webp" alt="HDB invitation headed Building A Shared Future at Sunset Way and Gillman Barracks" loading="lazy" decoding="async"></span>
-        <div class="tl-date">1 September 2026</div>
-        <div class="tl-body">&ldquo;Building A Shared Future at Sunset Way &amp; Gillman Barracks&rdquo;, an HDB dialogue in the Multi-Purpose Hall at HortPark. Residents presented A Better Plan for Gillman. NParks offered to study the boardwalk and the forest trails, agencies undertook to look at widening connectivity and minimising forest loss, and four questions went unanswered, including what residents would have to give up to keep the forest whole.</div>
-        <span class="tl-tag">Read the record &darr;</span>
-      </div>
-      <div class="tl future">
-        <span class="tl-thumb"><img src="assets/img/nature/canopy-mist.webp" alt="Mist over the forest canopy at Gillman" loading="lazy" decoding="async"></span>
-        <div class="tl-date">Ongoing</div>
-        <div class="tl-body">The adjusted plans are to be finalised over the coming month or so. Updates will be posted here.</div>
-      </div>
-      <div class="tl">
-        <span class="tl-thumb"><img src="assets/img/now/land-cleared.webp" alt="Cleared ground beside standing forest, with excavators and lorries at work" loading="lazy" decoding="async"></span>
-        <div class="tl-date">14 August 2026</div>
-        <div class="tl-body">Minister of State Alvin Tan announces adjusted plans: more greenery kept at Gillman and Maju than the July plans showed, fewer homes in exchange, no figure yet, and the plans to be finalised over the coming month or so.</div>
-      </div>
-      <div class="tl clickable" id="tl-04" data-detail="detail-04">
-        <span class="tl-thumb"><img src="assets/img/now/parliament-4-5-aug.webp" alt="Graphic on the 4 and 5 August parliamentary sitting" loading="lazy" decoding="async"></span>
-        <div class="tl-date">4 August 2026</div>
-        <div class="tl-body">Parliament sits. More than 20 questions on Gillman Barracks and Maju Forest are on the order paper, the most heavily questioned item of the sitting.</div>
-        <span class="tl-tag">See details &darr;</span>
-      </div>
-      <div class="tl clickable" id="tl-03" data-detail="detail-03">
-        <span class="tl-thumb"><img src="assets/img/now/teh-tarik-ep158.webp" alt="Teh Tarik with Walid, episode 158" loading="lazy" decoding="async"></span>
-        <div class="tl-date">3 August 2026</div>
-        <div class="tl-body">Gillman and Maju discussed on the Teh Tarik with Walid programme, with Melissa Low of the NUS Sustainability Academy and Muhd Nasry of Singapore Youth Voices for Biodiversity.</div>
-        <span class="tl-tag">See details &darr;</span>
-      </div>
-      <div class="tl clickable" id="tl-01" data-detail="detail-01">
-        <span class="tl-thumb"><img src="assets/img/nature/canopy-golden.webp" alt="The forest canopy at Gillman in late afternoon light" loading="lazy" decoding="async"></span>
-        <div class="tl-date">1 August 2026</div>
-        <div class="tl-body">Dialogue with MP David Hoe, MP Lee Hui Ying and the Nature Society on how Environmental Impact Assessments are commissioned, and what residents want asked in Parliament.</div>
-        <span class="tl-tag">See details &darr;</span>
-      </div>
-      <div class="tl clickable" id="tl-30" data-detail="detail-30">
-        <span class="tl-thumb"><img src="assets/img/jpg-44.jpg" alt="A resident presenting a poster at the 30 July session" loading="lazy" decoding="async"></span>
-        <div class="tl-date">30 July 2026</div>
-        <div class="tl-body">Get-together and dialogue with MP Rachel Ong and representatives of HDB, URA and NParks.</div>
-        <span class="tl-tag">See details &darr;</span>
-      </div>
-      <div class="tl clickable" id="tl-26" data-detail="detail-26">
-        <span class="tl-thumb"><img src="assets/img/jpg-42.jpg" alt="Residents seated around tables at the community forum" loading="lazy" decoding="async"></span>
-        <div class="tl-date">26 July 2026</div>
-        <div class="tl-body">Gillman Barracks and Forest Community Forum. Residents gathered for a community-led dialogue on the future of Gillman.</div>
-        <span class="tl-tag">See photos &darr;</span>
-      </div>
-    </div>
-
-    <div class="detail" id="detail-01sep">
-      <h3>1 September 2026 &mdash; the residents&rsquo; record of the session</h3>
-      <p class="detail-note">An HDB dialogue in the Multi-Purpose Hall at HortPark, the continued engagement the Government promised during the 4 August sitting. Residents brought a worked alternative to the table: <b>A Better Plan for Gillman</b>, prepared by residents representative of the local community, setting out up to 2,400 homes on 538,000 m&sup2; of buildable land across two sites, against 340,000 m&sup2; in the July plan, with the forest kept.</p>
-      <p class="detail-note">What follows is the residents&rsquo; record of what was asked and what was answered. It is written at agency level and names no individual officer. It has been sent to HDB, URA and NParks with a request to correct anything reported wrongly, and any correction will be published here.</p>
-      <p class="detail-note"><b>Three things the agencies offered to study.</b> NParks said it had read the proposal and is prepared to study the sensory boardwalk along the stream and the nature trail into the park, subject to what building there would do to the trees and the soil. Agencies undertook to look at whether connectivity through the site can be widened, and to look at minimising forest loss so that a meaningful and sizable forest remains. There was a qualified willingness to consult the Singapore Tourism Board.</p>
-      <p class="detail-note"><b>One answer that matters beyond Gillman.</b> Asked directly whether an environmental impact assessment is carried out when the island wide land use plan is drawn, the answer was no. Assessment comes after a site has been selected. Upstream, NParks contributes information on flora and fauna. Asked whether urban heat and climate impact are assessed at that stage, no such assessment was described.</p>
-      <p class="detail-note"><b>Four questions that went unanswered.</b> The projected yield for the site, which has never been published. What residents would have to give up in order to keep the forest whole, put four separate times. Access to the underlying planning data, offered to be analysed by a resident. And any date at all, asked three times.</p>
-      <ul class="detail-list">
-        <li>Density was explained as a function of proximity to an MRT station and, in places, height constraints. Asked whether height constraints apply near Tanglin, the answer was that they do not.</li>
-        <li>7,800 hectares of green space are safeguarded nationally. Residents noted that safeguarded green space and mature forest are not the same thing.</li>
-        <li>The agencies will process the feedback, rework the conceptual plan and share a summary findings report. No date was given, and it was not established whether that report ends the process.</li>
-      </ul>
-      <a class="res-link" href="documents/Gillman_MeetingRecord_26-09-01.pdf" target="_blank" rel="noopener">The full record of the session <span class="res-chip">PDF</span></a>
-      <a class="res-link" href="documents/Gillman_ABetterPlan_26-08-30.pdf" target="_blank" rel="noopener">A Better Plan for Gillman, the residents&rsquo; proposal <span class="res-chip">PDF</span></a>
-    </div>
-
-        <div class="detail" id="detail-04">
-      <h3>4 August 2026 &mdash; Parliament</h3>
-      <p class="detail-note">More than 20 questions on Gillman Barracks and Maju Forest were filed for this sitting by members from both sides of the House. Answering for the Ministry of National Development, Minister of State Alvin Tan said the plans for both sites are not final, that engagement with stakeholders will continue after the consultation closes on 6 August, and that agencies will publish a report summarising their responses to the feedback and any changes made to the plans.</p>
-      <p class="detail-note">On Gillman specifically, he said the Government is studying how to retain most of the native dominated secondary forest, how to maintain ecological connections east to west between Telok Blangah Hill Park and HortPark and north to south towards Berlayer Creek and Labrador Nature Reserve, and how to retain all buildings of exceptional heritage significance and most of those rated high. He said the number of homes has not been fixed, that the current conceptual plan already carries fewer homes in order to keep green and heritage areas, and that conserving more would mean building fewer still.</p>
-      <p class="detail-note">The questions residents had asked were these:</p>
-      <ul class="detail-list">
-        <li>Which parts of the plan remain open to change, and whether site clearance or tenders will wait for the feedback to be considered.</li>
-        <li>Whether alternative sites were evaluated, and whether a smaller footprint or lower density at Gillman itself was assessed against the current plan.</li>
-        <li>Whether dialogue sessions with residents, heritage groups and nature groups will follow once feedback closes on 6 August.</li>
-        <li>What threshold of harm would set a site aside, given that both assessments rate the biodiversity impact as major negative even after mitigation.</li>
-        <li>Whether under-used state land, including the grounds of black and white bungalows and ageing low-rise estates, was assessed first.</li>
-        <li>What urban heat modelling was done, and what the effect on surrounding homes is expected to be.</li>
-        <li>Whether the phased clearance plan includes checkpoints where monitoring data is reviewed before further clearance is authorised.</li>
-      </ul>
-      <button class="res-link" onclick="openPdf('parlq',event)">Questions on Gillman and Maju, order paper for 4 August <span class="res-chip">PDF</span></button>
-      <button class="res-link" onclick="openPdf('parlnotes',event)">Notes on the sitting, prepared by members of the public <span class="res-chip">PDF</span></button>
-    </div>
-
-
-    <div class="detail" id="detail-03">
-      <h3>3 August 2026 &mdash; Gillman and Maju on Teh Tarik with Walid</h3>
-      <p class="detail-note">Episode 158 of the programme was given over to a discussion of Maju Forest and Gillman Barracks, with Melissa Low, Head of the NUS Sustainability Academy, and Muhd Nasry, Executive Director of Singapore Youth Voices for Biodiversity. Melissa Low helped organise the residents&rsquo; dialogues at Telok Blangah.</p>
-      <a class="res-link" href="https://www.instagram.com/reel/DblK2DiEzts/" target="_blank" rel="noopener">Watch the discussion <span class="res-chip">Instagram</span></a>
-    </div>
-
-    <div class="detail" id="detail-01">
-      <h3>1 August 2026 &mdash; dialogue with MP David Hoe, MP Lee Hui Ying and the Nature Society</h3>
-      <p class="detail-note">A session at EtonHouse, Orchard Road, hosted by the Young PAP Advisers and moderated by a member of the Nature Society, held under Chatham House rules. It opened with an explanation of how an Environmental Impact Assessment is commissioned and what it covers, then moved to open questions and four smaller discussion groups.</p>
-      <p class="detail-note">Recurring themes from the floor:</p>
-      <ul class="detail-list">
-        <li>The four-week feedback window is too short for a report of this size, and is the same regardless of how large the development is.</li>
-        <li>An EIA is commissioned only after the decision to redevelop has been made, so it can mitigate but not reconsider. The Nature Society noted there is no precedent for such a decision being reversed, and that the time to be heard is during Master Plan brainstorming &mdash; while adding that feedback through the HDB channel is still worth giving.</li>
-        <li>The assessment covers flora and fauna but not urban heat, cultural value, opportunity cost, or the interests of future generations.</li>
-        <li>Doubts about whether mitigation measures are enforced, citing Berlayer Creek at the former Keppel site, where trees and mangroves were lost despite similar assurances.</li>
-        <li>Questions about the transparency of the housing demand figures behind the plans.</li>
-        <li>Calls for the Ministry of Sustainability and the Environment to take a leading role.</li>
-        <li>On Gillman specifically: most of the native-dominated forest would be kept, but a large area of exotic forest would be lost, and the corridor to Labrador Park at 30 m is narrower than it should be. Gillman is the connector between the Southern Ridges and Labrador Park; without it, the forests fragment.</li>
-      </ul>
-      <p class="detail-note">MP David Hoe asked each group for the one question they would most want put to Parliament, and said that public feedback can make a difference &mdash; &ldquo;nothing is cast in stone&rdquo;.</p>
-      <button class="res-link" onclick="openPdf('mpns',event)">Summary of the session <span class="res-chip">PDF</span></button>
-    </div>
-
-    <div class="detail" id="detail-30">
-      <h3>30 July 2026 &mdash; dialogue with MP Rachel Ong and representatives of HDB, URA and NParks</h3>
-      <img class="detail-photo" src="assets/img/jpg-44.jpg" alt="A resident presenting a poster titled Getting the Balance Right at the 30 July feedback session" onclick="openImg(this.src)" loading="lazy" decoding="async">
-      <button class="res-link" onclick="openPdf('summary',event)">Summary of the dialogue session <span class="res-chip">PDF</span></button>
-      <button class="res-link" onclick="openImg('assets/img/jpg-45.jpg')">Top concerns raised by residents <span class="res-chip">Image</span></button>
-      <button class="res-link" onclick="openPdf('letter',event)">Letter to PM Wong on the dialogue <span class="res-chip">PDF</span></button>
-      <button class="res-link" onclick="openPdf('proposal',event)">Residents&rsquo; feedback &amp; proposal <span class="res-chip">PDF</span></button>
-    </div>
-
-<div class="detail" id="detail-26">
-      <h3>26 July 2026 &middot; Gillman Barracks and Forest Community Forum</h3>
-      <p class="detail-note">Residents came together for a community-led dialogue, &ldquo;The Future of Gillman Barracks&rdquo;, to understand the plans and share their views ahead of the sessions with the planning agencies.</p>
-      <div class="detail-gallery">
-        <img src="assets/img/jpg-42.jpg" alt="Residents seated around tables at the Gillman Barracks and Forest community forum" onclick="openImg(this.src)" loading="lazy" decoding="async">
-        <img src="assets/img/jpg-43.jpg" alt="A resident speaking into a microphone at the forum, before a slide reading The Future of Gillman Barracks: A Community Dialogue" onclick="openImg(this.src)" loading="lazy" decoding="async">
-      </div>
     </div>
 
     <div class="foot">
@@ -1462,411 +1422,45 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     </ul>
 
     <h3 class="news-head">Reporting</h3>
-    <ul class="news-list">
-        <li class="news-item">
-          <a class="news-thumb" href="https://www.aljazeera.com/news/2026/8/28/singapores-plans-to-clear-forest-for-homes-lead-to-rare-public-protests" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://www.aljazeera.com/wp-content/uploads/2026/08/majuprotest-1787884661_be8ff4-1787894188.jpeg?resize=1200%2C630&amp;quality=80" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">Al Jazeera</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">28 Aug 2026</span><span class="news-src">Al Jazeera</span></div>
-            <a class="news-title" href="https://www.aljazeera.com/news/2026/8/28/singapores-plans-to-clear-forest-for-homes-lead-to-rare-public-protests" target="_blank" rel="noopener">Singapore&rsquo;s plans to clear forest for homes lead to rare public protests</a>
-            <p class="news-note">Toh Ee Ming carries the campaign to an international readership, setting the plans for both sites against Singapore&rsquo;s own City in Nature branding and its pledge under the Glasgow declaration to halt deforestation by 2030. The report puts the petitions past 60,000 signatures, records that the Gillman environmental assessment counts 178 animal species, and follows a resident who moved to an estate near Gillman Forest and has since built a Telegram group of nearly 800 people to help others read the assessments and write to the authorities. It also records that many of those involved reject the idea that housing and nature are the only two things on the table.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <span class="news-thumb is-blank" aria-hidden="true"><span class="news-thumb-fb">Reuters</span></span>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">21 Aug 2026</span><span class="news-src">Reuters</span></div>
-            <a class="news-title" href="https://www.freemalaysiatoday.com/category/world/2026/08/21/singapore-s-plan-to-clear-forest-for-housing-faces-a-backlash" target="_blank" rel="noopener">Singapore&rsquo;s plan to clear forest for housing faces a backlash</a>
-            <p class="news-note">The first wire report to carry the campaign to an international readership, filed by Jun Yuan Yong and run by outlets across Asia and the United States. It centres on Maju Forest rather than Gillman, but the case it records applies to both sites. Nature Society president Leong Kwok Peng says the authorities send conflicting messages, wanting to plant a million trees while removing thousands from wild areas. Rachel Oh, a conservation researcher at the National University of Singapore, says mature forests reduce heat stress and that a newly planted park would need 40 to 50 years to match one, so clearing forest also removes public health infrastructure. The piece cites a 2023 estimate that Singapore is set to clear 7,331 hectares of secondary forest, some 1.2 times the area of all its parks and nature reserves.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://www.planb.sg/post/massive-crowd-rallies-over-maju-forest-with-gcbs-and-golf-courses-taking-centre-stage" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://static.wixstatic.com/media/eb9271_76de31ffb1a5486fad48b0f2a174ba92~mv2.jpg/v1/fill/w_720,h_691,al_c,q_85/eb9271_76de31ffb1a5486fad48b0f2a174ba92~mv2.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">Plan B</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">18 Aug 2026</span><span class="news-src">Plan B</span></div>
-            <a class="news-title" href="https://www.planb.sg/post/massive-crowd-rallies-over-maju-forest-with-gcbs-and-golf-courses-taking-centre-stage" target="_blank" rel="noopener">Massive crowd rallies over Maju Forest, with GCBs and golf courses taking centre stage</a>
-            <p class="news-note">The account that records what the crowd pressed for beyond the two sites, with Good Class Bungalows and golf courses raised from the stage as land that could be built on first. It notes the Save Gillman Forest booth among those run on the day, one of which invited people to vote on the factors that should count in land use decisions, among them animal welfare, public feedback and urban heat. The piece puts the loss under the original plans at no less than 10 hectares of forest at Gillman, and records that MPs from several parties came.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://www.scmp.com/week-asia/health-environment/article/3364280/singaporeans-urge-forest-protection-rally-housing-plans-spur-concerns" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://cdn.i-scmp.com/sites/default/files/styles/og_image_scmp_generic/public/d8/images/canvas/2026/08/17/db6d8c35-58b3-4a38-9952-e6c955afb6fb_406a6254.jpg?itok=kSiPzE0N&amp;v=1786954981" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">South China Morning Post</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">17 Aug 2026</span><span class="news-src">South China Morning Post</span></div>
-            <a class="news-title" href="https://www.scmp.com/week-asia/health-environment/article/3364280/singaporeans-urge-forest-protection-rally-housing-plans-spur-concerns" target="_blank" rel="noopener">Singaporeans urge forest protection at rally as housing plans spur concerns</a>
-            <p class="news-note">The first account of the campaign to reach a regional readership. Kolette Lim reports the Hong Lim Park gathering with her own photographs, records the crowd chanting &ldquo;Hands off, hands off Gillman&rdquo;, and describes the fliers handed out showing mock ups of how the earmarked sites would look if cleared without proper protection of the green spaces. The piece puts the figure at stake at Gillman at no less than 10 hectares of forest, and treats the turnout as a large public display of concern rather than a local dispute.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://www.channelnewsasia.com/singapore/sg-climate-rally-hong-lim-park-maju-forest-gillman-barracks-6322031" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://dam.mediacorp.sg/image/upload/s--rQVLRjDC--/c_crop,h_1125,w_2000,x_0,y_104/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2021-08:cna,w_0.1/f_auto,q_auto/v1/mediacorp/cna/image/2026/08/16/ayt_6033.jpg?itok=q7eym5MM" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">CNA</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">16 Aug 2026</span><span class="news-src">CNA</span></div>
-            <a class="news-title" href="https://www.channelnewsasia.com/singapore/sg-climate-rally-hong-lim-park-maju-forest-gillman-barracks-6322031" target="_blank" rel="noopener">More than 1,000 rally at Hong Lim Park over Maju Forest, Gillman Barracks plans</a>
-            <p class="news-note">Koh Wan Ting reports the gathering two days after the Government said it would keep more greenery at both sites. CNA put the turnout above 1,000 from its own aerial shots, where the organisers counted more than 2,000. The three-hour programme ran to speeches, poetry, postcard writing and a sing-along, and the participants quoted make the point the campaign has been making all along: the forest has not been cleared yet, so it is not too late, and once it is gone it is gone.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://mothership.sg/2026/08/hong-lim-park-maju-forest-rally/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://static.mothership.sg/1/2026/08/maju-rally-cover.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">Mothership</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">16 Aug 2026</span><span class="news-src">Mothership</span></div>
-            <a class="news-title" href="https://mothership.sg/2026/08/hong-lim-park-maju-forest-rally/" target="_blank" rel="noopener">Over 2,000 people turn up at Hong Lim Park over Maju Forest &amp; Gillman Barracks plans</a>
-            <p class="news-note">Izza Sofia&rsquo;s account carries the scale and the voices. A thousand programme booklets were gone within two hours of the start, and more than 250 postcards to MPs were written on the day and are being scanned and sent on. The rally set out three demands: protect nature areas, let the people decide, and redefine progress. Among those quoted is a mother who brought her three young children because she believes they need to be part of the conversation.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://theonlinecitizen.com/2026/08/16/over-2-000-turn-out-at-hong-lim-park-rally-for-maju-forest-gillman-barracks" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://media.theonlinecitizen.com/Save_forests_7801e3cf7b.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">The Online Citizen</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">16 Aug 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://theonlinecitizen.com/2026/08/16/over-2-000-turn-out-at-hong-lim-park-rally-for-maju-forest-gillman-barracks" target="_blank" rel="noopener">Over 2,000 turn out at Hong Lim Park rally for Maju Forest, Gillman Barracks</a>
-            <p class="news-note">The fullest record of what was actually said, speaker by speaker across nine of them. A residents&rsquo; declaration asks that assessments weigh avoidance ahead of mitigation, that agencies explain them in more than one language and meet people in person, that the housing demand figures and timelines behind decisions be published, and that these standards be made legally enforceable, including keeping the option not to develop a site at all. An ecologist sets Singapore against Malaysia, Indonesia, Vietnam, the Philippines, Japan and Hong Kong, where assessments carry the force of law and can stop a development. A journalist notes that as many as six feedback windows, Gillman among them, overlapped in recent months, and cites polling showing 79 per cent support for building on brownfield land before greenfield.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://www.straitstimes.com/singapore/nature-lovers-and-activists-hold-rally-in-hong-lim-park" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://cassette.sphdigital.com.sg/image/straitstimes/49b9e9866883ee6e83d431cb9f16afd96a73a3b5f0df7d62437a5f4decf29acc" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">The Straits Times</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">16 Aug 2026</span><span class="news-src">The Straits Times</span></div>
-            <a class="news-title" href="https://www.straitstimes.com/singapore/nature-lovers-and-activists-hold-rally-in-hong-lim-park" target="_blank" rel="noopener">Nature lovers and activists hold rally in Hong Lim Park</a>
-            <p class="news-note">The Straits Times records the rally and what the speakers asked for: more information about the forested land earmarked for housing, and about the factors weighed in reaching the decision. The report sets the gathering against the 14 August announcement and the plans still to be finalised. Behind the ST paywall.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://www.channelnewsasia.com/singapore/maju-forest-sunset-way-gillman-barracks-alvin-tan-mnd-hdb-6318816" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://dam.mediacorp.sg/image/upload/s--DxWxN7fG--/c_crop,h_1123,w_1997,x_3,y_1/c_fill,g_auto,h_676,w_1200/fl_relative,g_south_east,l_mediacorp:cna:watermark:2021-08:cna,w_0.1/f_auto,q_auto/v1/mediacorp/cna/image/2026/08/14/51796.jpg?itok=tc8E_oH6" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">CNA</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">14 Aug 2026</span><span class="news-src">CNA</span></div>
-            <a class="news-title" href="https://www.channelnewsasia.com/singapore/maju-forest-sunset-way-gillman-barracks-alvin-tan-mnd-hdb-6318816" target="_blank" rel="noopener">More greenery retained, fewer homes planned for Maju Forest, Gillman Barracks sites after public feedback</a>
-            <p class="news-note">Alvin Tan says the government will keep more greenery at Gillman Barracks and Sunset Way than the plans released on 10 July, and that this will mean fewer homes on both sites. How much more has not been worked out. The plans as they stand keep 40 per cent of the green spaces at Gillman and 35 per cent of the forest at Maju, and nature groups have asked for a wider central corridor at both. Leong Kwok Peng of the Nature Society says the highest aspiration is that the forest is not touched at all, that two thirds of it should be retained if it is, and that a habitat needs volume rather than a slice of land and a patch of stream. The plans are to be finalised over the coming month or so, with a report summarising the feedback and the agencies&rsquo; responses published first.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://www.straitstimes.com/singapore/more-green-spaces-in-gillman-barracks-maju-forest-to-be-retained-alvin-tan" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://cassette.sphdigital.com.sg/image/straitstimes/3d3e72e28bece879c3994199e2f08bb581b3d6b4fc00e904537fd59dd183323a" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">The Straits Times</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">14 Aug 2026</span><span class="news-src">The Straits Times</span></div>
-            <a class="news-title" href="https://www.straitstimes.com/singapore/more-green-spaces-in-gillman-barracks-maju-forest-to-be-retained-alvin-tan" target="_blank" rel="noopener">More green spaces to be retained in Gillman Barracks, Maju Forest: Alvin Tan</a>
-            <p class="news-note">The same announcement, with the minister saying the current plan was never final and that the trade off for more greenery is fewer flats. He did not take questions from reporters. Isabelle Liew sets out how the position was reached: residents drafting their own proposals, organising dialogues and petitioning their MPs, and nineteen MPs putting questions to the House on the housing and environment balance, the effectiveness of public feedback and the transparency of the planning process.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://mothership.sg/2026/08/maju-forest-gillman-barracks-more-greenery-retained-alvin-tan/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://static.mothership.sg/1/2026/08/alvin-tan-forest-coverimage.png" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">Mothership</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">14 Aug 2026</span><span class="news-src">Mothership</span></div>
-            <a class="news-title" href="https://mothership.sg/2026/08/maju-forest-gillman-barracks-more-greenery-retained-alvin-tan/" target="_blank" rel="noopener">More greenery to be retained at Maju Forest &amp; Gillman Barracks but we&rsquo;ll have to accept fewer homes on both sites: Alvin Tan</a>
-            <p class="news-note">Xueting Wu&rsquo;s account of the same doorstop carries what the Nature Society said alongside the minister. Its president Leong Kwok Peng gave his own preference as leaving the forest untouched, and said that if development goes ahead the planning should keep the habitat whole rather than split it in two, with roughly two thirds left forested. He also put on record that the society has been giving its feedback in closed door meetings, including one directly with the ministry.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://www.asiaone.com/singapore/gillman-barracks-sunset-way-maju-forest-plans-adjusted" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://www.asiaone.com/sites/default/files/styles/article_top_image/public/original_images/Aug2026/20260814_Alvin%20Tan_Doorstop_Gillman%20Barracks_Sunset%20Way_Chin%20Wee_1A%20%281%29.jpg?itok=x-xqvpJa" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">AsiaOne</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">14 Aug 2026</span><span class="news-src">AsiaOne</span></div>
-            <a class="news-title" href="https://www.asiaone.com/singapore/gillman-barracks-sunset-way-maju-forest-plans-adjusted" target="_blank" rel="noopener">More forested areas of Gillman Barracks, Sunset Way to be retained under adjusted housing plans: Alvin Tan</a>
-            <p class="news-note">Lim Kewei reports the doorstop with the detail of how the revision came about, that the adjusted plans were worked out with the nature groups which had responded to the environmental assessments, and that engagement carried on after the formal window closed on 6 August. The piece also records the wider green corridor the groups asked for and the gathering called at Hong Lim Park for Sunday.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://theonlinecitizen.com/2026/08/14/more-greenery-to-be-retained-at-maju-forest-and-gillman-barracks-following-public-feedback-says-alvin-tan" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://media.theonlinecitizen.com/Alvin_Tan_said_govt_will_revise_housing_plans_to_retain_more_greenery_39846888a9.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">The Online Citizen</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">14 Aug 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://theonlinecitizen.com/2026/08/14/more-greenery-to-be-retained-at-maju-forest-and-gillman-barracks-following-public-feedback-says-alvin-tan" target="_blank" rel="noopener">More greenery to be retained at Maju Forest and Gillman Barracks following public feedback, says Alvin Tan</a>
-            <p class="news-note">The fullest account of what the nature groups have actually asked for at Gillman. The wider central corridor they want would strengthen the link north towards Telok Blangah Hill Park, Labrador Nature Reserve and Berlayer Creek Nature Park, and east and west towards HortPark and Mount Faber Park. The minister said the plans are to be finalised over the coming month or so, which gives the campaign a date to work towards.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://theonlinecitizen.com/2026/08/14/don-t-touch-maju-forest-nss-chief-urges-greater-protection-as-netizens-back-preservation-call" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://media.theonlinecitizen.com/Leong_Kwok_Peng_urged_the_Government_to_prioritise_retaining_Maju_Fores_6358e1b9f0.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">The Online Citizen</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">14 Aug 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://theonlinecitizen.com/2026/08/14/don-t-touch-maju-forest-nss-chief-urges-greater-protection-as-netizens-back-preservation-call" target="_blank" rel="noopener">&ldquo;Don&rsquo;t touch Maju Forest&rdquo;: NSS president urges greater protection as netizens back preservation call</a>
-            <p class="news-note">Leong Kwok Peng of the Nature Society sets out at length what he is asking for, a retained habitat with volume rather than a thin corridor, and says the strength of public feeling took him by surprise. The piece also gathers the response to the government&rsquo;s announcement on Gillman and Maju, much of it asking why brownfield land, empty factories and golf courses are not being used before forest is cleared.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://theonlinecitizen.com/2026/08/14/maju-rally-to-be-held-on-16-august-calling-for-nature-protection-and-greater-transparency-in-development-decisions" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://media.theonlinecitizen.com/Maju_Rally_16_August_de4858bd9b.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">The Online Citizen</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">14 Aug 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://theonlinecitizen.com/2026/08/14/maju-rally-to-be-held-on-16-august-calling-for-nature-protection-and-greater-transparency-in-development-decisions" target="_blank" rel="noopener">Maju Rally to be held on 16 August, calling for nature protection &amp; greater transparency in development decisions</a>
-            <p class="news-note">The full list of what Sunday&rsquo;s gathering at Hong Lim Park is asking for, including permanent protection for Gillman Forest and Gillman Barracks on grounds of biodiversity, heritage and community use, a pause on the planned developments until a fuller justification is given, and a legal requirement for environmental assessments before plans are settled rather than after. Gillman and Sunset Way residents will run booths at the event, which now runs from 3.30pm to 6.30pm.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://theonlinecitizen.com/2026/08/12/mnd-promo-videos-face-backlash-as-netizens-challenge-housing-narrative-and-redevelopment-plans" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://media.theonlinecitizen.com/MND_promo_videos_said_housing_greenery_and_heritage_must_be_balanced_fba4e457ca.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">The Online Citizen</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">12 Aug 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://theonlinecitizen.com/2026/08/12/mnd-promo-videos-face-backlash-as-netizens-challenge-housing-narrative-and-redevelopment-plans" target="_blank" rel="noopener">MND promo videos face backlash as netizens challenge housing narrative and redevelopment plans</a>
-            <p class="news-note">The ministry&rsquo;s Instagram videos defending the housing plans drew a wave of public questions in reply, on alternative brownfield sites, the weight given to the environmental findings, and what genuinely remains open to change now the feedback window has closed.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://mothership.sg/2026/08/grace-fu-maju-forest-gillman-barracks/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://static.mothership.sg/1/2026/08/cover-pic-8.png" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">Mothership</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">8 Aug 2026</span><span class="news-src">Mothership</span></div>
-            <a class="news-title" href="https://mothership.sg/2026/08/grace-fu-maju-forest-gillman-barracks/" target="_blank" rel="noopener">MSE has no mandate on land use planning for Gillman Barracks &amp; Maju Forest: Grace Fu</a>
-            <p class="news-note">The environment minister says land use planning sits with National Development and that it is not for her ministry to object to those decisions, an answer given after a Workers&rsquo; Party MP asked in the House why MSE had not been seen advocating for the two sites.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://theonlinecitizen.com/2026/08/07/hdb-says-engagement-does-not-end-as-feedback-period-closes-but-leaves-timeline-and-scope-undefined" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://media.theonlinecitizen.com/This_form_has_been_taken_down_17f6f4e4fa.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">The Online Citizen</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">7 Aug 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://theonlinecitizen.com/2026/08/07/hdb-says-engagement-does-not-end-as-feedback-period-closes-but-leaves-timeline-and-scope-undefined" target="_blank" rel="noopener">HDB says engagement &ldquo;does not end&rdquo; as feedback period closes, but leaves timeline and scope undefined</a>
-            <p class="news-note">With the formal window now shut, HDB says it will keep listening and points residents to a written feedback channel, but it gives no date for the promised report on what the feedback actually changed.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://mothership.sg/2026/08/hong-lim-park-gathering-maju-forest-gillman-barracks/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://static.mothership.sg/1/2026/08/coverimage-2026-08-05T103812.060.png" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">Mothership</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">5 Aug 2026</span><span class="news-src">Mothership</span></div>
-            <a class="news-title" href="https://mothership.sg/2026/08/hong-lim-park-gathering-maju-forest-gillman-barracks/" target="_blank" rel="noopener">SG Climate Rally to hold Hong Lim Park gathering in response to Maju Forest &amp; Gillman Barracks redevelopment</a>
-            <p class="news-note">The climate advocacy group has called a public gathering at Hong Lim Park on 16 August, inviting people to discuss the loss of forests including Gillman and to ask that land use decisions be made with full transparency and genuine public involvement.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://news.theonlinecitizen.com/2026/08/05/11-arts-tenants-at-gillman-barracks-to-remain-as-existing-leases-continue-until-2029-edwin-tong" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://media.onlinecitizenasia.com/Gillman_Barracks_f5be99ff91.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">The Online Citizen</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">5 Aug 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://news.theonlinecitizen.com/2026/08/05/11-arts-tenants-at-gillman-barracks-to-remain-as-existing-leases-continue-until-2029-edwin-tong" target="_blank" rel="noopener">11 arts tenants at Gillman Barracks to remain as existing leases continue until 2029: Edwin Tong</a>
-            <p class="news-note">A written answer puts on record that the eleven arts tenants can stay to the end of their leases, with the option to extend to the end of 2029, a commitment the precinct&rsquo;s supporters can now point to.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <span class="news-thumb is-blank" aria-hidden="true"><span class="news-thumb-fb">The Independent Singapore</span></span>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">5 Aug 2026</span><span class="news-src">The Independent Singapore</span></div>
-            <a class="news-title" href="https://theindependent.sg/redevelop-gcb-sites-lah-alvin-tan-s-lack-of-clear-answer-on-maju-forest-preservation-leaves-netizens-dissatisfied/" target="_blank" rel="noopener">&lsquo;Redevelop GCB sites lah&rsquo; &mdash;Alvin Tan&rsquo;s lack of clear answer on Maju Forest preservation leaves netizens dissatisfied</a>
-            <p class="news-note">Records the public reaction to the minister&rsquo;s answer in the House, with many saying it left them unconvinced that the consultation will change the outcome, and renewed calls to use older estates and other land instead.</p>
-          </div>
-        </li>
-    </ul>
-    <ul class="news-list news-more" id="news-more" hidden>
-        <li class="news-item">
-          <a class="news-thumb" href="https://news.theonlinecitizen.com/2026/08/04/wp-m-ps-ask-if-gillman-maju-forest-are-right-housing-sites-alvin-tan-defends-housing-needs-and-environmental-trade-offs" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://media.onlinecitizenasia.com/M_Ps_question_on_Maju_and_Gillman_development_79058715d4.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">The Online Citizen</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">4 Aug 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://news.theonlinecitizen.com/2026/08/04/wp-m-ps-ask-if-gillman-maju-forest-are-right-housing-sites-alvin-tan-defends-housing-needs-and-environmental-trade-offs" target="_blank" rel="noopener">WP MPs ask if Gillman, Maju Forest are right housing sites; Alvin Tan defends housing needs &amp; environmental trade-offs</a>
-            <p class="news-note">The fullest account of the debate itself, in which MPs pressed on alternative sites, environmental thresholds and earlier consultation, and the minister agreed to extend the engagement period beyond 6 August.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://news.theonlinecitizen.com/2026/08/04/alvin-tan-confirms-maju-and-gillman-forest-redevelopment-will-proceed-after-andre-low-presses-on-options" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://media.onlinecitizenasia.com/Alvin_Tan_and_Andre_Low_9268698387.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">The Online Citizen</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">4 Aug 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://news.theonlinecitizen.com/2026/08/04/alvin-tan-confirms-maju-and-gillman-forest-redevelopment-will-proceed-after-andre-low-presses-on-options" target="_blank" rel="noopener">Alvin Tan confirms Maju and Gillman forest redevelopment will proceed after Andre Low presses on options</a>
-            <p class="news-note">The record of the exchange in which the Government said it will proceed, after an NCMP asked directly whether not developing the sites was still an option.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://news.theonlinecitizen.com/2026/08/04/government-to-engage-stakeholders-further-before-finalising-maju-forest-gillman-plans-says-alvin-tan" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://media.onlinecitizenasia.com/Govt_will_review_consultation_feedback_conduct_further_engagements_before_finalising_redevelopment_plans_after_6_August_611c2eea66.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">The Online Citizen</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">4 Aug 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://news.theonlinecitizen.com/2026/08/04/government-to-engage-stakeholders-further-before-finalising-maju-forest-gillman-plans-says-alvin-tan" target="_blank" rel="noopener">Government to engage stakeholders further before finalising Maju Forest, Gillman plans, says Alvin Tan</a>
-            <p class="news-note">Sets out the commitments made in the House: further engagement after the deadline, a published response to feedback, and study of retaining most of the native forest and the most significant heritage buildings.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://mothership.sg/2026/08/gillman-barracks-maju-forest-alvin-tan/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://static.mothership.sg/1/2026/08/Alvin.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">Mothership</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">4 Aug 2026</span><span class="news-src">Mothership</span></div>
-            <a class="news-title" href="https://mothership.sg/2026/08/gillman-barracks-maju-forest-alvin-tan/" target="_blank" rel="noopener">Govt will proceed to redevelop Maju Forest &amp; Gillman Barracks, but plans not finalised: Alvin Tan</a>
-            <p class="news-note">The Government confirmed it will proceed, while stating that the plans are not finalised and that further engagement will follow.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <span class="news-thumb is-blank" aria-hidden="true"><span class="news-thumb-fb">CNA</span></span>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">3 Aug 2026</span><span class="news-src">CNA</span></div>
-            <a class="news-title" href="https://www.channelnewsasia.com/singapore/parliament-gillman-barracks-maju-forest-govtech-layoffs-6294751" target="_blank" rel="noopener">Parliament to discuss Gillman Barracks and Maju Forest housing plans, and GovTech layoffs</a>
-            <p class="news-note">A preview of the 4 August sitting and the questions filed on the two sites.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <span class="news-thumb is-blank" aria-hidden="true"><span class="news-thumb-fb">The Online Citizen</span></span>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">3 Aug 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://news.theonlinecitizen.com/2026/08/03/parliament-to-debate-gillman-barracks-and-maju-forest-housing-plans-wp-s-economic-motion" target="_blank" rel="noopener">Parliament to debate Gillman Barracks and Maju Forest housing plans</a>
-            <p class="news-note">More than 20 questions on the two sites make them the most heavily questioned item on the order paper for the sitting on 4 August.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <span class="news-thumb is-blank" aria-hidden="true"><span class="news-thumb-fb">The Straits Times</span></span>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">1 Aug 2026</span><span class="news-src">The Straits Times</span></div>
-            <a class="news-title" href="https://www.straitstimes.com/singapore/politics/nothing-is-cast-in-stone-mps-pledge-to-raise-concerns-on-maju-forest-gillman-barracks" target="_blank" rel="noopener">&lsquo;Nothing is cast in stone&rsquo;: MPs pledge to raise concerns over Maju Forest, Gillman Barracks</a>
-            <p class="news-note">Two MPs told a public talk of around 80 people that the plans are not settled and that they would take residents&rsquo; concerns into the parliamentary sitting.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <span class="news-thumb is-blank" aria-hidden="true"><span class="news-thumb-fb">The Straits Times</span></span>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">31 Jul 2026</span><span class="news-src">The Straits Times</span></div>
-            <a class="news-title" href="https://www.straitstimes.com/singapore/forest-preservation-early-say-in-gillman-barracks-redevelopment-among-issues-raised-at-dialogue" target="_blank" rel="noopener">Forest preservation and an early say among issues raised at Gillman Barracks dialogue</a>
-            <p class="news-note">Reporting from the 30 July dialogue at Telok Blangah Community Club.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://news.theonlinecitizen.com/2026/07/31/residents-grill-agencies-on-ecology-trust-at-gillman-barracks-dialogue" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://media.onlinecitizenasia.com/HDB_URA_and_N_Parks_fielded_60_resident_questions_at_the_30_July_Gillman_Barracks_dialogue_47e40c52a1.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">The Online Citizen</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">31 Jul 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://news.theonlinecitizen.com/2026/07/31/residents-grill-agencies-on-ecology-trust-at-gillman-barracks-dialogue" target="_blank" rel="noopener">Residents grill agencies on ecology and trust at Gillman Barracks dialogue</a>
-            <p class="news-note">Around 300 attended and 60 questions were put to HDB, URA and NParks. Ecology, trust in the consultation and housing need made up roughly three quarters of them.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://theonlinecitizen.com/2026/07/31/m-ps-file-questions-on-gillman-maju-forest-plans-as-public-feedback-deadline-looms-in-one-week" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://media.theonlinecitizen.com/M_Ps_raise_concern_over_Gillman_and_Maju_development_c4aa857017.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">The Online Citizen</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">31 Jul 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://theonlinecitizen.com/2026/07/31/m-ps-file-questions-on-gillman-maju-forest-plans-as-public-feedback-deadline-looms-in-one-week" target="_blank" rel="noopener">MPs file questions on Gillman and Maju Forest plans as public feedback deadline looms</a>
-            <p class="news-note">Members from both sides of the House file questions on housing demand, consultation and alternatives.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://news.theonlinecitizen.com/2026/07/27/online-petitions-against-gillman-barracks-and-maju-forest-housing-plans-pass-40-600-endorsements" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://media.onlinecitizenasia.com/Online_petitions_opposing_housing_plans_at_Gillman_and_Maju_Forest_74223a98b8.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">The Online Citizen</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">27 Jul 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://news.theonlinecitizen.com/2026/07/27/online-petitions-against-gillman-barracks-and-maju-forest-housing-plans-pass-40-600-endorsements" target="_blank" rel="noopener">Online petitions against Gillman Barracks and Maju Forest housing plans pass 40,600 endorsements</a>
-            <p class="news-note">Nine thousand more signatures in a week.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://news.theonlinecitizen.com/2026/07/23/community-groups-organise-gillman-barracks-events-amid-growing-calls-to-protect-its-green-heritage" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://media.onlinecitizenasia.com/Gillman_forest_54a96d2c76.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">The Online Citizen</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">23 Jul 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://news.theonlinecitizen.com/2026/07/23/community-groups-organise-gillman-barracks-events-amid-growing-calls-to-protect-its-green-heritage" target="_blank" rel="noopener">Community groups organise Gillman Barracks events amid growing calls to protect its green heritage</a>
-            <p class="news-note">Walks, talks and gatherings organised by residents and heritage groups.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <span class="news-thumb is-blank" aria-hidden="true"><span class="news-thumb-fb">The Online Citizen</span></span>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">20 Jul 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://theonlinecitizen.com/2026/07/20/online-petitions-opposing-gillman-and-maju-forest-housing-plans-surpass-31-500-endorsements" target="_blank" rel="noopener">Online petitions opposing Gillman and Maju Forest housing plans surpass 31,500 endorsements</a>
-            <p class="news-note">Ten days after the announcement.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <span class="news-thumb is-blank" aria-hidden="true"><span class="news-thumb-fb">The Online Citizen</span></span>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">15 Jul 2026</span><span class="news-src">The Online Citizen</span></div>
-            <a class="news-title" href="https://theonlinecitizen.com/2026/07/15/nus-academic-questions-how-green-space-decisions-are-made-urges-earlier-public-participation" target="_blank" rel="noopener">NUS academic questions how green space decisions are made, urges earlier public participation</a>
-            <p class="news-note">An academic voice making the residents&rsquo; central point: by the time an impact assessment is published, the decision that matters has already been taken.</p>
-          </div>
-        </li>
-        <li class="news-item">
-          <a class="news-thumb" href="https://mothership.sg/2026/07/hdb-redevelop-gillman-barracks-sunset-way/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-            <img src="https://static.mothership.sg/1/2026/07/Gillman.jpg" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"
-                 onerror="this.closest('.news-thumb').classList.add('is-blank')">
-            <span class="news-thumb-fb">Mothership</span>
-          </a>
-          <div class="news-body">
-            <div class="news-meta"><span class="news-date">10 Jul 2026</span><span class="news-src">Mothership</span></div>
-            <a class="news-title" href="https://mothership.sg/2026/07/hdb-redevelop-gillman-barracks-sunset-way/" target="_blank" rel="noopener">HDB to redevelop Gillman Barracks and Sunset Way for housing</a>
-            <p class="news-note">The announcement that began this, published alongside the environmental and heritage studies.</p>
-          </div>
-        </li>
-    </ul>
-    <div class="news-morewrap"><button type="button" class="btn-mini btn-mini--ghost news-more-btn" aria-expanded="false" aria-controls="news-more" data-label="Show all 15 earlier reports">Show all 15 earlier reports</button></div>
+    <p class="rep-note">Every report on Gillman we have found, newest first. Headlines link to the original.</p>
+      <ul class="rep-list">
+        <li><a href="https://www.aljazeera.com/news/2026/8/28/singapores-plans-to-clear-forest-for-homes-lead-to-rare-public-protests" target="_blank" rel="noopener"><span class="rp-date">28 Aug 2026</span><span class="rp-src">Al Jazeera</span><span class="rp-title">Singapore&rsquo;s plans to clear forest for homes lead to rare public protests</span></a></li>
+        <li><a href="https://www.freemalaysiatoday.com/category/world/2026/08/21/singapore-s-plan-to-clear-forest-for-housing-faces-a-backlash" target="_blank" rel="noopener"><span class="rp-date">21 Aug 2026</span><span class="rp-src">Reuters</span><span class="rp-title">Singapore&rsquo;s plan to clear forest for housing faces a backlash</span></a></li>
+        <li><a href="https://www.planb.sg/post/massive-crowd-rallies-over-maju-forest-with-gcbs-and-golf-courses-taking-centre-stage" target="_blank" rel="noopener"><span class="rp-date">18 Aug 2026</span><span class="rp-src">Plan B</span><span class="rp-title">Massive crowd rallies over Maju Forest, with GCBs and golf courses taking centre stage</span></a></li>
+        <li><a href="https://www.scmp.com/week-asia/health-environment/article/3364280/singaporeans-urge-forest-protection-rally-housing-plans-spur-concerns" target="_blank" rel="noopener"><span class="rp-date">17 Aug 2026</span><span class="rp-src">South China Morning Post</span><span class="rp-title">Singaporeans urge forest protection at rally as housing plans spur concerns</span></a></li>
+        <li><a href="https://www.channelnewsasia.com/singapore/sg-climate-rally-hong-lim-park-maju-forest-gillman-barracks-6322031" target="_blank" rel="noopener"><span class="rp-date">16 Aug 2026</span><span class="rp-src">CNA</span><span class="rp-title">More than 1,000 rally at Hong Lim Park over Maju Forest, Gillman Barracks plans</span></a></li>
+        <li><a href="https://mothership.sg/2026/08/hong-lim-park-maju-forest-rally/" target="_blank" rel="noopener"><span class="rp-date">16 Aug 2026</span><span class="rp-src">Mothership</span><span class="rp-title">Over 2,000 people turn up at Hong Lim Park over Maju Forest &amp; Gillman Barracks plans</span></a></li>
+        <li><a href="https://theonlinecitizen.com/2026/08/16/over-2-000-turn-out-at-hong-lim-park-rally-for-maju-forest-gillman-barracks" target="_blank" rel="noopener"><span class="rp-date">16 Aug 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">Over 2,000 turn out at Hong Lim Park rally for Maju Forest, Gillman Barracks</span></a></li>
+        <li><a href="https://www.straitstimes.com/singapore/nature-lovers-and-activists-hold-rally-in-hong-lim-park" target="_blank" rel="noopener"><span class="rp-date">16 Aug 2026</span><span class="rp-src">The Straits Times</span><span class="rp-title">Nature lovers and activists hold rally in Hong Lim Park</span></a></li>
+        <li><a href="https://www.channelnewsasia.com/singapore/maju-forest-sunset-way-gillman-barracks-alvin-tan-mnd-hdb-6318816" target="_blank" rel="noopener"><span class="rp-date">14 Aug 2026</span><span class="rp-src">CNA</span><span class="rp-title">More greenery retained, fewer homes planned for Maju Forest, Gillman Barracks sites after public feedback</span></a></li>
+        <li><a href="https://www.straitstimes.com/singapore/more-green-spaces-in-gillman-barracks-maju-forest-to-be-retained-alvin-tan" target="_blank" rel="noopener"><span class="rp-date">14 Aug 2026</span><span class="rp-src">The Straits Times</span><span class="rp-title">More green spaces to be retained in Gillman Barracks, Maju Forest: Alvin Tan</span></a></li>
+        <li><a href="https://mothership.sg/2026/08/maju-forest-gillman-barracks-more-greenery-retained-alvin-tan/" target="_blank" rel="noopener"><span class="rp-date">14 Aug 2026</span><span class="rp-src">Mothership</span><span class="rp-title">More greenery to be retained at Maju Forest &amp; Gillman Barracks but we&rsquo;ll have to accept fewer homes on both sites: Alvin Tan</span></a></li>
+        <li><a href="https://www.asiaone.com/singapore/gillman-barracks-sunset-way-maju-forest-plans-adjusted" target="_blank" rel="noopener"><span class="rp-date">14 Aug 2026</span><span class="rp-src">AsiaOne</span><span class="rp-title">More forested areas of Gillman Barracks, Sunset Way to be retained under adjusted housing plans: Alvin Tan</span></a></li>
+        <li><a href="https://theonlinecitizen.com/2026/08/14/more-greenery-to-be-retained-at-maju-forest-and-gillman-barracks-following-public-feedback-says-alvin-tan" target="_blank" rel="noopener"><span class="rp-date">14 Aug 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">More greenery to be retained at Maju Forest and Gillman Barracks following public feedback, says Alvin Tan</span></a></li>
+        <li><a href="https://theonlinecitizen.com/2026/08/14/don-t-touch-maju-forest-nss-chief-urges-greater-protection-as-netizens-back-preservation-call" target="_blank" rel="noopener"><span class="rp-date">14 Aug 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">&ldquo;Don&rsquo;t touch Maju Forest&rdquo;: NSS president urges greater protection as netizens back preservation call</span></a></li>
+        <li><a href="https://theonlinecitizen.com/2026/08/14/maju-rally-to-be-held-on-16-august-calling-for-nature-protection-and-greater-transparency-in-development-decisions" target="_blank" rel="noopener"><span class="rp-date">14 Aug 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">Maju Rally to be held on 16 August, calling for nature protection &amp; greater transparency in development decisions</span></a></li>
+        <li><a href="https://theonlinecitizen.com/2026/08/12/mnd-promo-videos-face-backlash-as-netizens-challenge-housing-narrative-and-redevelopment-plans" target="_blank" rel="noopener"><span class="rp-date">12 Aug 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">MND promo videos face backlash as netizens challenge housing narrative and redevelopment plans</span></a></li>
+        <li><a href="https://mothership.sg/2026/08/grace-fu-maju-forest-gillman-barracks/" target="_blank" rel="noopener"><span class="rp-date">8 Aug 2026</span><span class="rp-src">Mothership</span><span class="rp-title">MSE has no mandate on land use planning for Gillman Barracks &amp; Maju Forest: Grace Fu</span></a></li>
+        <li><a href="https://theonlinecitizen.com/2026/08/07/hdb-says-engagement-does-not-end-as-feedback-period-closes-but-leaves-timeline-and-scope-undefined" target="_blank" rel="noopener"><span class="rp-date">7 Aug 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">HDB says engagement &ldquo;does not end&rdquo; as feedback period closes, but leaves timeline and scope undefined</span></a></li>
+        <li><a href="https://mothership.sg/2026/08/hong-lim-park-gathering-maju-forest-gillman-barracks/" target="_blank" rel="noopener"><span class="rp-date">5 Aug 2026</span><span class="rp-src">Mothership</span><span class="rp-title">SG Climate Rally to hold Hong Lim Park gathering in response to Maju Forest &amp; Gillman Barracks redevelopment</span></a></li>
+        <li><a href="https://news.theonlinecitizen.com/2026/08/05/11-arts-tenants-at-gillman-barracks-to-remain-as-existing-leases-continue-until-2029-edwin-tong" target="_blank" rel="noopener"><span class="rp-date">5 Aug 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">11 arts tenants at Gillman Barracks to remain as existing leases continue until 2029: Edwin Tong</span></a></li>
+        <li><a href="https://theindependent.sg/redevelop-gcb-sites-lah-alvin-tan-s-lack-of-clear-answer-on-maju-forest-preservation-leaves-netizens-dissatisfied/" target="_blank" rel="noopener"><span class="rp-date">5 Aug 2026</span><span class="rp-src">The Independent Singapore</span><span class="rp-title">&lsquo;Redevelop GCB sites lah&rsquo; &mdash;Alvin Tan&rsquo;s lack of clear answer on Maju Forest preservation leaves netizens dissatisfied</span></a></li>
+              <li><a href="https://news.theonlinecitizen.com/2026/08/04/wp-m-ps-ask-if-gillman-maju-forest-are-right-housing-sites-alvin-tan-defends-housing-needs-and-environmental-trade-offs" target="_blank" rel="noopener"><span class="rp-date">4 Aug 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">WP MPs ask if Gillman, Maju Forest are right housing sites; Alvin Tan defends housing needs &amp; environmental trade-offs</span></a></li>
+        <li><a href="https://news.theonlinecitizen.com/2026/08/04/alvin-tan-confirms-maju-and-gillman-forest-redevelopment-will-proceed-after-andre-low-presses-on-options" target="_blank" rel="noopener"><span class="rp-date">4 Aug 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">Alvin Tan confirms Maju and Gillman forest redevelopment will proceed after Andre Low presses on options</span></a></li>
+        <li><a href="https://news.theonlinecitizen.com/2026/08/04/government-to-engage-stakeholders-further-before-finalising-maju-forest-gillman-plans-says-alvin-tan" target="_blank" rel="noopener"><span class="rp-date">4 Aug 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">Government to engage stakeholders further before finalising Maju Forest, Gillman plans, says Alvin Tan</span></a></li>
+        <li><a href="https://mothership.sg/2026/08/gillman-barracks-maju-forest-alvin-tan/" target="_blank" rel="noopener"><span class="rp-date">4 Aug 2026</span><span class="rp-src">Mothership</span><span class="rp-title">Govt will proceed to redevelop Maju Forest &amp; Gillman Barracks, but plans not finalised: Alvin Tan</span></a></li>
+        <li><a href="https://www.channelnewsasia.com/singapore/parliament-gillman-barracks-maju-forest-govtech-layoffs-6294751" target="_blank" rel="noopener"><span class="rp-date">3 Aug 2026</span><span class="rp-src">CNA</span><span class="rp-title">Parliament to discuss Gillman Barracks and Maju Forest housing plans, and GovTech layoffs</span></a></li>
+        <li><a href="https://news.theonlinecitizen.com/2026/08/03/parliament-to-debate-gillman-barracks-and-maju-forest-housing-plans-wp-s-economic-motion" target="_blank" rel="noopener"><span class="rp-date">3 Aug 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">Parliament to debate Gillman Barracks and Maju Forest housing plans</span></a></li>
+        <li><a href="https://www.straitstimes.com/singapore/politics/nothing-is-cast-in-stone-mps-pledge-to-raise-concerns-on-maju-forest-gillman-barracks" target="_blank" rel="noopener"><span class="rp-date">1 Aug 2026</span><span class="rp-src">The Straits Times</span><span class="rp-title">&lsquo;Nothing is cast in stone&rsquo;: MPs pledge to raise concerns over Maju Forest, Gillman Barracks</span></a></li>
+        <li><a href="https://www.straitstimes.com/singapore/forest-preservation-early-say-in-gillman-barracks-redevelopment-among-issues-raised-at-dialogue" target="_blank" rel="noopener"><span class="rp-date">31 Jul 2026</span><span class="rp-src">The Straits Times</span><span class="rp-title">Forest preservation and an early say among issues raised at Gillman Barracks dialogue</span></a></li>
+        <li><a href="https://news.theonlinecitizen.com/2026/07/31/residents-grill-agencies-on-ecology-trust-at-gillman-barracks-dialogue" target="_blank" rel="noopener"><span class="rp-date">31 Jul 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">Residents grill agencies on ecology and trust at Gillman Barracks dialogue</span></a></li>
+        <li><a href="https://theonlinecitizen.com/2026/07/31/m-ps-file-questions-on-gillman-maju-forest-plans-as-public-feedback-deadline-looms-in-one-week" target="_blank" rel="noopener"><span class="rp-date">31 Jul 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">MPs file questions on Gillman and Maju Forest plans as public feedback deadline looms</span></a></li>
+        <li><a href="https://news.theonlinecitizen.com/2026/07/27/online-petitions-against-gillman-barracks-and-maju-forest-housing-plans-pass-40-600-endorsements" target="_blank" rel="noopener"><span class="rp-date">27 Jul 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">Online petitions against Gillman Barracks and Maju Forest housing plans pass 40,600 endorsements</span></a></li>
+        <li><a href="https://news.theonlinecitizen.com/2026/07/23/community-groups-organise-gillman-barracks-events-amid-growing-calls-to-protect-its-green-heritage" target="_blank" rel="noopener"><span class="rp-date">23 Jul 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">Community groups organise Gillman Barracks events amid growing calls to protect its green heritage</span></a></li>
+        <li><a href="https://theonlinecitizen.com/2026/07/20/online-petitions-opposing-gillman-and-maju-forest-housing-plans-surpass-31-500-endorsements" target="_blank" rel="noopener"><span class="rp-date">20 Jul 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">Online petitions opposing Gillman and Maju Forest housing plans surpass 31,500 endorsements</span></a></li>
+        <li><a href="https://theonlinecitizen.com/2026/07/15/nus-academic-questions-how-green-space-decisions-are-made-urges-earlier-public-participation" target="_blank" rel="noopener"><span class="rp-date">15 Jul 2026</span><span class="rp-src">The Online Citizen</span><span class="rp-title">NUS academic questions how green space decisions are made, urges earlier public participation</span></a></li>
+        <li><a href="https://mothership.sg/2026/07/hdb-redevelop-gillman-barracks-sunset-way/" target="_blank" rel="noopener"><span class="rp-date">10 Jul 2026</span><span class="rp-src">Mothership</span><span class="rp-title">HDB to redevelop Gillman Barracks and Sunset Way for housing</span></a></li>
+      </ul>
 
     <div class="foot">
       Links are provided so that readers can go to the original reporting. Listing an article here is not
@@ -2211,6 +1805,34 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     <p class="plan-note">Rows reproduced from the EIA&rsquo;s own species checklist, Appendix 1, Birds. Two species carrying
     IUCN&rsquo;s most severe global classification are marked &ldquo;No&rdquo; under species of conservation significance.</p>
 
+    <div class="precedent">
+        <h3 class="plan-h" style="margin-top:38px">So what should they keep?</h3>
+        <p>At <a href="https://majuforest.com/" target="_blank" rel="noopener">Maju</a>, the Nature Society has named a figure: two thirds of the forest. Gillman has no number of its own, and the adjustment being drawn this month will fill that silence one way or another. Here is what to ask for, all of it drawn from the Government&rsquo;s own reports.</p>
+        <div class="damage-list">
+          <div class="dmg">
+            <p class="dmg-lead">A forest, not a strip</p>
+            <p class="dmg-body">The July plan retains 14.6ha inside a 40ha boundary. Ask for a single contiguous block of forest large enough to work as habitat. The president of the Nature Society put it plainly on 14 August: a slice of land and a patch of stream is not a home for anything.</p>
+          </div>
+          <div class="dmg">
+            <p class="dmg-lead">A 60m corridor, by the report&rsquo;s own rule</p>
+            <p class="dmg-body">The Environmental Impact Assessment does not merely suggest 60m. It calls 60m the minimum needed to protect a corridor&rsquo;s core from edge effects, and it sets out when that minimum applies. At the former Keppel Club site, 30m was used where development sat on one side of the habitat, and a 60m central corridor where development sat on both sides, to account for the double edge. The report says Gillman&rsquo;s context is similar. Gillman&rsquo;s new corridor is the spine of a housing estate, with development on both sides, so by that rule it is a 60m corridor. The plan gives it 30m.</p>
+          </div>
+          <div class="dmg">
+            <p class="dmg-lead">Say what crosses the road</p>
+            <p class="dmg-body">The corridor is aligned, in the report&rsquo;s own words, to suit &ldquo;volant fauna&rdquo;, with birds and arboreal mammals named as the target species. No eco-link, land bridge or wildlife underpass appears anywhere in the plan. The link to Labrador rests on birds flying across a highway, and the evidence given for that is a personal communication about a single species. The report itself rates loss of connectivity as Moderate Negative for 63 species, including the Sunda pangolin, which it names as vulnerable to roadkill moving between forests. Ask which animals can actually reach Labrador on foot.</p>
+          </div>
+          <div class="dmg">
+            <p class="dmg-lead">Bring the eastern cluster inside the line</p>
+            <p class="dmg-body">The ground between two drain channels off Telok Blangah Street 31 holds a narrow strip of native-dominated forest, three Critically Endangered <i>Ficus sinuata</i>, two clusters of the Vulnerable <i>Cissus repens</i> and a Vulnerable <i>Litsea umbellata</i>, and it sits outside the retained area with no explanation given. The figs are young epiphytes that established on a living host tree, which is something no transplant can carry with it.</p>
+          </div>
+          <div class="dmg">
+            <p class="dmg-lead">Publish the arithmetic behind &ldquo;fewer homes&rdquo;</p>
+            <p class="dmg-body">More greenery is only a cost to other Singaporeans if the number of homes and the density were fixed to begin with, and neither has been published. Ask how many units were assumed at Gillman, at what density, and what the same homes would cost on land already cleared and already zoned.</p>
+          </div>
+        </div>
+        <p class="prec-turn">Two of these, in your own words, is a strong letter.</p>
+      </div>
+
     <h3 class="plan-h">Read the findings in full</h3>
     <ul class="plan-docs">
       <li>
@@ -2473,27 +2095,10 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 
     <p class="gd-src">Species figure from HDB&rsquo;s published Environmental Impact Assessment (CH2M Hill/Jacobs,
     8 July 2026), Table 4-37. Building ratings from the Heritage Impact Assessment prepared by Studio Lapis.
-    Both are linked in full on the <button class="gd-inline" type="button" data-page="plan">Deforestation plan</button> page.</p>
+    Both are linked in full on the <button class="gd-inline" type="button" data-page="plan">Deforestation Plan</button> page.</p>
   </div>
 </section>
 
-<!-- SIGN ME UP -->
-<section class="page" id="page-signup">
-  <div class="wrap">
-    <div class="signup-box">
-      <p class="eyebrow">Stay in the loop</p>
-      <h2>Join the residents&rsquo; group</h2>
-      <p>Follow what&rsquo;s happening, track the campaign, and lend your voice. The more of us there are, the harder we are to ignore.</p>
-      <div class="cta-row" style="justify-content:center">
-        <a class="btn btn--go" href="https://www.change.org/p/save-gillman-barracks-forest-build-homes-in-gsw-instead" target="_blank" rel="noopener">Sign the petition</a>
-        <a class="btn btn--ghost" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Write to HDB</a>
-      </div>
-      <!-- Telegram: restore this button once the invite link is available.
-      <a class="btn btn--leaf" href="TELEGRAM-URL-HERE" target="_blank" rel="noopener">Join on Telegram</a>
-      -->
-    </div>
-  </div>
-</section>
 
 </main>
 
@@ -2587,6 +2192,10 @@ document.querySelectorAll('.ba').forEach(function(el){
 /* ---- letters reader ---- */
 (function(){
   const DOCS=[
+    {pdf:'betterplan', thumb:'assets/img/betterplan/map-better-plan.webp', kicker:'Proposal', title:'A Better Plan for Gillman',
+     desc:'The residents’ alternative, put to HDB, URA and NParks on 1 September. Up to 2,400 homes on 538,000 m² across two sites, against 340,000 m² in the July plan, with the forest kept.', meta:'21 pages · PDF'},
+    {pdf:'record01sep', thumb:'assets/img/now/hdb-dialogue-1sep.webp', kicker:'Record', title:'Record of the 1 September session',
+     desc:'What residents asked and what the agencies answered at HortPark, written at agency level and sent to HDB, URA and NParks for correction.', meta:'3 pages · PDF'},
     {pdf:'proposal', thumb:'assets/img/jpg-41.jpg', kicker:'Report', title:'Residents’ feedback & proposal',
      desc:'The residents’ case for the forest, reviewing HDB’s environmental and heritage impact assessments, with immediate requests to Parliament and for an extended consultation.', meta:'26 pages · PDF'},
     {pdf:'summary', thumb:'assets/img/jpg-46.jpg', kicker:'Summary', title:'Summary of the 30 July dialogue',
@@ -2617,18 +2226,42 @@ document.querySelectorAll('.ba').forEach(function(el){
   render();
 })();
 
-/* ---- dialogue detail toggle ---- */
+/* ---- dialogue accordion ---- */
 (function(){
-  document.querySelectorAll('.tl.clickable').forEach(t=>{
-    t.addEventListener('click',()=>{
-      const d=document.getElementById(t.dataset.detail);
-      if(!d) return;
-      const willOpen=!d.classList.contains('open');
-      document.querySelectorAll('.detail.open').forEach(o=>{ if(o!==d) o.classList.remove('open'); });
-      d.classList.toggle('open', willOpen);
-      if(willOpen){ try{ d.scrollIntoView({behavior:'smooth',block:'nearest'}); }catch(e){} }
+  const heads=Array.from(document.querySelectorAll('.acc-head'));
+  function setOpen(h, open, scroll){
+    const p=document.getElementById(h.getAttribute('aria-controls'));
+    if(!p) return;
+    h.setAttribute('aria-expanded', open?'true':'false');
+    p.hidden=!open;
+    if(open){
+      p.querySelectorAll('img[loading="lazy"]').forEach(im=>{ im.loading='eager';
+        if(!im.complete||im.naturalWidth===0){ const s=im.getAttribute('src'); if(s) im.setAttribute('src',s); } });
+      if(scroll){ try{ h.scrollIntoView({behavior:'smooth',block:'nearest'}); }catch(e){} }
+    }
+  }
+  heads.forEach(h=>{
+    h.addEventListener('click',()=>{
+      const open=h.getAttribute('aria-expanded')==='true';
+      heads.forEach(o=>{ if(o!==h) setOpen(o,false,false); });
+      setOpen(h,!open,!open);
+    });
+    h.addEventListener('keydown',e=>{
+      const i=heads.indexOf(h);
+      if(e.key==='ArrowDown'||e.key==='ArrowUp'){
+        e.preventDefault();
+        const n=heads[(i+(e.key==='ArrowDown'?1:heads.length-1))%heads.length];
+        if(n) n.focus();
+      }
     });
   });
+  window.openAccordion=function(id){
+    const h=document.querySelector('.acc-head[aria-controls="'+id+'"]');
+    if(!h) return false;
+    heads.forEach(o=>{ if(o!==h) setOpen(o,false,false); });
+    setOpen(h,true,true);
+    return true;
+  };
 })();
 
 /* ---- image lightbox ---- */
