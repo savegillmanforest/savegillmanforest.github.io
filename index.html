@@ -212,6 +212,7 @@ h1,h2,h3{margin:0}
 .tl.future .tl-date{color:var(--muted)}
 
 .acc{margin:30px 0 10px;border-top:1px solid rgba(255,255,255,.18)}
+.acc--flush{margin:20px 0 0}
 .acc-item{border-bottom:1px solid rgba(255,255,255,.18)}
 .acc-head{display:flex;align-items:center;gap:16px;width:100%;background:none;border:0;padding:16px 4px;text-align:left;cursor:pointer;color:inherit;font:inherit}
 .acc-head:hover .acc-title,.acc-head:focus-visible .acc-title{color:var(--amber)}
@@ -517,7 +518,10 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .plan-maps figcaption b{color:var(--cream);font-weight:700}
 .bp-maps{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin:18px 0 0;align-items:start}
 .bp-maps figure,.bp-fig{margin:0}
+.bp-lead{color:var(--cream);font-size:17px;line-height:1.62;margin:0 0 4px;max-width:78ch}
+@media(max-width:600px){.bp-lead{font-size:16px}}
 .bp-fig{max-width:900px;margin:18px 0 0}
+.bp-fig--wide{max-width:100%}
 .bp-maps img,.bp-fig img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,.16);cursor:zoom-in;background:#0d160f}
 .bp-maps figcaption,.bp-fig figcaption{color:var(--muted);font-size:13.5px;line-height:1.5;margin-top:10px}
 .bp-maps figcaption b,.bp-fig figcaption b{color:var(--cream);font-weight:700}
@@ -1902,7 +1906,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     </div>
 
     <h3 class="plan-h">Split the housing across two sites</h3>
-    <p class="plan-note" style="margin-top:0">The July plan concentrates development on one site and takes the forest with it. This
+    <p class="bp-lead">The July plan concentrates development on one site and takes the forest with it. This
     plan redevelops one side of Alexandra Park as well, which grows the total buildable land and takes the
     pressure off Gillman Forest. More land to build on, and the forest kept.</p>
     <div class="bp-maps">
@@ -1918,7 +1922,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     <p class="plan-note">Tap either map to enlarge it. These are residents&rsquo; drawings, prepared from the published plans and the Master Plan. They show intent and area, not a surveyed boundary.</p>
 
     <h3 class="plan-h">Where the homes go</h3>
-    <p class="plan-note" style="margin-top:0">Ten to twelve blocks of about 200 units each at 991 Alexandra Road and the adjacent
+    <p class="bp-lead">Ten to twelve blocks of about 200 units each at 991 Alexandra Road and the adjacent
     Telok Blangah Street 31 industrial site, a short walk from Labrador Park station on the Circle Line. The
     blocks are vertically extendable, so the yield can rise without taking more ground. That is public housing
     sized to drive ridership at a station that already exists, alongside the thousands of units already planned
@@ -1929,7 +1933,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     </figure>
 
     <h3 class="plan-h">What Gillman becomes</h3>
-    <p class="plan-note" style="margin-top:0">&ldquo;Gillman Corner&rdquo;: a mixed-use neighbourhood woven around the forest edge rather
+    <p class="bp-lead">&ldquo;Gillman Corner&rdquo;: a mixed-use neighbourhood woven around the forest edge rather
     than carved out of it. The heritage barracks come back into use, and the amenities are the ones the estate
     around it actually lacks.</p>
     <ul class="detail-list">
@@ -1939,19 +1943,17 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
       <li><b>Malan Row</b>, a second pedestrian zone at 37 to 47 Malan Road for childcare, pottery, art, a bookstore and a spa.</li>
       <li><b>A music pavilion</b>, partially sunk into the SAJC ravine and sound-designed to reflect noise away from homes.</li>
     </ul>
-    <div class="bp-maps">
-      <figure>
-        <img src="assets/img/betterplan/zone-map.webp" alt="Zone map of Gillman Corner showing the housing, community hub, hawker centre, village and forest trails" onclick="openImg(this.src)" width="1087" height="1447" loading="lazy" decoding="async">
-        <figcaption><b>Gillman Corner, zoned.</b> Housing to the west near the station, civic and commercial uses along the forest edge, and the forest itself untouched.</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/img/betterplan/community-hub.webp" alt="Visualisation of the community hub with a rooftop running track wrapped around it" onclick="openImg(this.src)" width="1500" height="750" loading="lazy" decoding="async">
-        <figcaption><b>The community hub.</b> A rooftop track wrapped around a complex serving four generations, aligned with ActiveSG, Healthier SG and Active Ageing.</figcaption>
-      </figure>
-    </div>
+    <figure class="bp-fig bp-fig--wide">
+      <img src="assets/img/betterplan/zone-poster.webp" alt="Annotated plan of Gillman Corner, with the housing near Labrador station, the community hub, the hawker centre, Gillman Village, Malan Row, the therapeutic walk and the forest track called out around the map" onclick="openImg(this.src)" width="1800" height="1273" loading="lazy" decoding="async">
+      <figcaption><b>Gillman Corner, annotated.</b> Housing to the west beside Labrador station, civic and commercial uses along the forest edge, and the forest itself untouched. Tap to enlarge.</figcaption>
+    </figure>
+    <figure class="bp-fig">
+      <img src="assets/img/betterplan/community-hub.webp" alt="Visualisation of the community hub with a rooftop running track wrapped around it" onclick="openImg(this.src)" width="1500" height="750" loading="lazy" decoding="async">
+      <figcaption><b>The community hub.</b> A rooftop track wrapped around a complex serving four generations, aligned with ActiveSG, Healthier SG and Active Ageing.</figcaption>
+    </figure>
 
     <h3 class="plan-h">The forest stays whole, and opens up</h3>
-    <p class="plan-note" style="margin-top:0">Keeping the forest is not the same as fencing it off. The plan builds around the
+    <p class="bp-lead">Keeping the forest is not the same as fencing it off. The plan builds around the
     mature trees rather than clearing them, and gives residents four ways in.</p>
     <ul class="detail-list">
       <li><b>A sensory boardwalk</b> along stream WQ1, which runs audibly after rainfall, unlocking views the vegetation currently hides.</li>
@@ -1983,7 +1985,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     <p class="plan-note">Tap any image to enlarge. Early concept sketches, drawn to show how the trail network, playground and track weave through the retained canopy. The goal throughout is to build around existing mature trees rather than clear them. NParks told residents on 1 September that it is prepared to study the boardwalk and the forest trails, subject to what building there would do to the trees and the soil.</p>
 
     <h3 class="plan-h">Gillman as a node, not an island</h3>
-    <p class="plan-note" style="margin-top:0">Gillman sits at the narrowest point of the green corridor that links Kent Ridge,
+    <p class="bp-lead">Gillman sits at the narrowest point of the green corridor that links Kent Ridge,
     HortPark, Telok Blangah Hill Park, Berlayer Creek and Labrador Nature Reserve. Clearing it breaks a route the
     public has already paid to build, from the Kent Ridge canopy walk through the Forest Walk and Henderson Waves
     to the coast. This plan completes that spine instead, and strings the heritage along it: the Norwegian
@@ -1995,7 +1997,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     </figure>
 
     <h3 class="plan-h">If more homes are genuinely needed</h3>
-    <p class="plan-note" style="margin-top:0">HDB has not published a yield for the Gillman site, so nobody outside government can
+    <p class="bp-lead">HDB has not published a yield for the Gillman site, so nobody outside government can
     say how many homes the forest is being cleared for. If more are needed than this plan provides, residents
     identified twelve places to put them that hold no forest. Six of them:</p>
     <dl class="ev-facts plan-facts">
@@ -2017,15 +2019,31 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     </ul>
 
     <h3 class="plan-h">Where it stands</h3>
-    <p class="plan-note" style="margin-top:0">The plan was presented to HDB, URA and NParks on 1 September 2026. NParks said it is
+    <p class="bp-lead">The plan was presented to HDB, URA and NParks on 1 September 2026. NParks said it is
     prepared to study the boardwalk and the forest trails. Agencies undertook to look at widening connectivity
     through the site and at minimising forest loss. Four questions went unanswered, including what residents
     would have to give up in order to keep the forest whole. The agencies will rework the conceptual plan and
     share a summary findings report, for which no date has been given.</p>
 
+    <div class="acc acc--flush">
+      <div class="acc-item">
+        <button class="acc-head" type="button" aria-expanded="false" aria-controls="acc-bp-record">
+          <span class="acc-thumb"><img src="assets/img/now/hdb-dialogue-1sep.webp" alt="HDB invitation headed Building A Shared Future at Sunset Way and Gillman Barracks" loading="lazy" decoding="async"></span>
+          <span class="acc-txt"><span class="acc-date">1 September 2026</span><span class="acc-title">The record of the session, in full</span></span>
+          <span class="acc-chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel" id="acc-bp-record" hidden>
+          <p class="detail-note">The residents&rsquo; record of what was asked and what was answered at HortPark. It is written at agency level and names no individual officer. It has been sent to HDB, URA and NParks with a request to correct anything reported wrongly, and any correction will be published.</p>
+          <p class="detail-note"><b>Three things the agencies offered to study.</b> NParks said it had read the proposal and is prepared to study the sensory boardwalk along the stream and the nature trail into the park, subject to what building there would do to the trees and the soil. Agencies undertook to look at whether connectivity through the site can be widened, and at minimising forest loss so that a meaningful and sizable forest remains. There was a qualified willingness to consult the Singapore Tourism Board.</p>
+          <p class="detail-note"><b>One answer that matters beyond Gillman.</b> Asked directly whether an environmental impact assessment is carried out when the island wide land use plan is drawn, the answer was no. Assessment comes after a site has been selected. Upstream, NParks contributes information on flora and fauna. Asked whether urban heat and climate impact are assessed at that stage, no such assessment was described.</p>
+          <p class="detail-note"><b>Four questions that went unanswered.</b> The projected yield for the site, which has never been published. What residents would have to give up in order to keep the forest whole, put four separate times. Access to the underlying planning data, offered to be analysed by a resident. And any date at all, asked three times.</p>
+          <a class="res-link" href="documents/Gillman_MeetingRecord_26-09-01.pdf" target="_blank" rel="noopener">Download the full record <span class="res-chip">PDF</span></a>
+          <a class="res-link" href="#dialogue" data-page="dialogue">See it alongside everything that came before <span class="res-chip">Where we stand</span></a>
+        </div>
+      </div>
+    </div>
+
     <a class="res-link" href="documents/Gillman_ABetterPlan_26-08-30.pdf" target="_blank" rel="noopener">Read A Better Plan for Gillman in full <span class="res-chip">PDF</span></a>
-    <a class="res-link" href="documents/Gillman_MeetingRecord_26-09-01.pdf" target="_blank" rel="noopener">The record of the 1 September session <span class="res-chip">PDF</span></a>
-    <a class="res-link" href="#dialogue" data-page="dialogue">What was asked, and what was answered <span class="res-chip">Dialogue</span></a>
 
     <div class="foot">
       A Better Plan for Gillman is a residents&rsquo; proposal, prepared independently and submitted to MND, URA, HDB and NParks. It is not a government document and carries no official standing. Figures for the July 2026 plan are as published on 10 July 2026. Visualisations and maps are residents&rsquo; own work and are indicative.
