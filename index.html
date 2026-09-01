@@ -191,8 +191,8 @@ h1,h2,h3{margin:0}
 .reader{margin-top:30px;display:grid;grid-template-columns:48px 1fr 48px;gap:14px;align-items:center;max-width:900px}
 .reader-arrow{width:48px;height:64px;border:none;background:rgba(255,255,255,.1);color:#fff;font-size:26px;border-radius:10px;cursor:pointer}
 .reader-arrow:hover{background:rgba(255,255,255,.22)}
-.reader-card{background:var(--panel);color:var(--ink);border-radius:14px;padding:22px;display:grid;grid-template-columns:130px 1fr;gap:22px;align-items:center;min-height:220px}
-.reader-card img{width:130px;height:184px;object-fit:cover;object-position:top;border:1px solid #d9d7cf;border-radius:6px;box-shadow:0 2px 10px rgba(0,0,0,.16)}
+.reader-card{background:var(--panel);color:var(--ink);border-radius:14px;padding:22px;display:grid;grid-template-columns:172px 1fr;gap:22px;align-items:center;min-height:220px}
+.reader-card img{width:172px;height:196px;object-fit:contain;background:#fff;padding:5px;border:1px solid #d9d7cf;border-radius:6px;box-shadow:0 2px 10px rgba(0,0,0,.16)}
 .rc-kicker{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9e6b1f}
 .rc-title{font-size:22px;font-weight:800;margin:6px 0 8px;line-height:1.2}
 .rc-desc{font-size:15px;color:#4a4a44;line-height:1.55;margin:0 0 16px}
@@ -2451,7 +2451,7 @@ document.querySelectorAll('.ba').forEach(function(el){
 /* ---- letters reader ---- */
 (function(){
   const DOCS=[
-    {pdf:'betterplan', thumb:'assets/img/betterplan/map-better-plan.webp', kicker:'Proposal', title:'A Better Plan for Gillman',
+    {pdf:'betterplan', thumb:'assets/img/betterplan/deck-cover.webp', kicker:'Proposal', title:'A Better Plan for Gillman',
      desc:'The residents’ alternative, put to HDB, URA and NParks on 1 September. Up to 2,400 homes on 538,000 m² across two sites, against 340,000 m² in the July plan, with the forest kept.', meta:'21 pages · PDF'},
     {pdf:'record01sep', thumb:'assets/img/now/hdb-dialogue-1sep.webp', kicker:'Record', title:'Record of the 1 September session',
      desc:'What residents asked and what the agencies answered at HortPark, written at agency level, naming no individual officer.', meta:'3 pages · PDF'},
