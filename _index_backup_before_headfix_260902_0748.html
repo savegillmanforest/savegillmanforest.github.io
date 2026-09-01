@@ -412,7 +412,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 /* ---- happening now ---- */
 .nowbar{max-width:1080px;margin:clamp(64px,8vw,104px) auto 0;text-align:left}
 .nowbar-head{font-size:clamp(22px,2.8vw,30px);font-weight:800;letter-spacing:-.015em;line-height:1.15;color:#fff;margin:0 0 22px;text-align:left}
-.now-grid-head{font-size:clamp(22px,2.8vw,30px);font-weight:800;letter-spacing:-.015em;line-height:1.15;color:#fff;text-align:left;margin:clamp(38px,4.5vw,58px) 0 22px}
+.now-grid-head{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin:clamp(38px,4.5vw,58px) 0 14px}
 .now-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,18px)}
 .now-card{display:flex;flex-direction:column;text-decoration:none;cursor:pointer;
   background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden}
@@ -727,6 +727,8 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
     <div class="film-wrap"><video class="film-el" controls muted playsinline webkit-playsinline preload="metadata" poster="assets/img/jpg-39.jpg"><source data-src="media/film.mp4" type="video/mp4">Your browser does not support the video tag.</video><button class="film-play" type="button" aria-label="Turn on the sound"><span class="film-cap">Tap for sound</span></button></div>
 
     <section class="nowbar" aria-label="What is happening now">
+      <h2 class="nowbar-head">What&rsquo;s happening now</h2>
+
       <div class="deadline-banner">
         <img class="db-img" src="assets/img/now/land-cleared.webp" alt="Cleared ground beside standing forest, with excavators and lorries at work" loading="lazy" decoding="async">
         <div class="db-body">
@@ -752,7 +754,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
       </div>
       </div>
 
-      <h2 class="now-grid-head">What&rsquo;s happening</h2>
+      <h3 class="now-grid-head">What&rsquo;s happening</h3>
 
       <div class="now-grid">
 
@@ -801,18 +803,6 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
         <p>Gillman is not empty land. It is a <b>mature forest decades in the making</b> that cannot be recreated, a <b>living link</b> between Berlayer Creek, Labrador and the Southern Ridges, and one of Singapore&rsquo;s most effective <b>natural cooling landscapes</b>. It is a sanctuary where people walk, breathe and restore their health, and one of the rare places where <b>heritage, art and nature meet</b>. Clear it, and <b>none of it comes back</b>.</p>
       </div>
     </section>
-
-    <figure class="ba-fig">
-      <div class="ba" style="--pos:50%">
-        <img src="assets/img/plan/aerial-cleared.webp" alt="Visualisation of the same aerial view with the land inside the development boundary cleared to bare earth, leaving a green strip through the middle" loading="lazy" decoding="async">
-        <img class="ba-top" src="assets/img/plan/aerial-today.webp" alt="Aerial view of Gillman Forest today, a continuous green canopy between the surrounding roads and estates" loading="lazy" decoding="async">
-        <span class="ba-line"></span><span class="ba-knob">&#8596;</span>
-        <span class="ba-tag ba-tag--l">Today</span><span class="ba-tag ba-tag--r">If cleared</span>
-        <span class="ba-credit">Right: indicative, residents&rsquo; visualisation. Base imagery &copy; Google</span>
-        <input class="ba-range" type="range" min="0" max="100" value="50" step="0.1" aria-label="Drag to compare Gillman today with a visualisation of the site cleared">
-      </div>
-      <figcaption><b>Drag the handle to compare.</b> Gillman today, against the indicative extent of forest that would be cleared under the plan published on 10 July 2026, drawn by residents from the Environmental Impact Assessment. It maps forest area, not individual buildings. On 14 August the Government said more will be kept, without saying how much. Three weeks on, no revised plan has been published. <button class="gd-inline" type="button" data-page="plan">See the deforestation plan</button></figcaption>
-    </figure>
     <section class="damage">
       <img class="damage-img" src="assets/img/jpg-40.jpg" alt="Aerial view of the forest canopy and an elevated walkway along the Southern Ridges near Gillman" loading="lazy" decoding="async">
       <div class="damage-list">
