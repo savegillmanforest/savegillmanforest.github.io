@@ -522,6 +522,21 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .bp-maps figcaption,.bp-fig figcaption{color:var(--muted);font-size:13.5px;line-height:1.5;margin-top:10px}
 .bp-maps figcaption b,.bp-fig figcaption b{color:var(--cream);font-weight:700}
 @media(max-width:820px){ .bp-maps{grid-template-columns:1fr;gap:20px} }
+.bp-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:18px 0 0}
+.bp-gallery figure{margin:0;display:flex;flex-direction:column}
+.bp-gallery .bp-g-wide{grid-column:span 4}
+.bp-gallery img{display:block;width:100%;height:210px;object-fit:contain;background:rgba(255,255,255,.06);border-radius:12px;border:1px solid rgba(255,255,255,.16);cursor:zoom-in;padding:8px}
+.bp-gallery .bp-g-wide img{height:auto;max-height:440px;object-fit:cover;padding:0;background:#0b140d}
+.bp-gallery figcaption{color:var(--muted);font-size:13px;line-height:1.45;margin-top:9px}
+@media(max-width:900px){
+  .bp-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bp-gallery .bp-g-wide{grid-column:span 2}
+}
+@media(max-width:520px){
+  .bp-gallery{grid-template-columns:1fr}
+  .bp-gallery .bp-g-wide{grid-column:span 1}
+  .bp-gallery img{height:180px}
+}
 .plan-note{color:var(--muted);font-size:13.5px;line-height:1.55;margin:16px 0 0;max-width:80ch}
 .plan-docs{list-style:none;padding:0;margin:14px 0 0;max-width:900px}
 .plan-docs li{padding:16px 0;border-top:1px solid rgba(255,255,255,.14)}
@@ -1943,10 +1958,29 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
       <li><b>Therapeutic earth trails</b>, restoring the abandoned trails in the manner of MacRitchie, with three or four entry points from Dover Road, Telok Blangah Street 31, Malan Road and Alexandra Road.</li>
       <li><b>A forest running track and playground</b> on the former archery school site, which is reforested rather than cleared.</li>
     </ul>
-    <figure class="bp-fig">
-      <img src="assets/img/betterplan/sensory-boardwalk.webp" alt="Concept sketch of a boardwalk running along the forest stream beneath the tree canopy" onclick="openImg(this.src)" width="1174" height="676" loading="lazy" decoding="async">
-      <figcaption><b>The sensory boardwalk.</b> NParks told residents on 1 September that it is prepared to study this and the forest trails, subject to what building there would do to the trees and the soil.</figcaption>
-    </figure>
+    <div class="bp-gallery">
+      <figure class="bp-g-wide">
+        <img src="assets/img/betterplan/forest-boardwalk.webp" alt="Concept render of the sensory boardwalk running beside the forest stream beneath the canopy" onclick="openImg(this.src)" loading="lazy" decoding="async">
+        <figcaption>The sensory boardwalk, along stream WQ1</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/betterplan/forest-trails.webp" alt="Concept image of restored earth trails through the forest" onclick="openImg(this.src)" loading="lazy" decoding="async">
+        <figcaption>Restored earth trails</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/betterplan/forest-track.webp" alt="Concept image of a forest running track on the reforested archery school site" onclick="openImg(this.src)" loading="lazy" decoding="async">
+        <figcaption>Forest track, inspired by Nike&rsquo;s Michael Johnson Track</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/betterplan/forest-pavilion.webp" alt="Concept image of the sunken music pavilion in the SAJC ravine" onclick="openImg(this.src)" loading="lazy" decoding="async">
+        <figcaption>Music pavilion, sunk into the SAJC ravine</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/betterplan/forest-sketch.webp" alt="Early concept sketch of the trail network, playground and running track weaving through the tree canopy" onclick="openImg(this.src)" loading="lazy" decoding="async">
+        <figcaption>Concept sketch of the trail and track network</figcaption>
+      </figure>
+    </div>
+    <p class="plan-note">Tap any image to enlarge. Early concept sketches, drawn to show how the trail network, playground and track weave through the retained canopy. The goal throughout is to build around existing mature trees rather than clear them. NParks told residents on 1 September that it is prepared to study the boardwalk and the forest trails, subject to what building there would do to the trees and the soil.</p>
 
     <h3 class="plan-h">Gillman as a node, not an island</h3>
     <p class="plan-note" style="margin-top:0">Gillman sits at the narrowest point of the green corridor that links Kent Ridge,
