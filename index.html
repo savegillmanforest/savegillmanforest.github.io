@@ -418,6 +418,31 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
   background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden}
 .now-thumb{display:block;position:relative;background:rgba(255,255,255,.06)}
 .now-thumb img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+
+/* the text sits on its own layer, casting a soft shadow up onto the image */
+.now-thumb::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  box-shadow:0 -7px 16px -2px rgba(0,0,0,.55);pointer-events:none}
+
+/* hover: a small lift, a warmer edge, and the image easing in behind it */
+.now-card{transition:transform .32s cubic-bezier(.2,.7,.3,1),border-color .32s ease,background-color .32s ease,box-shadow .32s ease}
+.now-thumb img{transition:transform .55s cubic-bezier(.2,.7,.3,1)}
+.now-title,.now-when{transition:color .25s ease}
+.now-card:hover,.now-card:focus-visible{
+  transform:translateY(-4px);
+  background:rgba(255,255,255,.085);
+  border-color:rgba(245,176,46,.55);
+  box-shadow:0 16px 34px -14px rgba(0,0,0,.65);
+}
+.now-card:hover .now-thumb img,.now-card:focus-visible .now-thumb img{transform:scale(1.045)}
+.now-card:hover .now-title,.now-card:focus-visible .now-title{color:var(--amber)}
+.now-card:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.now-card:active{transform:translateY(-1px)}
+.now-card.is-urgent:hover{border-color:rgba(245,176,46,.85)}
+@media(prefers-reduced-motion:reduce){
+  .now-card,.now-thumb img{transition:none}
+  .now-card:hover,.now-card:focus-visible{transform:none}
+  .now-card:hover .now-thumb img{transform:none}
+}
 .now-when{color:var(--amber);font-weight:800;font-size:12.5px;letter-spacing:.03em;padding:13px 15px 0}
 .now-title{color:#fff;font-weight:700;font-size:16.5px;line-height:1.25;letter-spacing:-.01em;padding:5px 15px 0}
 .now-sub{color:var(--cream);font-size:13.5px;line-height:1.45;padding:7px 15px 16px}
