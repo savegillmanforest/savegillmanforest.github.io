@@ -1392,12 +1392,13 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 
     <div class="doc-cards" id="doc-cards">
       <button class="doc-card" data-doc="0"><div class="dc-kicker">Proposal</div><div class="dc-title">A Better Plan for Gillman</div><div class="dc-meta">21pp &middot; PDF</div></button>
-      <button class="doc-card" data-doc="1"><div class="dc-kicker">Record</div><div class="dc-title">Record of the 1 September session</div><div class="dc-meta">3pp &middot; PDF</div></button>
-      <button class="doc-card" data-doc="2"><div class="dc-kicker">Report</div><div class="dc-title">Residents&rsquo; feedback &amp; proposal on the redevelopment</div><div class="dc-meta">26pp &middot; PDF</div></button>
-      <button class="doc-card" data-doc="3"><div class="dc-kicker">Summary</div><div class="dc-title">Summary of the 30 July dialogue session</div><div class="dc-meta">11pp &middot; PDF</div></button>
-      <button class="doc-card" data-doc="4"><div class="dc-kicker">Letter</div><div class="dc-title">Letter to PM Wong on the 30 July dialogue</div><div class="dc-meta">3pp &middot; PDF</div></button>
-      <button class="doc-card" data-doc="5"><div class="dc-kicker">Letter</div><div class="dc-title">Letter to Minister Grace Fu (MSE)</div><div class="dc-meta">3pp &middot; PDF</div></button>
-      <button class="doc-card" data-doc="6"><div class="dc-kicker">Official</div><div class="dc-title">HDB&rsquo;s Environmental Impact Assessment</div><div class="dc-meta">255pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="1"><div class="dc-kicker">Submission</div><div class="dc-title">A Better Plan for Gillman, the written submission</div><div class="dc-meta">29pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="2"><div class="dc-kicker">Record</div><div class="dc-title">Record of the 1 September session</div><div class="dc-meta">3pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="3"><div class="dc-kicker">Report</div><div class="dc-title">Residents&rsquo; feedback &amp; proposal on the redevelopment</div><div class="dc-meta">26pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="4"><div class="dc-kicker">Summary</div><div class="dc-title">Summary of the 30 July dialogue session</div><div class="dc-meta">11pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="5"><div class="dc-kicker">Letter</div><div class="dc-title">Letter to PM Wong on the 30 July dialogue</div><div class="dc-meta">3pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="6"><div class="dc-kicker">Letter</div><div class="dc-title">Letter to Minister Grace Fu (MSE)</div><div class="dc-meta">3pp &middot; PDF</div></button>
+      <button class="doc-card" data-doc="7"><div class="dc-kicker">Official</div><div class="dc-title">HDB&rsquo;s Environmental Impact Assessment</div><div class="dc-meta">255pp &middot; PDF</div></button>
     </div>
 
     <div class="reader">
@@ -2347,6 +2348,8 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 
     <a class="res-link res-link--thumb" href="documents/Gillman_ABetterPlan_26-08-30.pdf" target="_blank" rel="noopener"><img class="res-thumb res-thumb--wide" src="assets/img/betterplan/deck-cover.webp" alt="Cover of A Better Plan for Gillman" loading="lazy" decoding="async"><span class="res-txt">Read A Better Plan for Gillman in full</span><span class="res-chip">PDF</span></a>
 
+    <a class="res-link res-link--thumb" href="documents/Gillman_ABetterPlan_Submission_26-08-28.pdf" target="_blank" rel="noopener"><img class="res-thumb" src="assets/img/betterplan/submission-cover.webp" alt="First page of the written submission of A Better Plan for Gillman" loading="lazy" decoding="async"><span class="res-txt">Read the written submission, with the zone-by-zone detail and Annexes A, B and C</span><span class="res-chip">PDF</span></a>
+
     <div class="foot">
       A Better Plan for Gillman is a residents&rsquo; proposal, prepared independently and submitted to MND, URA, HDB and NParks. It is not a government document and carries no official standing. Figures for the July 2026 plan are as published on 10 July 2026. Visualisations and maps are residents&rsquo; own work and are indicative.
     </div>
@@ -2479,6 +2482,7 @@ const PDFS = {
   "parlnotes": "documents/Gillman_ParliamentNotes_04-Aug-2026.pdf",
   "eia": "documents/Gillman_EIAMainReport_26-07-08.pdf",
   "betterplan": "documents/Gillman_ABetterPlan_26-08-30.pdf",
+  "betterplandoc": "documents/Gillman_ABetterPlan_Submission_26-08-28.pdf",
   "record01sep": "documents/Gillman_MeetingRecord_26-09-01.pdf"
 };
 function openPdf(id, ev){
@@ -2545,6 +2549,8 @@ document.querySelectorAll('.ba').forEach(function(el){
   const DOCS=[
     {pdf:'betterplan', thumb:'assets/img/betterplan/deck-cover.webp', kicker:'Proposal', title:'A Better Plan for Gillman',
      desc:'The residents’ alternative, put to HDB, URA and NParks on 1 September. Up to 2,400 homes on 538,000 m² across two sites, against 340,000 m² in the July plan, with the forest kept.', meta:'21 pages · PDF'},
+    {pdf:'betterplandoc', thumb:'assets/img/betterplan/submission-cover.webp', kicker:'Submission', title:'A Better Plan for Gillman, the written submission',
+     desc:'The proposal as submitted to MND, URA, HDB and NParks on 28 August. Sets out Gillman Corner zone by zone, and carries the site comparison in Annex A, the artist sketches in Annex B and the twelve alternative brownfield sites in Annex C.', meta:'29 pages · PDF'},
     {pdf:'record01sep', thumb:'assets/img/now/hdb-dialogue-1sep.webp', kicker:'Record', title:'Record of the 1 September session',
      desc:'What residents asked and what the agencies answered at HortPark, written at agency level, naming no individual officer.', meta:'3 pages · PDF'},
     {pdf:'proposal', thumb:'assets/img/jpg-41.jpg', kicker:'Report', title:'Residents’ feedback & proposal',
