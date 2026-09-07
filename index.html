@@ -750,6 +750,8 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
   .act-kicker,.act-note{min-height:0}.act-note{margin-bottom:14px}}
 /* position:sticky needs a non-scrolling ancestor; clip keeps the horizontal guard without one */
 html,body{overflow-x:clip}
+/* more air under the fixed nav where the page opens with the eyebrow */
+#page-guide{padding-top:clamp(122px,11vw,152px)}
 /* the guide is a long scrolling read, so the nav needs a floor under it */
 body[data-page="guide"] .nav{background:rgba(10,24,16,.93);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.10)}
 /* worked example */
