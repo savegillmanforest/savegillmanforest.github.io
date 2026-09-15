@@ -17,14 +17,14 @@
 <meta property="og:locale" content="en_SG">
 <meta property="og:url" content="https://savegillmanforest.org/">
 <meta property="og:title" content="Save Gillman Forest">
-<meta property="og:description" content="Gillman Forest has stood for generations. Within months a decision could be made to clear it. Three ways to act while the plan is being redrawn, and what is still open.">
+<meta property="og:description" content="Gillman Forest has stood for generations. Within months a decision could be made to clear it. Two ways to make your voice heard while the plan is being redrawn, and what is still open.">
 <meta property="og:image" content="https://savegillmanforest.org/assets/img/og-share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Aerial view of the forest canopy at Gillman with the elevated Forest Walk threading through it">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Save Gillman Forest">
-<meta name="twitter:description" content="Gillman Forest has stood for generations. Within months a decision could be made to clear it. Three ways to act while the plan is being redrawn, and what is still open.">
+<meta name="twitter:description" content="Gillman Forest has stood for generations. Within months a decision could be made to clear it. Two ways to make your voice heard while the plan is being redrawn, and what is still open.">
 <meta name="twitter:image" content="https://savegillmanforest.org/assets/img/og-share.jpg">
 <script type="application/ld+json">
 {
@@ -101,6 +101,59 @@ h1,h2,h3{margin:0}
 #page-home{padding:0}
 .home-below{padding:80px clamp(20px,4.5vw,44px) 60px;text-align:center}
 .home-below .lede{margin:0 auto;text-align:center}
+.home-below--top{padding-top:calc(var(--navh, 90px) + clamp(28px,6vh,64px))}
+.wild--top{margin-top:0}
+.wild p.wild-eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin:0 0 14px;text-shadow:none}
+.wild h1.wild-lead{font-size:clamp(38px,6vw,70px);font-weight:800;color:#fff;line-height:1.02;letter-spacing:-.03em;margin:0 0 20px;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.hero-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:clamp(28px,4vw,56px);align-items:center;max-width:1080px;margin:0 auto;text-align:left}
+.hero-split .ba-fig{grid-column:1;grid-row:1;max-width:none;margin:0;justify-self:end;width:100%;max-width:640px}
+.hero-split .wild{grid-column:2;grid-row:1;max-width:none;margin:0;text-align:left;align-self:start;padding-top:clamp(8px,3vw,40px)}
+@media(max-width:600px){.br-wide{display:none}}
+.hero-split .wild p{font-size:clamp(18px,1.75vw,22px)}
+.wild h2.wild-sub{font-size:clamp(30px,3.4vw,44px);font-weight:800;color:#fff;line-height:1.08;letter-spacing:-.02em;margin:0 0 16px;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.wild.wild--head{margin:0 auto clamp(44px,5.5vw,76px);max-width:820px}
+.wild--head h1.wild-lead{margin-bottom:0}
+.hero-split .ba-fig figcaption{text-align:left}
+@media(max-width:860px){
+  .hero-split{grid-template-columns:1fr;gap:26px}
+  .hero-split .wild,.hero-split .ba-fig{grid-column:1;grid-row:auto}
+  .hero-split .wild{text-align:center;padding-top:0}
+  .hero-split .ba-fig{max-width:520px;margin:0 auto}
+}
+.learn{max-width:1080px;margin:clamp(40px,5vw,64px) auto 0;text-align:left}
+.learn-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,18px)}
+.learn-card .now-thumb img{aspect-ratio:16/8}
+.learn-card .now-title{font-size:19px}
+.learn-card .now-sub{font-size:14.5px;flex:1 1 auto}
+.learn-go{align-self:flex-start;margin:0 15px 18px;color:var(--amber);font-weight:800;font-size:14px;border-bottom:1px solid rgba(245,176,46,.5)}
+@media(max-width:760px){.learn-grid{grid-template-columns:1fr}}
+.home-below--top .act-head{margin-top:clamp(40px,5vw,64px);font-size:clamp(30px,3.8vw,46px)}
+.home-below .act-row.act-row--two{margin-top:clamp(24px,2.8vw,36px)}
+.home-below .act-row.act-row--two{max-width:1080px}
+.act-row--two .act-card{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"n kick kick" "n title title" "n body body" "n note go";grid-template-rows:auto auto 1fr auto;column-gap:14px;padding:16px 20px 16px 16px;align-items:start}
+.act-row--two .act-n{grid-area:n;margin:0}
+.act-row--two .act-kicker{grid-area:kick;min-height:0;align-self:center;line-height:26px}
+.act-row--two .act-title{grid-area:title;margin-top:2px}
+.act-row--two .act-body{grid-area:body;margin-top:6px}
+.act-row--two .act-note{grid-area:note;min-height:0;margin:10px 0 0;align-self:center}
+.act-row--two .act-go{grid-area:go;margin:8px 0 0;align-self:end;white-space:nowrap}
+.act-row--two .act-card{background:var(--amber);border-color:var(--amber);color:#241a00}
+.act-row--two .act-card:hover,.act-row--two .act-card:focus-visible{background:#ffc24d;border-color:#ffc24d}
+.act-row--two .act-card:focus-visible{outline-color:#fff}
+.act-row--two .act-n{background:#241a00;color:var(--amber)}
+.act-row--two .act-kicker{color:#5a4200}
+.act-row--two .act-title{color:#1a1300}
+.act-row--two .act-body{color:#2e2300}
+.act-row--two .act-note{color:#5a4200}
+.act-row--two .act-go,.act-row--two .act-card:hover .act-go{background:#241a00;color:#ffd27a}
+.learn{max-width:1080px}
+.learn-card{padding:16px 20px}
+.learn-card .now-when,.learn-card .now-title,.learn-card .now-sub{padding-left:0;padding-right:0}
+.learn-card .now-when{padding-top:0}
+.learn-card .now-title{font-size:18px}
+.learn-card .now-sub{font-size:14px;padding-bottom:10px;flex:0 0 auto}
+.learn-card .learn-go{margin:0}
+.film-wrap--late{margin-top:clamp(56px,7vw,90px)}
 .hero-vid{position:relative;width:100%;height:84vh;min-height:440px;overflow:hidden;background:#0c0e0d}
 .hero-vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero-vid-scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(8,20,13,.34),rgba(8,20,13,.26) 45%,rgba(8,20,13,.66))}
@@ -137,7 +190,7 @@ h1,h2,h3{margin:0}
 .strip-kicker{font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:0;text-transform:none;color:#fff;margin:34px 0 14px}
 .damage{max-width:980px;margin:64px auto 0;text-align:center}
 .damage-title{font-weight:800;font-size:clamp(28px,4.6vw,48px);color:#fff;letter-spacing:-.01em;line-height:1.05;margin:0 0 26px;text-shadow:0 2px 16px rgba(0,0,0,.5)}
-.damage-img{width:100vw;max-width:none;margin:0 0 6px calc(50% - 50vw);display:block;border:none;border-radius:0;aspect-ratio:1200/719;object-fit:cover;object-position:50% 100%}
+.damage-img{width:100vw;max-width:none;margin:0 0 6px calc(50% - 50vw);display:block;border:none;border-radius:0;aspect-ratio:1200/360;object-fit:cover;object-position:50% 50%}
 .damage-list{max-width:840px;margin:56px auto 0;text-align:center}
 .damage-list .dmg-body{margin-left:auto;margin-right:auto;max-width:56ch}
 .dmg{padding:24px 2px;border-top:1px solid rgba(255,255,255,.16)}
@@ -378,7 +431,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
   border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:1px}
 .news-title:hover{color:var(--amber);border-bottom-color:var(--amber)}
 .news-note{color:var(--cream);font-size:14.5px;line-height:1.55;margin:7px 0 0;max-width:70ch}
-.ev-list .news-item.is-past{display:none}
+.ev-list .news-item.is-past,.now-card.is-past{display:none}
 .ev-list .ev-facts{margin:14px 0 0;max-width:560px}
 .ev-list .ev-facts > div{grid-template-columns:110px minmax(0,1fr);gap:12px;padding:7px 0}
 .ev-list .ev-facts dd{font-size:14.5px}
@@ -542,6 +595,7 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .letters-priority b{color:var(--amber)}
 .letters-priority a{color:var(--amber)}
 .ev-ctas{display:flex;justify-content:center;margin-top:24px}
+.gd-close .ev-ctas{gap:10px;flex-wrap:wrap}
 .dlg-act{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--cream);font-size:15px;margin:14px 0 4px}
 .cta-pair{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 .hdr-btns{display:inline-flex;align-items:center;gap:8px}
@@ -767,8 +821,10 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
 .act-card:hover .act-go{background:#ffc24d}
 .act-note{color:var(--muted);font-size:12.5px;line-height:1.4;margin-top:10px;margin-bottom:16px;min-height:2.8em}
 .act-foot{font-size:14px;color:var(--cream);margin:16px 0 0;text-align:center}
+.act-row.act-row--two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px;margin-left:auto;margin-right:auto}
 @media(max-width:900px){.act-row{grid-template-columns:1fr;gap:12px}.act-title{font-size:18px}
   .act-kicker,.act-note{min-height:0}.act-note{margin-bottom:14px}}
+@media(max-width:900px){.act-row.act-row--two{grid-template-columns:1fr}}
 /* position:sticky needs a non-scrolling ancestor; clip keeps the horizontal guard without one */
 html,body{overflow-x:clip}
 /* more air under the fixed nav where the page opens with the eyebrow */
@@ -813,7 +869,7 @@ body[data-page="guide"] .nav{background:rgba(10,24,16,.93);-webkit-backdrop-filt
     <button data-page="news">News</button>
   </nav>
   <span class="nav-ctas">
-    <button class="signup-btn" type="button" data-page="guide">Three ways to act</button>
+    <button class="signup-btn" type="button" data-page="guide" data-anchor="gd-mp">Write to your MP</button>
     <button class="signup-btn signup-btn--ghost" type="button" data-page="guide" data-anchor="gd-mse">Write to MSE</button>
   </span>
   </div>
@@ -823,87 +879,94 @@ body[data-page="guide"] .nav{background:rgba(10,24,16,.93);-webkit-backdrop-filt
 
 <!-- HOME -->
 <section class="page active" id="page-home">
-  <div class="hero-vid">
-    <video class="hero-vid-el" autoplay muted loop playsinline webkit-playsinline x5-playsinline disablepictureinpicture preload="auto" poster="assets/img/jpg-38.jpg" aria-label="Aerial footage of Gillman Forest"><source data-src="media/hero.mp4" type="video/mp4"></video>
-    <div class="hero-vid-scrim"></div>
-    <h1 class="hero-vid-title">Save Gillman Forest</h1>
-  </div>
-  <div class="wrap home-below">
-    <p class="lede">Gillman Forest has stood for generations. Within months, a decision could be made to clear it. And once a mature forest is lost, no amount of replanting brings it back. Add your voice today, and help us keep Gillman standing for generations to come.</p>
-
-    <h2 class="act-head">Three ways to act</h2>
-    <div class="act-row" id="act">
-      <button class="act-card" type="button" data-page="guide" data-anchor="gd-mse">
+  <div class="wrap home-below home-below--top">
+    <section class="wild wild--top wild--head">
+      <div>
+        <h1 class="wild-lead">Save Gillman Forest</h1>
+      </div>
+    </section>
+    <div class="hero-split">
+    <section class="wild wild--top">
+      <div>
+        <h2 class="wild-sub">What clearing Gillman would destroy</h2>
+        <p>Gillman is not empty land. It is a <b>mature forest decades in the making</b> that cannot be recreated, a <b>living link</b> between Berlayer Creek, Labrador and the Southern Ridges, and one of Singapore&rsquo;s most effective <b>natural cooling landscapes</b>. It is a sanctuary where people walk, breathe and restore their health, and one of the rare places where <b>heritage, art and nature meet</b>. Clear it, and <b>none of it comes back</b>.</p>
+      </div>
+    </section>
+    <figure class="ba-fig">
+      <div class="ba" style="--pos:50%">
+        <img src="assets/img/plan/aerial-cleared.webp" alt="Visualisation of the same aerial view with the land inside the development boundary cleared to bare earth, leaving a green strip through the middle" loading="lazy" decoding="async">
+        <img class="ba-top" src="assets/img/plan/aerial-today.webp" alt="Aerial view of Gillman Forest today, a continuous green canopy between the surrounding roads and estates" loading="lazy" decoding="async">
+        <span class="ba-line"></span><span class="ba-knob">&#8596;</span>
+        <span class="ba-tag ba-tag--l">Today</span><span class="ba-tag ba-tag--r">If cleared</span>
+        <span class="ba-credit">Right: indicative, residents&rsquo; visualisation. Base imagery &copy; Google</span>
+        <input class="ba-range" type="range" min="0" max="100" value="50" step="0.1" aria-label="Drag to compare Gillman today with a visualisation of the site cleared">
+      </div>
+      <figcaption><b>Drag the handle to compare.</b> Gillman today, against the indicative extent of forest that would be cleared under the plan published on 10 July 2026, drawn by residents from the Environmental Impact Assessment. It maps forest area, not individual buildings. On 14 August the Government said more will be kept, without saying how much. Three weeks on, no revised plan has been published. <button class="gd-inline" type="button" data-page="plan">See the deforestation plan</button></figcaption>
+    </figure>
+    </div>
+    <h2 class="act-head">Make your voice heard</h2>
+    <div class="act-row act-row--two" id="act">
+      <button class="act-card" type="button" data-page="guide" data-anchor="gd-mp">
         <span class="act-n">1</span>
+        <span class="act-kicker">Parliament</span>
+        <span class="act-title">Ask your MP to put the questions</span>
+        <span class="act-body">Ask two questions the Government has not answered: how much forest the revised plan keeps, and how many homes it holds. The guide gives you the names, the email addresses and a simple four-part letter to put in your own words.</span>
+        <span class="act-note">One paragraph is enough.</span>
+        <span class="act-go">See what to write</span>
+      </button>
+      <button class="act-card" type="button" data-page="guide" data-anchor="gd-mse">
+        <span class="act-n">2</span>
         <span class="act-kicker">MSE, the environment ministry</span>
         <span class="act-title">Tell the climate plan what a forest is worth</span>
         <span class="act-body">MSE is writing Singapore&rsquo;s first National Adaptation Plan and is asking the public what worries them. Gillman is a cooling landscape, a flood sponge, and shade you can walk under. Say so in your own words.</span>
         <span class="act-note">About ten minutes. It asks for your name and email.</span>
-        <span class="act-go">See what to write</span>
-      </button>
-      <button class="act-card" type="button" data-page="guide" data-anchor="gd-mp">
-        <span class="act-n">2</span>
-        <span class="act-kicker">Parliament</span>
-        <span class="act-title">Ask your MP to put the question</span>
-        <span class="act-body">MPs raise what their residents write to them about, and 4 August showed they do. The names, the addresses and what to put in a letter are all here.</span>
-        <span class="act-note">One paragraph is enough.</span>
-        <span class="act-go">See who to write to</span>
-      </button>
-      <button class="act-card" type="button" data-page="guide" data-anchor="gd-hdb">
-        <span class="act-n">3</span>
-        <span class="act-kicker">HDB, the housing board</span>
-        <span class="act-title">Send your feedback while the plan is redrawn</span>
-        <span class="act-body">The agencies are redrawing the Gillman plan now, with a findings report due in about a month. A letter that arrives before it is written is one HDB has to answer.</span>
-        <span class="act-note">Under &ldquo;Category of Feedback&rdquo; choose Land Use Plans.</span>
-        <span class="act-go">See what to ask for</span>
+        <span class="act-go">See what to tell MSE</span>
       </button>
     </div>
-    <p class="act-foot">Three different desks, and all three are open. Each one opens with a short primer, then the form itself. The whole set takes about half an hour.</p>
+    <p class="act-foot">Each one opens with a short primer, then the letter or the form. Also worth doing while the plan is being redrawn: <button class="gd-inline" type="button" data-page="guide" data-anchor="gd-hdb">send your feedback to HDB</button>.</p>
 
-    <div class="film-wrap"><video class="film-el" controls muted playsinline webkit-playsinline preload="metadata" poster="assets/img/jpg-39.jpg"><source data-src="media/film.mp4" type="video/mp4">Your browser does not support the video tag.</video><button class="film-play" type="button" aria-label="Turn on the sound"><span class="film-cap">Tap for sound</span></button></div>
+    <section class="learn" aria-label="The plan and where it stands">
+      <div class="learn-grid">
+        <a class="now-card learn-card" href="#plan" data-page="plan">
+          <span class="now-when">The deforestation plan</span>
+          <span class="now-title">What the July plan would clear</span>
+          <span class="now-sub">At least 10 hectares of forest cleared under the plan of 10 July 2026, still the only published position.</span>
+          <span class="learn-go">Read the plan</span>
+        </a>
+        <a class="now-card learn-card" href="#dialogue" data-page="dialogue">
+          <span class="now-when">Where we stand</span>
+          <span class="now-title">They agreed to keep more. Nobody has said how much.</span>
+          <span class="now-sub">Residents put an alternative to the agencies on 1 September. A findings report is due in early October.</span>
+          <span class="learn-go">Developments so far</span>
+        </a>
+      </div>
+    </section>
+
 
     <section class="nowbar" aria-label="What is happening now">
-      <div class="deadline-banner">
-        <img class="db-img" src="assets/img/now/land-cleared.webp" alt="Cleared ground beside standing forest, with excavators and lorries at work" loading="lazy" decoding="async">
-        <div class="db-body">
-          <div class="db-when">As of 4 September. The plan is being redrawn.</div>
-          <h3 class="db-title">They have agreed to keep more.<br>Nobody has said how much.</h3>
-          <p class="db-note">On 14 August the Government said more greenery will be kept at Gillman and fewer homes built. Three weeks on, no figure has been published. On 1 September residents put a worked alternative to HDB, URA and NParks that builds the homes and keeps the forest. The agencies will now redraw the plan, with a summary findings report due in about a month. A letter sent today still arrives while the line is being drawn.</p>
-          <div class="db-btns"><a class="btn btn--go" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Send your feedback to HDB</a><button class="btn btn--ghost" type="button" data-page="dialogue">Where we stand, in full</button></div>
-          <div class="db-tpl"><span>Under &ldquo;Category of Feedback&rdquo; choose <b style="color:var(--amber)">Land Use Plans</b>, write in your own words, then submit your enquiry.</span><button class="btn-mini btn-mini--ghost" type="button" data-page="guide">How to write it</button></div>
-        </div>
-      </div>
-
-      <div class="prec-pair">
-      <div class="precedent">
-        <h3 class="prec-h">This is not unprecedented.</h3>
-        <p>In 2021, Dover Forest drew 50,000 signatures and nearly 1,800 written submissions. The plans changed, and the western half of the forest was kept.</p>
-        <p class="prec-turn">Feedback moved it once, and it has already moved this plan. What is still open is how far.</p>
-      </div>
-
-      <div class="precedent">
-        <h3 class="prec-h">So what should they keep?</h3>
-        <p>At <a href="https://majuforest.com/" target="_blank" rel="noopener">Maju</a>, the Nature Society has named a figure: two thirds of the forest. Gillman has no number of its own, and the plan being redrawn now will fill that silence one way or another. Residents have set out five things to ask for, every one of them drawn from the Government&rsquo;s own reports: a contiguous forest rather than a strip, a 60m corridor by the report&rsquo;s own rule, an answer on what can actually cross the road, the eastern flora cluster brought inside the line, and the arithmetic behind &ldquo;fewer homes&rdquo;.</p>
-        <p class="prec-turn">Two of these, in your own words, is a strong letter. <button class="gd-inline" type="button" data-page="plan">Read the five findings in full</button></p>
-      </div>
-      </div>
-
       <h2 class="now-grid-head">What&rsquo;s happening</h2>
 
       <div class="now-grid">
-
-        <a class="now-card is-urgent" href="#dialogue" data-page="dialogue">
-          <span class="now-thumb"><img src="assets/img/now/hdb-dialogue-1sep-16x10.webp" alt="HDB invitation headed Building A Shared Future at Sunset Way and Gillman Barracks" loading="lazy" decoding="async"></span>
-          <span class="now-when">1 September</span>
-          <span class="now-title">Residents put a better plan to the agencies</span>
-          <span class="now-sub">At a meeting residents asked for, HDB, URA, MND and NParks were shown an alternative that builds the homes and keeps the forest. NParks is prepared to study two parts of it. The housing yield was not given. Read the record.</span>
-        </a>
 
         <a class="now-card now-card--wide" href="#betterplan" data-page="betterplan">
           <span class="now-thumb"><img src="assets/img/betterplan/deck-cover.webp" alt="Cover of A Better Plan for Gillman, the residents&rsquo; proposal" loading="lazy" decoding="async"></span>
           <span class="now-when">The proposal</span>
           <span class="now-title">A Better Plan for Gillman</span>
           <span class="now-sub">Up to 2,400 homes on 538,000 m&sup2; across two sites, against 340,000 m&sup2; in the July plan, with the forest kept. The maps, the amenities, the alternative sites and what the agencies said to each of it.</span>
+        </a>
+
+        <a class="now-card" href="#events" data-page="events" data-until="2026-09-20">
+          <span class="now-thumb"><img src="assets/img/events/walk-20sep-painting.webp" alt="" loading="lazy" decoding="async"></span>
+          <span class="now-when">Walk, Sun 20 Sep</span>
+          <span class="now-title">Hike Gillman Forest and Earth Trail</span>
+          <span class="now-sub">A free morning walk from Gillman Barracks, 8am to 11am, led by a resident. Limited to 20 people. Register ahead.</span>
+        </a>
+
+        <a class="now-card" href="#events" data-page="events" data-until="2026-10-03">
+          <span class="now-thumb"><img src="assets/img/events/bbco-everything-nature.webp" alt="" style="object-position:left center" loading="lazy" decoding="async"></span>
+          <span class="now-when">Concert, Sat 3 Oct</span>
+          <span class="now-title">Everything Nature, with a Save Gillman Forest booth</span>
+          <span class="now-sub">Bukit Batok Chinese Orchestra at SOTA Concert Hall. Lobby activities from 4.15pm, concert at 5pm.</span>
         </a>
 
         <a class="now-card" href="https://theonlinecitizen.com/2026/08/18/what-planning-parameter-is-singapore-s-entire-housing-pipeline-actually-sized-for" target="_blank" rel="noopener">
@@ -938,24 +1001,6 @@ body[data-page="guide"] .nav{background:rgba(10,24,16,.93);-webkit-backdrop-filt
       </div>
     </section>
 
-    <section class="wild">
-      <div>
-        <p class="wild-lead">What clearing Gillman would destroy</p>
-        <p>Gillman is not empty land. It is a <b>mature forest decades in the making</b> that cannot be recreated, a <b>living link</b> between Berlayer Creek, Labrador and the Southern Ridges, and one of Singapore&rsquo;s most effective <b>natural cooling landscapes</b>. It is a sanctuary where people walk, breathe and restore their health, and one of the rare places where <b>heritage, art and nature meet</b>. Clear it, and <b>none of it comes back</b>.</p>
-      </div>
-    </section>
-
-    <figure class="ba-fig">
-      <div class="ba" style="--pos:50%">
-        <img src="assets/img/plan/aerial-cleared.webp" alt="Visualisation of the same aerial view with the land inside the development boundary cleared to bare earth, leaving a green strip through the middle" loading="lazy" decoding="async">
-        <img class="ba-top" src="assets/img/plan/aerial-today.webp" alt="Aerial view of Gillman Forest today, a continuous green canopy between the surrounding roads and estates" loading="lazy" decoding="async">
-        <span class="ba-line"></span><span class="ba-knob">&#8596;</span>
-        <span class="ba-tag ba-tag--l">Today</span><span class="ba-tag ba-tag--r">If cleared</span>
-        <span class="ba-credit">Right: indicative, residents&rsquo; visualisation. Base imagery &copy; Google</span>
-        <input class="ba-range" type="range" min="0" max="100" value="50" step="0.1" aria-label="Drag to compare Gillman today with a visualisation of the site cleared">
-      </div>
-      <figcaption><b>Drag the handle to compare.</b> Gillman today, against the indicative extent of forest that would be cleared under the plan published on 10 July 2026, drawn by residents from the Environmental Impact Assessment. It maps forest area, not individual buildings. On 14 August the Government said more will be kept, without saying how much. Three weeks on, no revised plan has been published. <button class="gd-inline" type="button" data-page="plan">See the deforestation plan</button></figcaption>
-    </figure>
     <section class="damage">
       <img class="damage-img" src="assets/img/jpg-40.jpg" alt="Aerial view of the forest canopy and an elevated walkway along the Southern Ridges near Gillman" loading="lazy" decoding="async">
       <div class="damage-list">
@@ -1102,6 +1147,8 @@ body[data-page="guide"] .nav{background:rgba(10,24,16,.93);-webkit-backdrop-filt
       </div>
       <p class="fauna-foot">Gillman sits between Berlayer Creek, Labrador Nature Reserve and the Southern Ridges. Species like these move between those green spaces. Remove the link in the middle and the habitat on either side is left fragmented.</p>
     </section>
+
+    <div class="film-wrap film-wrap--late"><video class="film-el" controls muted playsinline webkit-playsinline preload="metadata" poster="assets/img/jpg-39.jpg"><source data-src="media/film.mp4" type="video/mp4">Your browser does not support the video tag.</video><button class="film-play" type="button" aria-label="Turn on the sound"><span class="film-cap">Tap for sound</span></button></div>
 
     <div class="precedent" id="maju">
       <h3 class="prec-h">Gillman is not fighting alone.</h3>
@@ -1490,7 +1537,7 @@ body[data-page="guide"] .nav{background:rgba(10,24,16,.93);-webkit-backdrop-filt
     </div>
 
     <h3 class="plan-h" style="margin-top:44px">The documents</h3>
-<p class="letters-cta" style="margin-bottom:26px"><b>Looking for who to write to?</b> The names, the addresses and what to put in a letter now live on one page. <button class="gd-inline" type="button" data-page="guide">Three ways to act</button></p>
+<p class="letters-cta" style="margin-bottom:26px"><b>Looking for who to write to?</b> The names, the addresses and what to put in a letter now live on one page. <button class="gd-inline" type="button" data-page="guide" data-anchor="gd-mp">Make your voice heard</button></p>
 
     <div class="doc-cards" id="doc-cards">
       <button class="doc-card" data-doc="0"><div class="dc-kicker">Proposal</div><div class="dc-title">A Better Plan for Gillman</div><div class="dc-meta">21pp &middot; PDF</div></button>
@@ -2697,19 +2744,77 @@ body[data-page="guide"] .nav{background:rgba(10,24,16,.93);-webkit-backdrop-filt
 <!-- GUIDE -->
 <section class="page" id="page-guide">
   <div class="wrap-wide">
-    <p class="eyebrow">Three ways to act</p>
+    <p class="eyebrow">Make your voice heard</p>
     <h2 class="gd-h1">How to write it</h2>
-    <p class="gd-lead">Three channels are open, and each one reaches a different desk. Ten to fifteen
-    minutes, in your own words, is enough for any of them. You do not have to live nearby. Gillman belongs
+    <p class="gd-lead">Two come first: your MP, and the national climate plan. Each reaches a different desk,
+    and ten to fifteen minutes in your own words is enough for either. The HDB feedback form is also open
+    while the plan is being redrawn. You do not have to live nearby. Gillman belongs
     to all of Singapore.</p>
     <div class="gd-jump">
-      <button type="button" data-anchor="gd-mse">1. The national climate plan</button>
-      <button type="button" data-anchor="gd-mp">2. Your MP and the ministers</button>
-      <button type="button" data-anchor="gd-hdb">3. The HDB feedback form</button>
+      <button type="button" data-anchor="gd-mp">1. Your MP and the ministers</button>
+      <button type="button" data-anchor="gd-mse">2. The national climate plan</button>
+      <button type="button" data-anchor="gd-hdb">Also: the HDB feedback form</button>
+    </div>
+
+    <div class="gd-sec" id="gd-mp">
+      <div class="gd-sec-n">One</div>
+      <h3 class="gd-sec-h">Your MP and the ministers</h3>
+      <p class="gd-sec-lead">Letters get read, logged and answered, and each one puts Gillman on another
+      desk. An MP can ask in the House what the revised plan keeps and how many homes it holds, which are
+      the two figures still unpublished.</p>
+      <div class="letters-intro">
+      <p class="letters-cta"><b>Fifteen minutes, in your own words, is enough.</b> If you are not sure where to start, write to the two people at the top of this list.</p>
+      <ol class="letters-priority">
+        <li><b>Alvin Tan</b>, Minister of State for National Development, who answered for the Government in Parliament on 4 August and is leading the response on both sites.</li>
+        <li><b>Prime Minister Lawrence Wong</b>, via the <a href="https://www.pmo.gov.sg/contact-info/" target="_blank" rel="noopener">PMO website</a>, since the final balance between housing and forest is a whole of government decision.</li>
+        <li><b>Grace Fu</b>, Minister for Sustainability and the Environment, whose ministry residents have repeatedly asked to take a leading role.</li>
+        <li><b>Your own MP</b>, whoever that is. They raise what their residents write to them about, and 4 August showed they do.</li>
+      </ol>
+      <p>Contacts for the MPs covering the area and the key decision makers:</p>
+      <p class="tbl-hint">Scroll the table sideways to reach the email addresses.</p>
+      <div class="mp-table-wrap">
+      <table class="mp-table">
+        <thead><tr><th>Name</th><th>Constituency</th><th>Government position</th><th>Email address</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Name">Chan Chun Sing</td><td data-label="Constituency">Buona Vista</td><td data-label="Government position">Coordinating Minister for Public Services and Minister for Defence</td><td data-label="Email address"><a href="mailto:chan_chun_sing@mindef.gov.sg">chan_chun_sing@mindef.gov.sg</a></td></tr>
+          <tr><td data-label="Name">Alvin Tan Sheng Hui</td><td data-label="Constituency">Moulmein-Cairnhill</td><td data-label="Government position">Minister of State for Trade and Industry, and National Development</td><td data-label="Email address"><a href="mailto:alvin.tan@pap.org.sg">alvin.tan@pap.org.sg</a></td></tr>
+          <tr><td data-label="Name">Joan Pereira</td><td data-label="Constituency">Henderson-Dawson</td><td data-label="Government position">Member of Parliament</td><td data-label="Email address"><a href="mailto:joan.pereira@pap.org.sg">joan.pereira@pap.org.sg</a></td></tr>
+          <tr><td data-label="Name">Foo Cexiang</td><td data-label="Constituency">Tanjong Pagar-Tiong Bahru</td><td data-label="Government position">Minister of State</td><td data-label="Email address"><a href="mailto:Foo.Cexiang@pap.org.sg">Foo.Cexiang@pap.org.sg</a></td></tr>
+          <tr><td data-label="Name">Rachel Ong</td><td data-label="Constituency">Telok Blangah</td><td data-label="Government position">Member of Parliament</td><td data-label="Email address"><a href="mailto:rachel.ong@pap.org.sg">rachel.ong@pap.org.sg</a></td></tr>
+          <tr><td data-label="Name">Grace Fu</td><td data-label="Constituency"></td><td data-label="Government position">Minister for Sustainability and the Environment</td><td data-label="Email address"><a href="mailto:grace_fu@mse.gov.sg">grace_fu@mse.gov.sg</a></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="gd-small">Not on this list? Parliament keeps a lookup for every constituency at
+      <a href="https://www.parliament.gov.sg/mps/find-mps-in-my-constituency" target="_blank" rel="noopener">parliament.gov.sg</a>.
+      Writing to your own MP counts wherever in Singapore you live.</p>
+    </div>
+
+      <p class="gd-group">What to put in it</p>
+      <dl class="ev-facts gd-facts">
+        <div><dt>That you are their resident</dt><dd>Name the street or the estate. It is the line that
+        makes the letter theirs to answer.</dd></div>
+        <div><dt>What you want raised</dt><dd>One question, put plainly. How much forest is being kept, and
+        how many homes the revised plan holds, are the two still unanswered.</dd></div>
+        <div><dt>Why it matters where you live</dt><dd>The walk, the shade, the birds, the children. One or
+        two sentences of your own.</dd></div>
+        <div><dt>A request for a reply</dt><dd>Ask to be told what they do with it. A letter that expects an
+        answer is harder to file away.</dd></div>
+      </dl>
+      <div class="gd-eg">
+        <span class="gd-eg-tag">An example of the shape, not words to copy</span>
+        <p>I live on Depot Road and I am one of your residents. I am writing about the Gillman Barracks
+        plan. The Government has said more greenery will be kept and no figure has been published. Could
+        you ask how much forest the revised plan keeps, and how many homes it holds? I would be grateful to
+        know what comes of it.</p>
+      </div>
+      <p class="gd-after"><b>After you send it.</b> Most offices acknowledge a letter from a resident, and
+      an MP who hears the same thing from several people is far more likely to raise it. If you would
+      rather say it face to face, every MP holds a Meet-the-People session in their own ward.</p>
     </div>
 
     <div class="gd-sec" id="gd-mse">
-      <div class="gd-sec-n">One</div>
+      <div class="gd-sec-n">Two</div>
       <h3 class="gd-sec-h">The national climate plan</h3>
       <p class="gd-sec-lead">The Ministry of Sustainability and the Environment is writing Singapore&rsquo;s
       first National Adaptation Plan, due in 2027, and is asking the public what worries them about climate
@@ -2763,65 +2868,8 @@ body[data-page="guide"] .nav{background:rgba(10,24,16,.93);-webkit-backdrop-filt
       if you would rather say it in person.</p>
     </div>
 
-    <div class="gd-sec" id="gd-mp">
-      <div class="gd-sec-n">Two</div>
-      <h3 class="gd-sec-h">Your MP and the ministers</h3>
-      <p class="gd-sec-lead">Letters get read, logged and answered, and each one puts Gillman on another
-      desk. An MP can ask in the House what the revised plan keeps and how many homes it holds, which are
-      the two figures still unpublished.</p>
-      <div class="letters-intro">
-      <p class="letters-cta"><b>Fifteen minutes, in your own words, is enough.</b> If you are not sure where to start, write to the two people at the top of this list.</p>
-      <ol class="letters-priority">
-        <li><b>Alvin Tan</b>, Minister of State for National Development, who answered for the Government in Parliament on 4 August and is leading the response on both sites.</li>
-        <li><b>Prime Minister Lawrence Wong</b>, via the <a href="https://www.pmo.gov.sg/contact-us" target="_blank" rel="noopener">PMO website</a>, since the final balance between housing and forest is a whole of government decision.</li>
-        <li><b>Grace Fu</b>, Minister for Sustainability and the Environment, whose ministry residents have repeatedly asked to take a leading role.</li>
-        <li><b>Your own MP</b>, whoever that is. They raise what their residents write to them about, and 4 August showed they do.</li>
-      </ol>
-      <p>Contacts for the MPs covering the area and the key decision makers:</p>
-      <p class="tbl-hint">Scroll the table sideways to reach the email addresses.</p>
-      <div class="mp-table-wrap">
-      <table class="mp-table">
-        <thead><tr><th>Name</th><th>Constituency</th><th>Government position</th><th>Email address</th></tr></thead>
-        <tbody>
-          <tr><td data-label="Name">Chan Chun Sing</td><td data-label="Constituency">Buona Vista</td><td data-label="Government position">Coordinating Minister for Public Services and Minister for Defence</td><td data-label="Email address"><a href="mailto:chan_chun_sing@mindef.gov.sg">chan_chun_sing@mindef.gov.sg</a></td></tr>
-          <tr><td data-label="Name">Alvin Tan Sheng Hui</td><td data-label="Constituency">Moulmein-Cairnhill</td><td data-label="Government position">Minister of State for Trade and Industry, and National Development</td><td data-label="Email address"><a href="mailto:alvin.tan@pap.org.sg">alvin.tan@pap.org.sg</a></td></tr>
-          <tr><td data-label="Name">Joan Pereira</td><td data-label="Constituency">Henderson-Dawson</td><td data-label="Government position">Member of Parliament</td><td data-label="Email address"><a href="mailto:joan.pereira@pap.org.sg">joan.pereira@pap.org.sg</a></td></tr>
-          <tr><td data-label="Name">Foo Cexiang</td><td data-label="Constituency">Tanjong Pagar-Tiong Bahru</td><td data-label="Government position">Minister of State</td><td data-label="Email address"><a href="mailto:Foo.Cexiang@pap.org.sg">Foo.Cexiang@pap.org.sg</a></td></tr>
-          <tr><td data-label="Name">Rachel Ong</td><td data-label="Constituency">Telok Blangah</td><td data-label="Government position">Member of Parliament</td><td data-label="Email address"><a href="mailto:rachel.ong@pap.org.sg">rachel.ong@pap.org.sg</a></td></tr>
-          <tr><td data-label="Name">Grace Fu</td><td data-label="Constituency"></td><td data-label="Government position">Minister for Sustainability and the Environment</td><td data-label="Email address"><a href="mailto:grace_fu@mse.gov.sg">grace_fu@mse.gov.sg</a></td></tr>
-        </tbody>
-      </table>
-      </div>
-      <p class="gd-small">Not on this list? Parliament keeps a lookup for every constituency at
-      <a href="https://www.parliament.gov.sg/mps/find-mps-in-my-constituency" target="_blank" rel="noopener">parliament.gov.sg</a>.
-      Writing to your own MP counts wherever in Singapore you live.</p>
-    </div>
-
-      <p class="gd-group">What to put in it</p>
-      <dl class="ev-facts gd-facts">
-        <div><dt>That you are their resident</dt><dd>Name the street or the estate. It is the line that
-        makes the letter theirs to answer.</dd></div>
-        <div><dt>What you want raised</dt><dd>One question, put plainly. How much forest is being kept, and
-        how many homes the revised plan holds, are the two still unanswered.</dd></div>
-        <div><dt>Why it matters where you live</dt><dd>The walk, the shade, the birds, the children. One or
-        two sentences of your own.</dd></div>
-        <div><dt>A request for a reply</dt><dd>Ask to be told what they do with it. A letter that expects an
-        answer is harder to file away.</dd></div>
-      </dl>
-      <div class="gd-eg">
-        <span class="gd-eg-tag">An example of the shape, not words to copy</span>
-        <p>I live on Depot Road and I am one of your residents. I am writing about the Gillman Barracks
-        plan. The Government has said more greenery will be kept and no figure has been published. Could
-        you ask how much forest the revised plan keeps, and how many homes it holds? I would be grateful to
-        know what comes of it.</p>
-      </div>
-      <p class="gd-after"><b>After you send it.</b> Most offices acknowledge a letter from a resident, and
-      an MP who hears the same thing from several people is far more likely to raise it. If you would
-      rather say it face to face, every MP holds a Meet-the-People session in their own ward.</p>
-    </div>
-
     <div class="gd-sec" id="gd-hdb">
-      <div class="gd-sec-n">Three</div>
+      <div class="gd-sec-n">Also worth doing</div>
       <h3 class="gd-sec-h">The HDB feedback form</h3>
       <p class="gd-sec-lead">The plan is being redrawn now, with a summary findings report due in about a
       month. Anything that arrives before that report is written is something HDB has to answer.</p>
@@ -2919,8 +2967,9 @@ body[data-page="guide"] .nav{background:rgba(10,24,16,.93);-webkit-backdrop-filt
       <p><b>It has worked before.</b> In 2021, Dover Forest drew around 50,000 signatures and nearly 1,800
       written submissions. The plans changed and the western half of the forest was kept.</p>
       <div class="ev-ctas">
-        <a class="btn btn--go" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Write to HDB now</a>
-        <a class="btn btn--ghost" href="https://form.gov.sg/6a6979a29529e1ef456ca522" target="_blank" rel="noopener">Share your view with MSE</a>
+        <button class="btn btn--go" type="button" data-anchor="gd-mp">Write to your MP</button>
+        <button class="btn btn--ghost" type="button" data-anchor="gd-mse">Share your view with MSE</button>
+        <a class="btn btn--ghost" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Write to HDB</a>
       </div>
     </div>
 
@@ -2938,8 +2987,8 @@ body[data-page="guide"] .nav{background:rgba(10,24,16,.93);-webkit-backdrop-filt
   <div class="footer-scrim" aria-hidden="true"></div>
   <div class="footer-wordmark">Save Gillman Forest</div>
   <div class="cta-row cta-center">
-    <span class="cta-stack"><a class="btn btn--go" href="https://form.gov.sg/6a6979a29529e1ef456ca522" target="_blank" rel="noopener">Share your view with MSE</a><span class="cta-note">The national climate plan is being written now.</span></span>
-    <span class="cta-stack"><button class="btn btn--ghost" type="button" data-page="guide" data-anchor="gd-mp">Write to your MP</button><span class="cta-note">Names and addresses, and what to say.</span></span>
+    <span class="cta-stack"><button class="btn btn--go" type="button" data-page="guide" data-anchor="gd-mp">Write to your MP</button><span class="cta-note">Names and addresses, and what to say.</span></span>
+    <span class="cta-stack"><a class="btn btn--ghost" href="https://form.gov.sg/6a6979a29529e1ef456ca522" target="_blank" rel="noopener">Share your view with MSE</a><span class="cta-note">The national climate plan is being written now.</span></span>
     <span class="cta-stack"><a class="btn btn--ghost" href="https://hdb.gov.sg/write-to-us/feedback-form" target="_blank" rel="noopener">Send feedback to HDB</a><span class="cta-note">Choose &ldquo;Land Use Plans&rdquo; as the category.</span></span>
   </div>
   <p class="footer-note">A residents&rsquo; initiative for Telok Blangah. Not affiliated with HDB, URA, NParks, or any political party.</p>
@@ -3115,7 +3164,7 @@ document.querySelectorAll('.ba').forEach(function(el){
 (function(){
   var d=new Date(), today=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
   var left=0;
-  document.querySelectorAll('.ev-list .news-item[data-until]').forEach(function(li){ if(li.dataset.until<today) li.classList.add('is-past'); else left++; });
+  document.querySelectorAll('.ev-list .news-item[data-until], .now-card[data-until]').forEach(function(li){ if(li.dataset.until<today) li.classList.add('is-past'); else left++; });
   var empty=document.getElementById('ev-empty'); if(empty) empty.hidden=left>0;
 })();
 
