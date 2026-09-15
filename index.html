@@ -65,6 +65,7 @@ img{max-width:100%;display:block}
 .nav-links button{background:none;border:none;color:#fff;font-family:var(--sans);font-weight:700;font-size:17px;
   padding:6px 12px;cursor:pointer;letter-spacing:.01em;opacity:.94}
 .nav-links button:first-child{padding-left:0}
+@media(max-width:1200px){.nav-links button{padding:6px 8px;font-size:16px}}
 .nav-links button:hover{color:var(--amber)}
 .nav-links button[aria-current="true"]{color:var(--amber)}
 .nav-sep{color:rgba(255,255,255,.5);font-weight:400}
@@ -377,6 +378,26 @@ body[data-page="petition"] .site-footer .cta-row{display:none}
   border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:1px}
 .news-title:hover{color:var(--amber);border-bottom-color:var(--amber)}
 .news-note{color:var(--cream);font-size:14.5px;line-height:1.55;margin:7px 0 0;max-width:70ch}
+.ev-list .news-item.is-past{display:none}
+.ev-list .ev-facts{margin:14px 0 0;max-width:560px}
+.ev-list .ev-facts > div{grid-template-columns:110px minmax(0,1fr);gap:12px;padding:7px 0}
+.ev-list .ev-facts dd{font-size:14.5px}
+.ev-poster{margin:16px 0 0;max-width:560px}
+.ev-poster img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid rgba(255,255,255,.14);cursor:zoom-in}
+.ev-empty{color:var(--cream);font-size:16px;margin:26px 0 0}
+.ev-past-head{margin-top:64px}
+.events-box.ev-left{text-align:left;max-width:860px;margin:0}
+.events-box.ev-left.ev-later{margin-top:44px}
+.events-box.ev-left.ev-first{margin-top:18px}
+.ev-left h2{font-size:clamp(22px,3vw,30px)}
+.ev-left .ev-facts{margin-left:0}
+.ev-left .ev-ctas{justify-content:flex-start}
+.ev-left .ev-qr{justify-content:flex-start;margin-left:0}
+.events-box .ev-hint{font-size:13px;color:var(--muted)}
+.ev-left .ev-gallery{margin-left:0}
+@media(max-width:520px){.ev-list .ev-facts > div{grid-template-columns:1fr;gap:2px}}
+.news-go{display:inline-block;margin-top:10px;color:var(--amber);font-weight:700;font-size:14px;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+.news-go:hover{border-bottom-color:var(--amber)}
 .news-more[hidden]{display:none}
 .news-more{margin-top:0}
 .news-more .news-item:first-child{border-top:1px solid rgba(255,255,255,.14)}
@@ -788,6 +809,7 @@ body[data-page="guide"] .nav{background:rgba(10,24,16,.93);-webkit-backdrop-filt
     <button data-page="dialogue">Where we stand</button><span class="nav-sep">|</span>
     <button data-page="plan">Deforestation Plan</button><span class="nav-sep">|</span>
     <button data-page="betterplan">A Better Plan</button><span class="nav-sep">|</span>
+    <button data-page="events">Events</button><span class="nav-sep">|</span>
     <button data-page="news">News</button>
   </nav>
   <span class="nav-ctas">
@@ -1503,6 +1525,173 @@ body[data-page="guide"] .nav{background:rgba(10,24,16,.93);-webkit-backdrop-filt
 </section>
 
 <!-- NEWS -->
+<!-- EVENTS -->
+<section class="page" id="page-events">
+  <div class="wrap-wide">
+    <p class="eyebrow">Events</p>
+    <div class="letters-intro">
+      <p>Walks, talks and gatherings where you can see Gillman Forest for yourself, or meet the residents working to keep it.</p>
+    </div>
+
+    <h3 class="news-head">Coming up</h3>
+    <ul class="news-list ev-list">
+        <li class="news-item" data-until="2026-09-20">
+          <a class="news-thumb" href="https://forms.gle/DuhMoEW2PJbA7LuN6" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="assets/img/events/walk-20sep-painting.webp" alt="" loading="lazy" decoding="async">
+          </a>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-date">Sun 20 Sep 2026</span><span class="news-src">Walk</span></div>
+            <a class="news-title" href="https://forms.gle/DuhMoEW2PJbA7LuN6" target="_blank" rel="noopener">Hike Gillman Forest and Earth Trail</a>
+            <p class="news-note">A morning walk led by resident Amanda Ruiqing Flynn. Start at Gillman Barracks with the birdsong, then walk into the forest and past the ruins, and loop back to the start.</p>
+            <dl class="ev-facts">
+              <div><dt>Time</dt><dd>8am to 11am</dd></div>
+              <div><dt>Meet</dt><dd>Gillman Barracks. The exact meeting point is sent after you register.</dd></div>
+              <div><dt>Cost</dt><dd>Free. Limited to 20 people.</dd></div>
+              <div><dt>Who</dt><dd>Adults, and teens aged 14 and above with an adult</dd></div>
+            </dl>
+            <a class="news-go" href="https://forms.gle/DuhMoEW2PJbA7LuN6" target="_blank" rel="noopener">Register for the walk</a>
+          </div>
+        </li>
+        <li class="news-item" data-until="2026-10-03">
+          <a class="news-thumb" href="https://bookmyshow.sg/en/events/bbco-2026-everything-nature/BBCO2026" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="assets/img/events/bbco-everything-nature.webp" alt="" style="object-position:left center" loading="lazy" decoding="async">
+          </a>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-date">Sat 3 Oct 2026</span><span class="news-src">Concert</span></div>
+            <a class="news-title" href="https://bookmyshow.sg/en/events/bbco-2026-everything-nature/BBCO2026" target="_blank" rel="noopener">Bukit Batok Chinese Orchestra presents: Everything Nature</a>
+            <p class="news-note">Chinese orchestral music on the theme of nature. Local nature groups hold activities in the lobby before the concert. Visit the Save Gillman Forest booth there.</p>
+            <dl class="ev-facts">
+              <div><dt>Time</dt><dd>Lobby activities from 4.15pm. Concert at 5pm.</dd></div>
+              <div><dt>Where</dt><dd>SOTA Concert Hall, School of the Arts, 1 Zubir Said Drive</dd></div>
+              <div><dt>Programme</dt><dd>Legend of the White Snake, Courtyard After the Rain, Formosa: A Journey of Taiwan, and more</dd></div>
+              <div><dt>Tickets</dt><dd>Cat 1 S$26, Cat 2 S$20 on BookMyShow. Save S$2 a ticket on 2 or more, or S$4 a ticket on 4 or more.</dd></div>
+            </dl>
+            <figure class="ev-poster"><img src="assets/img/events/bbco-everything-nature.webp" alt="Poster for Everything Nature by Bukit Batok Chinese Orchestra, 3 October 2026 at SOTA Concert Hall, preshow activities 4.15pm, show 5pm" onclick="openImg(this.src)" loading="lazy" decoding="async"></figure>
+            <a class="news-go" href="https://bookmyshow.sg/en/events/bbco-2026-everything-nature/BBCO2026" target="_blank" rel="noopener">Get tickets</a>
+          </div>
+        </li>
+    </ul>
+    <p class="ev-empty" id="ev-empty" hidden>No events are listed right now. Check back soon.</p>
+
+
+    <h3 class="news-head ev-past-head">Past events</h3>
+    <div class="events-box ev-left ev-first">
+      <h2>The HDB dialogue, 1 September</h2>
+      <p>HDB held a dialogue with residents on the plans for Gillman Barracks and Sunset Way at HortPark.
+      Residents brought something of their own to it: <button class="gd-inline" type="button" data-page="betterplan">A Better Plan for Gillman</button>,
+      showing where the homes can go without clearing the forest. NParks said it is prepared to study the
+      boardwalk and the forest trails, the agencies undertook to look at widening connectivity and minimising forest
+      loss, and four questions went unanswered.</p>
+
+      <dl class="ev-facts">
+        <div><dt>Date</dt><dd>Monday, 1 September 2026</dd></div>
+        <div><dt>Time</dt><dd>6.30pm to 8.30pm</dd></div>
+        <div><dt>Where</dt><dd>Multi-Purpose Hall, HortPark</dd></div>
+        <div><dt>Organised by</dt><dd>HDB, by invitation</dd></div>
+      </dl>
+
+      <div class="ev-ctas">
+        <a class="btn btn--go" href="#dialogue" data-page="dialogue">What the agencies answered</a>
+      </div>
+    </div>
+
+    <div class="events-box ev-later ev-left">
+            <h2>The gathering at Hong Lim Park, 16 August</h2>
+      <p>SG Climate Rally called a gathering at Hong Lim Park in response to the redevelopment
+      plans, covering Gillman Barracks and Maju Forest alongside other sites. On Sunday afternoon
+      the lawn filled. People came to speak about access to nature, the loss of forests and natural
+      spaces, and to ask that decisions on land use are made with transparency and genuine public
+      involvement, with residents from the Gillman and Maju campaigns running booths at the edge of
+      the crowd.</p>
+
+      <div class="ev-gallery">
+        <figure>
+          <img src="assets/img/events/hong-lim-16aug.webp" style="aspect-ratio:auto" alt="A large crowd filling the lawn at Hong Lim Park on 16 August 2026, seated on picnic mats and standing under the trees, with the city skyline behind" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <figcaption>The lawn at Hong Lim Park on Sunday afternoon, 16 August. Photographs shared by participants.</figcaption>
+        </figure>
+      </div>
+      <div class="ev-gallery">
+        <figure>
+          <img src="assets/img/events/hong-lim-crowd.webp" alt="The crowd at Hong Lim Park seen from within, people talking in groups between the booths and the stage" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <figcaption>Between the booths and the stage.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/events/hong-lim-banner.webp" alt="A Save Gillman Forest banner reading Build homes. Keep the forest. standing on the lawn as people walk past" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <figcaption>Build homes. Keep the forest. The Gillman banners on the lawn.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/events/hong-lim-board.webp" alt="People placing green dot stickers on a board titled Important Considerations for Future Decisions, with columns for publishing alternative sites assessments, true housing needs, listening to public feedback, urban heat, community impact and open communications" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <figcaption>Green dots on the residents&rsquo; board, marking what people want weighed in the decisions ahead.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/events/hong-lim-print.webp" alt="People block-printing t-shirts at a booth table, one shirt reading Maju for the people" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <figcaption>Printing shirts at the campaign booths.</figcaption>
+        </figure>
+      </div>
+
+      <dl class="ev-facts">
+        <div><dt>Date</dt><dd>Sunday, 16 August 2026</dd></div>
+        <div><dt>Time</dt><dd>3.30pm to 6.30pm</dd></div>
+        <div><dt>Where</dt><dd>Hong Lim Park</dd></div>
+        <div><dt>Organised by</dt><dd>SG Climate Rally, not by this group</dd></div>
+      </dl>
+
+      <div class="ev-ctas">
+        <a class="btn btn--go" href="https://mothership.sg/2026/08/hong-lim-park-gathering-maju-forest-gillman-barracks/" target="_blank" rel="noopener">Read the report on this</a>
+      </div>
+    </div>
+
+    <div class="events-box ev-later ev-left">
+            <h2>The community walk, 8 August</h2>
+      <p>Residents walked from Telok Blangah Hill Park along the Forest Walk and into Gillman Barracks,
+      following the connections between nature, heritage and community that so many people spoke about at
+      the 30 July dialogue. The route, the flyer and the meeting point are kept here as a record, and for
+      anyone who wants to walk it on their own.</p>
+
+      <dl class="ev-facts">
+        <div><dt>Date</dt><dd>Saturday, 8 August 2026</dd></div>
+        <div><dt>Time</dt><dd>8.00am</dd></div>
+        <div><dt>Meeting point</dt><dd>Telok Blangah Hill Park, at the Forest Walk entrance</dd></div>
+        <div><dt>Ends at</dt><dd>Kyuukei Coffee, Gillman Barracks</dd></div>
+        <div><dt>Duration</dt><dd>About 1.5 to 2 hours</dd></div>
+      </dl>
+
+      <p class="ev-tail">The route goes at a leisurely pace, with pauses along the way to take in the
+      ecology, the heritage buildings and the community spaces. It is worth walking at any time. Every person
+      who walks it is one more person who has stood in this forest.</p>
+      <div class="ev-ctas">
+        <a class="btn btn--go" href="https://www.google.com/maps/dir/?api=1&amp;destination=1.279142,103.809579" target="_blank" rel="noopener">Get directions to the start</a>
+      </div>
+
+      <div class="ev-qr">
+        <a class="ev-qr-img" href="https://www.google.com/maps/dir/?api=1&amp;destination=1.279142,103.809579" target="_blank" rel="noopener">
+          <img src="assets/img/walk/walk-start-qr.png" alt="QR code opening Google Maps directions to the Forest Walk entrance, the starting point of the walk" loading="lazy" decoding="async">
+        </a>
+        <div class="ev-qr-txt">
+          <h4>Google Maps directions to starting point</h4>
+          <p>Scan this with your phone and Google Maps will route you from wherever you are to the exact spot we are meeting.</p>
+        </div>
+      </div>
+
+      <div class="ev-gallery">
+        <figure>
+          <img src="assets/img/walk/walk-flyer.webp" alt="The community forest walk flyer, giving the date, time, meeting point and duration" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <figcaption>The flyer</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/walk/walk-meeting-point.webp" alt="Map of Telok Blangah Hill Park marking the Forest Walk entrance where the walk begins" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <figcaption>Meeting point, the Forest Walk entrance at Telok Blangah Hill Park</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/walk/walk-route.webp" alt="Map of the Southern Ridges showing the route from Telok Blangah Hill Park towards Gillman Barracks and Labrador Park" onclick="openImg(this.src)" loading="lazy" decoding="async">
+          <figcaption>The route through the Southern Ridges</figcaption>
+        </figure>
+      </div>
+      <p class="ev-hint">Tap any image to enlarge.</p>
+    </div>
+  </div>
+</section>
+
 <section class="page" id="page-news">
   <div class="wrap-wide">
     <p class="eyebrow">In the news</p>
@@ -2874,7 +3063,7 @@ document.querySelectorAll('.ba').forEach(function(el){
   }, {passive:true});
   document.addEventListener('click', function(ev){
     var el = ev.target.closest('[data-page],[data-anchor]');
-    if(!el) return;
+    if(!el || el===document.body) return;   /* body carries data-page for styling, not navigation */
     if(el.dataset.page) show(el.dataset.page);
     if(el.dataset.anchor) scrollToAnchor(el.dataset.anchor);
   });
@@ -2920,6 +3109,14 @@ document.querySelectorAll('.ba').forEach(function(el){
       try{ document.querySelector('.reader').scrollIntoView({behavior:'smooth',block:'center'}); }catch(e){} });
   });
   render();
+})();
+
+/* ---- coming up: hide events once their day has passed ---- */
+(function(){
+  var d=new Date(), today=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  var left=0;
+  document.querySelectorAll('.ev-list .news-item[data-until]').forEach(function(li){ if(li.dataset.until<today) li.classList.add('is-past'); else left++; });
+  var empty=document.getElementById('ev-empty'); if(empty) empty.hidden=left>0;
 })();
 
 /* ---- dialogue accordion ---- */
